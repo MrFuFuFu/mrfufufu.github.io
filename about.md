@@ -1,11 +1,20 @@
 ---
 layout: page
-title: About
+title: 关于我
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+我叫傅圆，我是一名来自中国的 Android 开发者，你可以通过这些地方找到我或者看到我，^ ^
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
+[Github](https://github.com/MrFuFuFu)
 
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+[Facebook](https://www.facebook.com/profile.php?id=100006538561748)
+
+[Twitter](https://twitter.com/15068728607)
+
+[Instagram](https://instagram.com/mrfufufufu/)
+
+[知乎](http://www.zhihu.com/people/fu-yuan-58)
+
+[扇贝](http://www.shanbay.com/bdc/review/progress/12563734 )
+

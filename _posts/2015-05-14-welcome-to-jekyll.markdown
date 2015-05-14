@@ -1,12 +1,13 @@
 ---
 layout: post
-title:  “Hello, This is my First Blog~~“
+title:  “Hello, This is my first blog~~“
 date:   2015-05-14 11:07:36
 categories: jekyll update
 ---
 My name is Yuan Fu, I’m from China, developement Android of my job. Recently, I am learning English. Yes, Just you look it, My English is very bad, I had learning Enligsh 153 days, you can see here : [my shanbay page][shanbay].
 
-end…..
+end………
+下面是一些备注性的东西，请忽略吧.
 
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
