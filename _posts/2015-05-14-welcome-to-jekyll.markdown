@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  “Hello, This is my first blog~~“
+title:  Hello, This is my first blog~~
 date:   2015-05-14 11:07:36
 categories: jekyll update
 ---
