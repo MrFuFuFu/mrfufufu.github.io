@@ -4,7 +4,7 @@ title:  “Hello, This is my First Blog~~“
 date:   2015-05-14 11:07:36
 categories: jekyll update
 ---
-My name is Yuan Fu, I’m from China, developement Android of my job. Recently, I am learning English. Yes, Just you look it, My English is very bad, I had learning Enligsh 153 days, you can see here : http://www.shanbay.com/bdc/review/progress/12563734 
+My name is Yuan Fu, I’m from China, developement Android of my job. Recently, I am learning English. Yes, Just you look it, My English is very bad, I had learning Enligsh 153 days, you can see here : [my shanbay page][shanbay].
 
 end…..
 
@@ -27,3 +27,4 @@ Check out the [Jekyll docs][jekyll] for more info on how to get the most out of 
 [jekyll]:      http://jekyllrb.com
 [jekyll-gh]:   https://github.com/jekyll/jekyll
 [jekyll-help]: https://github.com/jekyll/jekyll-help
+[shanbay]:     http://www.shanbay.com/bdc/review/progress/12563734 
