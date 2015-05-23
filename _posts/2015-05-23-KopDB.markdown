@@ -1,0 +1,211 @@
+---
+layout: post
+title:  KopDB 框架学习1——使用
+date:   2015-05-14 17:18:00
+categories: Android
+---
+
+### 前言
+最近项目中要用到数据库，因为之前需要本地存储的数据量并不是非常大，SharedPreferences 足以解决大部分的数据存储问题，所以，我们一直没有用到 SQLite。现在产品需要优化私信模块体验，所以增加私信本地存储是非常必要的。这时候用上 SQLite 就非常必要了。好在我们的老大之前就已经封装好了一份非常完善的数据库框架了，拿来就能用。看了源码研究了一天，大概有了写心得体会，整理出来，学习使用。
+
+就给他起名叫KopDB吧（Kop 是我们老大打 log 的时候用的 tag），KopDB 采用的是对象关系映射(ORM)的模式，并将我们平时开发时最常用到的一些数据库功能进行了封装，使得不用编写一行SQL语句就可以完成各种建表、増删改查的操作。
+
+这篇文章主要讲的只是 KopDB 的使用，具体分析我会在下篇文章中。
+
+Github 项目地址，里面包含了 lib 和对应的 demo
+
+	https://github.com/MrFuFuFu/KopDB.git
+
+主要的使用方式非常简单：
+
+先给出数据 model 模型方便后面阅读理解：
+
+```
+ //@author Mr.傅
+ //2015-5-20 下午2:07:19
+public class PersonModel extends BaseModel {
+	private static final long serialVersionUID = 3462436436344054489L;
+
+    public static final String PERSON_ID = "person_id";
+    public static final String PERSON_NAME = "person_name";
+	public static final String PERSON_AGE = "person_age";
+	public static final String PERSON_ADDRESS = "person_address";
+	public static final String PERSON_PHONE = "person_phone";
+	
+	@DatabaseField(columnName = PERSON_ID, index = true, unique = true, canBeNull = false)
+	public int id;
+	
+	@DatabaseField(columnName = PERSON_NAME)
+	public String name;
+	
+	@DatabaseField(columnName = PERSON_AGE)
+	public String age;
+	
+	@DatabaseField(columnName = PERSON_ADDRESS)
+	public String address;
+	
+	@DatabaseField(columnName = PERSON_PHONE)
+	public String phone;
+
+	@Override
+	public String toString() {
+		return "PersonModel [id=" + id + ", name=" + name + ", age=" + age + ", address=" + address + ", phone=" + phone + "]";
+	}
+}
+```
+其中 id 的写法就表示它是主键啦，注意：必须继承 BaseModel 。
+
+###1、初始化：
+
+```
+//此函数应该在下面两种情况下调用： 
+//1：本地保存了userId,token,可以自动登陆，在自动登陆前
+//2：手工登陆方式，则需要在登陆成功后调用 3: 注册成功后，需要调用 
+public void initDB(long userId) {
+	if (DatabaseManager.getInstance().isInited())
+		return;
+	String dbName = String.valueOf(userId) + "person.db";
+	int version = 0;
+	try {
+		version = getPackageManager().getPackageInfo(getPackageName(), 0).versionCode;
+	} catch (NameNotFoundException e) {
+		e.printStackTrace();
+	}
+	List<Class<?>> list = new ArrayList<Class<?>>();
+	list.add(PersonModel.class);
+	DatabaseManager.getInstance().initDataBase(getApplicationContext(), dbName, version, list);
+}
+```
+
+其中 dbName 就是数据库名字；version 版本这里使用的是 versionCode，这样每次升级版本号以后数据库都会升级一次。当然你也可以自己定义；list 就是需要存到数据库的映射模型列表，它必须继承自 BaseModel。初始化完成以后，数据库和表就都已经给我们创建好了。
+
+
+根据对象关系映射模式的理念就是每一张表都应该对应一个模型(Model)，也就是说，如果我们想要建一张 person 表，就应该有一个对应的 Person 模型类。
+
+###2、insert 数据
+
+一行代码就能搞定：
+
+```
+DatabaseManager.getInstance().insert(PersonModel.class, model);
+```
+
+如果想要监听插入是否失败，则可以调用如下 insert 方法
+
+```
+DatabaseManager.getInstance().insert(PersonModel.class, model, new DatabaseManager.getInstance().insert(PersonModel.class, model, new DBOperateAsyncListener() {
+	@Override
+	public <T extends BaseModel> void onPostExecute(DatabaseOptionType optionType, Class<T> claz, List<T> successModels, List<T> failModels) {
+		if (successModels != null) {
+			Log.i("MrFu", "Success = " + ((PersonModel)(successModels.get(0))).toString());
+		}else if (failModels != null) {
+			Log.i("MrFu", "Fail = " + ((PersonModel)(failModels.get(0))).toString());
+		}
+	}
+});
+```
+当然，如果我的数据是一个 list 的形式的，也可也直接插入，而不需要写 for 循环一条一条插入，
+
+```
+DatabaseManager.getInstance().insert(PersonModel.class, models);
+```
+###3、update 数据
+
+同样也是一行代码的事情：
+
+```
+DatabaseManager.getInstance().update(PersonModel.class, model1);
+```
+他同样支持4个重载方法，insert 没有实际给出，这里给出他的四个重载方法，insert 类似
+
+```
+DatabaseManager.getInstance().update(Class<T> claz, T t);
+DatabaseManager.getInstance().update(Class<T> claz, List<T> models);
+DatabaseManager.getInstance().update(Class<T> claz, T t, DBOperateAsyncListener listener);
+DatabaseManager.getInstance().update(Class<T> claz, List<T> models, DBOperateAsyncListener listener);
+```
+###4、replace 数据
+
+同样也是一行代码就能搞定啦，同样支持4个重载方法：
+
+```
+DatabaseManager.getInstance().replace(Class<T> claz, T t);
+DatabaseManager.getInstance().replace(Class<T> claz, List<T> models);
+DatabaseManager.getInstance().replace(Class<T> claz, T t, DBOperateAsyncListener listener);
+DatabaseManager.getInstance().replace(Class<T> claz, List<T> models, DBOperateAsyncListener listener);
+```
+###5、delete 数据
+
+同样也是喔，其中 whereClause 是 delete 的条件，whereArgs就是 whereClause 的占位符啦：
+
+```
+DatabaseManager.getInstance().delete(Class<T> claz, String whereClause, String[] whereArgs);
+DatabaseManager.getInstance().delete(Class<T> claz, String whereClause, String[] whereArgs, DBOperateDeleteListener listener);
+```
+举个例子，删除 id 为 1 的数据
+
+```
+DatabaseManager.getInstance().delete(PersonModel.class, PersonModel.PERSON_ID + " = ?", new String[] {"1"});
+```
+这就表示删除 PersonModel 表中的 person_id 为 1 的数据。
+
+###6、select 数据
+
+如果需要查询整张表的数据，只需要按照下面的写法就可以咯：
+
+```
+DatabaseManager.getInstance().select(PersonModel.class, null, null, null, null, null, null, null);
+```
+其实这么写还是多余了。所以，我觉得我应该添加这么个方法：
+
+```
+List<PersonModel> list = DatabaseManager.getInstance().select(PersonModel.class);
+```
+这么来看，就方便多了，如果我需要查询整张表的数据，直接调用这个方法就可以了，当然如果你想对 select 方法进行扩展的话，完全可以重载更多的 select 方法来进行实现。
+
+其中 SQLiteDateBase 的 query 方法如下，可以根据这个方法的参数对应这来重载 select 方法，参数都是相同的：
+
+```
+/**
+* Query the given table, returning a {@link Cursor} over the result set.
+*
+* @param table The table name to compile the query against.
+* @param columns A list of which columns to return. Passing null will
+*            return all columns, which is discouraged to prevent reading
+*            data from storage that isn't going to be used.
+* @param selection A filter declaring which rows to return, formatted as an
+*            SQL WHERE clause (excluding the WHERE itself). Passing null
+*            will return all rows for the given table.
+* @param selectionArgs You may include ?s in selection, which will be
+*         replaced by the values from selectionArgs, in order that they
+*         appear in the selection. The values will be bound as Strings.
+* @param groupBy A filter declaring how to group rows, formatted as an SQL
+*            GROUP BY clause (excluding the GROUP BY itself). Passing null
+*            will cause the rows to not be grouped.
+* @param having A filter declare which row groups to include in the cursor,
+*            if row grouping is being used, formatted as an SQL HAVING
+*            clause (excluding the HAVING itself). Passing null will cause
+*            all row groups to be included, and is required when row
+*            grouping is not being used.
+* @param orderBy How to order the rows, formatted as an SQL ORDER BY clause
+*            (excluding the ORDER BY itself). Passing null will use the
+*            default sort order, which may be unordered.
+* @param limit Limits the number of rows returned by the query,
+*            formatted as LIMIT clause. Passing null denotes no LIMIT clause.
+* @return A {@link Cursor} object, which is positioned before the first entry. Note that
+* {@link Cursor}s are not synchronized, see the documentation for more details.
+* @see Cursor
+*/
+public Cursor query(String table, String[] columns, String selection, String[] selectionArgs, String groupBy, String having, String orderBy, String limit) {...}
+```
+
+怎么样，是不是非常简单呢，我们不需要考虑如何实现 SQLiteOpenHelper 也不需要考虑那些复杂的 SQL 情况。
+
+这篇博客主要讲述的是如何使用 KopDB 框架，下一篇博客，我会对这个框架的实现进行具体的分析，以加深印象，方便以后的扩展和学习。
+
+
+
+
+
+
+

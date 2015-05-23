@@ -2,7 +2,7 @@
 layout: post
 title:  浏览我旧的博客
 date:   2015-05-14 17:18:00
-categories: jekyll update
+categories: Android
 ---
 
 我就不将我旧时的博客克隆过来了，主要有两个原因：
