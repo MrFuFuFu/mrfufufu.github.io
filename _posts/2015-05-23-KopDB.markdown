@@ -20,7 +20,7 @@ Github 项目地址，里面包含了 lib 和对应的 demo
 
 先给出 demo 中的数据 model 模型方便后面阅读理解：
 
-{% highlight java %}
+```Java
 public class PersonModel extends BaseModel {
     private static final long serialVersionUID = 3462436436344054489L;
 			
@@ -50,13 +50,13 @@ public class PersonModel extends BaseModel {
         return "id=" + id + "\r name=" + name + "\r age=" + age + "\r address=" + address + "\r phone=" + phone;
     }
 }
-{% endhighlight %}
+```
 
 其中 id 的写法就表示它是主键啦，注意：必须继承 BaseModel 。
 
 ###1、初始化：
 
-{% highlight java %}
+```Java
 public void initDB() {
     if (DatabaseManager.getInstance().isInited())
         return;
@@ -71,7 +71,7 @@ public void initDB() {
     list.add(PersonModel.class);
     DatabaseManager.getInstance().initDataBase(getApplicationContext(), dbName, version, list);
 }
-{% endhighlight %}
+```
 
 其中 dbName 就是数据库名字；version 版本这里使用的是 versionCode，这样每次升级版本号以后数据库都会升级一次。当然你也可以自己定义；list 就是需要存到数据库的映射模型列表，它必须继承自 BaseModel。初始化完成以后，数据库和表就都已经给我们创建好了。
 
@@ -82,13 +82,13 @@ public void initDB() {
 
 一行代码就能搞定：
 
-{% highlight java %}
+```Java
 DatabaseManager.getInstance().insert(PersonModel.class, model);
-{% endhighlight %}
+```
 
 如果想要监听插入是否失败，则可以调用如下 insert 方法
 
-{% highlight java %}
+```Java
 DatabaseManager.getInstance().insert(PersonModel.class, model, new DatabaseManager.getInstance().insert(PersonModel.class, model, new DBOperateAsyncListener() {
     @Override
     public <T extends BaseModel> void onPostExecute(DatabaseOptionType optionType, Class<T> claz, List<T> successModels, List<T> failModels) {
@@ -99,56 +99,56 @@ DatabaseManager.getInstance().insert(PersonModel.class, model, new DatabaseManag
         }
     }
 });
-{% endhighlight %}
+```
 
 当然，如果我的数据是一个 list 的形式的，也可也直接插入，而不需要写 for 循环一条一条插入，
 
-{% highlight java %}
+```Java
 DatabaseManager.getInstance().insert(PersonModel.class, models);
-{% endhighlight %}
+```
 
 ###3、update 数据
 
 同样也是一行代码的事情：
 
-{% highlight java %}
+```Java
 DatabaseManager.getInstance().update(PersonModel.class, model1);
-{% endhighlight %}
+```
 
 他同样支持4个重载方法，insert 没有实际给出，这里给出他的四个重载方法，insert 类似
 
-{% highlight java %}
+```Java
 DatabaseManager.getInstance().update(Class<T> claz, T t);
 DatabaseManager.getInstance().update(Class<T> claz, List<T> models);
 DatabaseManager.getInstance().update(Class<T> claz, T t, DBOperateAsyncListener listener);
 DatabaseManager.getInstance().update(Class<T> claz, List<T> models, DBOperateAsyncListener listener);
-{% endhighlight %}
+```
 
 ###4、replace 数据
 
 同样也是一行代码就能搞定啦，同样支持4个重载方法：
 
-{% highlight java %}
+```Java
 DatabaseManager.getInstance().replace(Class<T> claz, T t);
 DatabaseManager.getInstance().replace(Class<T> claz, List<T> models);
 DatabaseManager.getInstance().replace(Class<T> claz, T t, DBOperateAsyncListener listener);
 DatabaseManager.getInstance().replace(Class<T> claz, List<T> models, DBOperateAsyncListener listener);
-{% endhighlight %}
+```
 
 ###5、delete 数据
 
 同样也是喔，其中 whereClause 是 delete 的条件，whereArgs就是 whereClause 的占位符啦：
 
-{% highlight java %}
+```Java
 DatabaseManager.getInstance().delete(Class<T> claz, String whereClause, String[] whereArgs);
 DatabaseManager.getInstance().delete(Class<T> claz, String whereClause, String[] whereArgs, DBOperateDeleteListener listener);
-{% endhighlight %}
+```
 
 举个例子，删除 id 为 1 的数据
 
-{% highlight java %}
+```Java
 DatabaseManager.getInstance().delete(PersonModel.class, PersonModel.PERSON_ID + " = ?", new String[] {"1"});
-{% endhighlight %}
+```
 
 这就表示删除 PersonModel 表中的 person_id 为 1 的数据。
 
@@ -156,21 +156,21 @@ DatabaseManager.getInstance().delete(PersonModel.class, PersonModel.PERSON_ID + 
 
 如果需要查询整张表的数据，只需要按照下面的写法就可以咯：
 
-{% highlight java %}
+```Java
 DatabaseManager.getInstance().select(PersonModel.class, null, null, null, null, null, null, null);
-{% endhighlight %}
+```
 
 其实这么写还是多余了。所以，我觉得我应该添加这么个方法：
 
-{% highlight java %}
+```Java
 List<PersonModel> list = DatabaseManager.getInstance().select(PersonModel.class);
-{% endhighlight %}
+```
 
 这么来看，就方便多了，如果我需要查询整张表的数据，直接调用这个方法就可以了，当然如果你想对 select 方法进行扩展的话，完全可以重载更多的 select 方法来进行实现。
 
 其中 SQLiteDateBase 的 query 方法如下，可以根据这个方法的参数对应这来重载 select 方法，参数都是相同的：
 
-{% highlight java %}
+```Java
 /**
 * Query the given table, returning a {@link Cursor} over the result set.
 *
@@ -202,7 +202,7 @@ List<PersonModel> list = DatabaseManager.getInstance().select(PersonModel.class)
 * @see Cursor
 */
 public Cursor query(String table, String[] columns, String selection, String[] selectionArgs, String groupBy, String having, String orderBy, String limit) {...}
-{% endhighlight %}
+```
 
 
 怎么样，是不是非常简单呢，我们不需要考虑如何实现 SQLiteOpenHelper 也不需要考虑那些复杂的 SQL 情况。

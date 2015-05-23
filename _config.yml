@@ -9,4 +9,5 @@ twitter_username: 15068728607
 github_username:  mrfufufu
 
 # Build settings
-markdown: kramdown
+#markdown: kramdown
+markdown: redcarpet
