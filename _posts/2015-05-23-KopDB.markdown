@@ -18,7 +18,7 @@ Github 项目地址，里面包含了 lib 和对应的 demo
 
 主要的使用方式非常简单：
 
-先给出数据 model 模型方便后面阅读理解：
+先给出 demo 中的数据 model 模型方便后面阅读理解：
 
 {% highlight java %}
 public class PersonModel extends BaseModel {
@@ -57,10 +57,10 @@ public class PersonModel extends BaseModel {
 ###1、初始化：
 
 {% highlight java %}
-public void initDB(long userId) {
+public void initDB() {
     if (DatabaseManager.getInstance().isInited())
         return;
-    String dbName = String.valueOf(userId) + "person.db";
+    String dbName = "person.db";
     int version = 0;
     try {
         version = getPackageManager().getPackageInfo(getPackageName(), 0).versionCode;
@@ -208,6 +208,12 @@ public Cursor query(String table, String[] columns, String selection, String[] s
 怎么样，是不是非常简单呢，我们不需要考虑如何实现 SQLiteOpenHelper 也不需要考虑那些复杂的 SQL 情况。
 
 这篇博客主要讲述的是如何使用 `KopDB` 框架，下一篇博客，我会对这个框架的实现进行具体的分析，以加深印象，方便以后的扩展和学习。
+
+本篇文章对 SQLite 的讲解不是非常的细致，有关 SQLite 的详细说明可以参照这两篇博文，非常非常详细：
+
+[郭霖: Android数据库高手秘籍](http://blog.csdn.net/column/details/android-database-pro.html)
+
+[scott: Android中SQLite应用详解](http://blog.csdn.net/liuhe688/article/details/6715983)
 
 
 
