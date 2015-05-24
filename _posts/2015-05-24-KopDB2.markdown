@@ -1,0 +1,541 @@
+---
+layout: post
+title:  KopDB 框架学习2——源码分析
+date:   2015-05-24 15:41:00
+categories: Android
+---
+
+上次我们主要是对 `KopDB` 框架的使用进行了分析，它是非常简单有用的。这次主要是对它的源码进行分析，进一步的来了解它的真面目。
+
+
+
+因为 `KopDB` 采用的是对象关系映射(ORM)模式，即我们使用的编程语言是面向对象语言，而我们使用的数据库则是关系型数据库，那么将面向对象的语言和面向关系的数据库之间建立一种映射关系，这就是对象关系映射了。
+
+使用 ORM 模式，主要是因为我们平时多用面向对象编程，只有少部分人才会比较精通关系型数据库。通过这种模式，可以让我们不考虑 SQL 语言的具体实现，从而专注于业务实现。
+
+根据 ORM 模式的理念，我们每张表都应该对应一个模型，即，如果我们想要建一张 Person 表，就应该有一个 Person 类。
+
+##类关系图
+
+![MrFuDB](https://raw.githubusercontent.com/MrFuFuFu/KopDB/master/Image/MrFuDB.png)
+
+##核心类功能的介绍：
+
+###1. BaseModel.java
+
+所有的模型都应继承这个类，这个类的主要有两个方法：
+
+`getContentValues(): ContentValues `:为将要进行的数据库操作获取表的字段和对应的值。方法是将对应的 model 通过反射的形式获取到它的列名和值，返回的是 ContentValues 对象。
+
+`getModels(Cursor curor):List<T>`: 为查询数据库操作以后得到的数据进行解析，返回对应的 model 类型 的List。方法是将查询完数据库以后会得到一个 Cursor，所有的查询操作得到值都通过这个变量返回，对这个 cursor 中的对应列的值映射到对应的 model 中去。
+
+###2. DatabaseManager.java
+
+最主要用到的类就是`DatabaseManager`类的，通过这类，我们完全了所有的数据库的操作，包括建表，增删查改等操作。注意，需要通过单例得到它的实例，主要方法有：
+
+####a. 初始化操作
+
+```Java
+initDataBase(Context context, String dbName, int version, List<Class<?>> models)
+```
+
+数据库的初始化相关的操作，dbName为数据库的名称，version 就是数据库的版本，models 为需要映射到数据库中去的 model，具体映射方法我们在`DatabaseTools.java`类中来讲。
+
+####b. 查询操作
+
+```Java
+select(Class<T> claz, String[] columns, String selection, String[] selectionArgs, String groupBy, String having, String orderBy, String limit)
+```
+
+直接通过 claz 拿到数据库名字，根据 SQLiteDatabase 的实例直接去进行 query 的操作，query 的到 Cursor 的对象，所有的数据都在这里面，然后调用`BaseModel.java`中的`getModels(Cursor curor)`方法得到 List 数据，即完成。
+
+####c. 插入操作
+`insert` 插入操作，有4个重载方法，这里只分析
+
+```Java
+insert(Class<T> claz, T t, DBOperateAsyncListener listener)
+```
+
+方法的实现，其他的大同小异。先是创建了 DBMsgObject<T> 对象，用来作为 Message 的 obj，所有的操作数据库操作都会到对应的 handle 去进行。具体 `insert` 方法如下：
+
+```Java
+public <T extends BaseModel> void insert(Class<T> claz, T t, DBOperateAsyncListener listener) {
+    if (claz != null && t != null) {
+        DBMsgObject<T> msgObj = new DBMsgObject<T>();//创建DBMsgObject 对象，作为Message 的 obj 
+        msgObj.claz = claz;
+        ContentValues contentValues = null;
+        try {
+            contentValues = t.getContentValues();//拿到 BaseModel 的 ContentValues
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+        if (contentValues != null) {
+            //ContentCondition 主要为插入数据库的条件，值
+            List<DBMsgObject.ContentCondition<T>> contentConditionList = new ArrayList<DBMsgObject.ContentCondition<T>>();
+            DBMsgObject.ContentCondition<T> condition = new DBMsgObject.ContentCondition<T>();
+            condition.model = t;//对应的 model
+            condition.contentValues = contentValues;//要插入的值（键值对的形式，key 就是列名）
+            contentConditionList.add(condition);//这里是单个 model 所有只需要 add 一次
+            msgObj.contentConditionList = contentConditionList;
+            msgObj.listener = listener;//对应的监听
+            Message msg = new Message();
+            msg.what = DatabaseOptionType.OPTION_INSERT.VALUE;//消息类型
+            msg.obj = msgObj;
+            handler.sendMessage(msg);//在 handler 中处理
+        }
+    }
+}
+```
+如果是如下重载方法的话，只是对 models 多了一个 for 循环，具体代码就不再给出
+
+```Java
+insert(Class<T> claz, List<T> models, DBOperateAsyncListener listener)
+```
+
+####d. 同步插入操作
+`syncInsert` 同步插入操作，即在当前线程中去操作，而不是在子线程进行。除了`syncInsert`，其他所有的操作都是在 Handler 中完成的。代码如下：
+
+```Java
+public  <T extends BaseModel> long syncInsert( Class<T> claz, T value,boolean bNeedNotify) {
+    if(appAppDatabase == null){
+        return -1;
+    }
+    long retValue=-1;
+    try{
+        if (  value != null) {
+            Message msg = new Message();
+            String table = DatabaseTools.getTableName(claz);
+            ContentValues contentValues = null;
+            try {
+                contentValues = value.getContentValues();
+            } catch (IllegalArgumentException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+//				if (false == isWithinTransaction()) {
+                SQLiteDatabase database = appAppDatabase
+                        .getWritableDatabase();
+                if (database == null) {
+                    return -1;
+                }
+                database.beginTransaction();
+                try {
+//						retValue=DatabaseUtil.insertNoTx(msg, database);
+                    database.insert(table, null, contentValues);
+                    //dataChange(table);
+                    database.setTransactionSuccessful();
+                } finally {
+                    database.endTransaction();
+                }
+//					if(bNeedNotify){
+//					    dataChange(table);
+//					}
+//				} else {
+//					TLSTransactionObject tlsObj = (TLSTransactionObject) mTls
+//							.get();
+//					tlsObj.setSyncOpDB(true);
+//					tlsObj.getMsgList().add(msg);
+//				}
+        }
+        return retValue;
+    } catch (Exception e) {
+        e.printStackTrace();
+    } catch (Throwable t) {
+        t.printStackTrace();
+    }
+    return retValue;
+}
+```
+
+####e.更新操作
+
+大部分和 insert 相同，这里给出不同的地方，只要是增加了条件，需要更新的条件通过调用`getUniqueColumn(claz);`方法得到唯一列，`getUniqueColumn(claz);`内部是通过调用`getDatabaseFields(claz);`方法得到HashMap<DatabaseField,String>对象，这个里面是通过反射的方式解析出来得到这个 HaspMap 的。在`getUniqueColumn(claz);`中遍历这个 HashMap，判断 key: DatabaseField 中`unique()`为 true 的值。`getUniqueColumn(claz);`和`getDatabaseFields(claz)`方法的实现如下：
+
+```Java
+private <T extends BaseModel> String getUniqueColumn(Class<T> claz) {
+    String unique = uniqueMap.get(claz);
+    if (TextUtils.isEmpty(unique)) {
+        HashMap<DatabaseField, String> map = DatabaseTools.getDatabaseFields(claz);//调用这个方法获得类的映射结构
+        if (map != null && map.size() > 0) {
+            Iterator<Entry<DatabaseField, String>> iterator = map.entrySet().iterator();
+            String tempUnique = "";
+            if (iterator != null) {
+                while (iterator.hasNext()) {//遍历
+                    Entry<DatabaseField, String> entry = iterator.next();
+                    DatabaseField field = entry.getKey();
+                    if (field != null) {
+                        if (TextUtils.isEmpty(tempUnique)) {
+                            tempUnique = field.columnName();
+                        }
+                        if (field.unique()) {//判断是是否是为 true 表示唯一
+                            unique = field.columnName();
+                            uniqueMap.put(claz, unique);
+                            break;
+                        }
+                    }
+                }
+            }
+            // 如果没有unique的列,就默认第一列作为unique列
+            if (TextUtils.isEmpty(unique) && !TextUtils.isEmpty(tempUnique)) {
+                unique = tempUnique;
+                uniqueMap.put(claz, unique);
+            }
+        }
+    }
+    return unique;
+}
+
+
+/**
+ * 根据数据模型返回map : key是有效的列 value是列的数据类型
+ * @param claz
+ * @return
+ */
+public static HashMap<DatabaseField,String> getDatabaseFields(Class<?> claz){
+	HashMap<DatabaseField,String> map = null;
+	if(claz != null){
+		for(Class<?> clazz = claz ; clazz != Object.class ; clazz = clazz.getSuperclass()) {
+			Field[] fields = clazz.getDeclaredFields();
+			if (fields != null && fields.length > 0) {
+				for (Field field : fields) {
+					if (field != null) {
+						DatabaseField dbField = field.getAnnotation(DatabaseField.class);
+						if (dbField != null) {
+							String columnName = dbField.columnName();
+							if (TextUtils.isEmpty(columnName)) {
+								continue;
+							}
+							String typeSQL = getTypeSQL(field);
+							if (TextUtils.isEmpty(typeSQL)) {
+								continue;
+							}
+							if(map == null){
+								map = new HashMap<DatabaseField, String>();
+							}
+							map.put(dbField, typeSQL);
+						}
+					}
+				}
+			}
+		}
+	}
+	return map;
+}
+
+/**
+*获取字段对应的类型
+*/
+public static String getTypeSQL(Field field) {
+	String sql = "";
+	if(field != null){
+		if (field.getType() == long.class 
+				|| field.getType() == int.class
+				|| field.getType() == short.class
+				|| field.getType() == byte.class
+				|| field.getType() == boolean.class
+				|| field.getType() == char.class) {
+			sql = "integer";
+		} else if (field.getType() == float.class
+				|| field.getType() == double.class) {
+			sql = "real";
+		} else if (field.getType() == String.class) {
+			sql = "text";
+		}else{//全部用gjson转换成字符串
+			sql = "text";
+		}
+	}
+	return sql;
+}
+```
+`Update` 的具体不同点的操作如下：完整的方法可以看 Github 上 lib 中的实现
+
+```Java
+if (contentValues != null) {
+    String unique = getUniqueColumn(claz);//获取唯一列的列名，这个唯一列，是在 model 里定义的
+    if (!TextUtils.isEmpty(unique)) {
+        List<DBMsgObject.ContentCondition<T>> contentConditionList = new ArrayList<DBMsgObject.ContentCondition<T>>();
+        DBMsgObject.ContentCondition<T> condition = new DBMsgObject.ContentCondition<T>();
+        condition.contentValues = contentValues;
+        condition.model = t;
+        condition.whereClause = unique + " = ?";//增加 update 条件，即更新对应列的数据
+        condition.whereArgs = new String[] { contentValues.getAsString(unique) };//condition.whereClause 中的参数值
+        contentConditionList.add(condition);
+        msgObj.contentConditionList = contentConditionList;
+        msgObj.listener = listener;
+        Message msg = new Message();
+        msg.what = DatabaseOptionType.OPTION_UPDATE.VALUE;//操作类型为更新操作
+        msg.obj = msgObj;
+        handler.sendMessage(msg);
+    }
+}
+```
+
+####f.替换操作
+
+replace 的操作和 `DatabaseManager`中的 `insert` 四个重载方法类似，只是Message 中的类型不同：
+
+```Java
+msg.what = DatabaseOptionType.OPTION_REPLACE.VALUE;
+```
+
+####g.删除操作
+
+delete 的实现方式也比较简单，主要就是加入了删除的条件，具体可以看下面的代码，
+
+```Java
+public <T extends BaseModel> void delete(Class<T> claz, String whereClause, String[] whereArgs, DBOperateDeleteListener listener) {
+    if (claz != null) {
+        DBMsgObject<T> msgObj = new DBMsgObject<T>();
+        msgObj.claz = claz;
+        List<DBMsgObject.ContentCondition<T>> contentConditionList = new ArrayList<DBMsgObject.ContentCondition<T>>();
+        DBMsgObject.ContentCondition<T> condition = new DBMsgObject.ContentCondition<T>();
+        contentConditionList.add(condition);
+        if (!TextUtils.isEmpty(whereClause)) {
+            condition.whereClause = whereClause;//删除的条件
+        }
+        if (whereArgs != null && whereArgs.length > 0) {
+            condition.whereArgs = whereArgs;//对应 whereClause 中的占位符
+        }
+        msgObj.contentConditionList = contentConditionList;
+        msgObj.deleteListener = listener;//注意：这里是删除的监听，这里和其他的监听是不同的，DBOperateDeleteListener 中的 onDeleteCallback 主要是反馈了删除的行数。
+        Message msg = new Message();
+        msg.what = DatabaseOptionType.OPTION_DELETE.VALUE;
+        msg.obj = msgObj;
+        handler.sendMessage(msg);
+    }
+}
+```
+
+###3、`DataBaseHandler.java`
+
+这个类的作用就是进行数据库的`insert`,`update`,`replace`,`delete`的处理。
+
+####我们通过 `insert` 方法来进行分析
+
+```Java
+private <T extends BaseModel> void insert(Message msg){
+	if(msg.obj == null){
+		return;
+	}
+	@SuppressWarnings("unchecked")
+	DBMsgObject<T> msgObj = (DBMsgObject<T>)msg.obj;//获取到消息对象
+	String tableName = DatabaseTools.getTableName(msgObj.claz);//拿到对应表名
+	if(!TextUtils.isEmpty(tableName) && msgObj.contentConditionList != null && msgObj.contentConditionList.size() > 0){
+		SQLiteDatabase database = appAppDatabase.getWritableDatabase();
+		if (database != null) {
+			List<T> successModels = new ArrayList<T>();
+			List<T> failModels = new ArrayList<T>();
+			database.beginTransaction();
+			try{
+				for(ContentCondition<T> condition : msgObj.contentConditionList){
+					if (condition != null && condition.contentValues != null) {
+						long id = database.insert(tableName, null, condition.contentValues);//进行插入操作
+						if(id != -1){//插入成功，将对应的model 值放入到 successModels 中
+							successModels.add(condition.model);
+						}else{//失败，放入到failModels
+							failModels.add(condition.model);
+						}
+					}
+				}
+				database.setTransactionSuccessful();// 设置事务处理成功，不设置会自动回滚不提交
+			}finally{
+				database.endTransaction();
+				postToMainLoop(msgObj.listener,DatabaseOptionType.OPTION_INSERT ,msgObj.claz,successModels, failModels);//失败回调到主线程
+			}
+		}
+	}
+}
+```
+
+四个步骤，1.得到 Message 的消息对象，这个 Message 就是我们在`DatabaseManager.java`中设置的 Message；2. 根据 Class 得到表名；3. 进行数据库插入操作；4. 调用 `postToMainLoop(...)` 方法回调到主线程中去，`postToMainLoop(...)`方法如下：
+
+```Java
+private <T extends BaseModel> void postToMainLoop(final DBOperateAsyncListener listener,final DatabaseOptionType type,final Class<T> claz,final List<T> successModels,final List<T> failModels){
+	if(listener != null){
+		uiHandler.post(new Runnable() {
+			@Override
+			public void run() {
+				try{
+				listener.onPostExecute(type,claz,successModels,failModels);
+				}catch(Throwable t){
+					AZusLog.e("DBHandler", t);
+				}
+			}
+		});
+	}
+}
+```
+
+####update 操作在数据库操作的时候增加了条件判断，如下：
+
+```Java
+int count = database.update(tableName, condition.contentValues, condition.whereClause, condition.whereArgs);
+if(count > 0){//更新条数大于0，表示更新成功
+	successModels.add(condition.model);
+}else{//否则表示更新失败
+	failModels.add(condition.model);
+}
+```
+
+####replace 操作就更加简单啦，直接把 insert 换个单词就行 ^ ^ 
+
+```Java
+long id = database.replace(tableName, null, condition.contentValues);
+if(id != -1){
+	successModels.add(condition.model);
+}else{
+	failModels.add(condition.model);
+}
+```
+
+####delete 操作，我们直接代码搞起：
+
+
+```Java
+private <T extends BaseModel> void delete(Message msg){
+	if(msg.obj == null){
+		return;
+	}
+	@SuppressWarnings("unchecked")
+	final DBMsgObject<T> msgObj = (DBMsgObject<T>)msg.obj;
+	String tableName = DatabaseTools.getTableName(msgObj.claz);
+	if(!TextUtils.isEmpty(tableName) && msgObj.contentConditionList != null && msgObj.contentConditionList.size() > 0){
+		SQLiteDatabase database = appAppDatabase.getWritableDatabase();
+		if (database != null) {
+			int rows = 0;//删除的行数，用于回调到主线程的时候使用
+			database.beginTransaction();
+			try{
+				for(ContentCondition<T> condition : msgObj.contentConditionList){
+					if (condition != null) {//删除操作
+						rows += database.delete(tableName, condition.whereClause, condition.whereArgs);
+					}
+				}
+				database.setTransactionSuccessful();// 设置事务处理成功，不设置会自动回滚不提交
+			}finally{
+				database.endTransaction();
+				if(msgObj.deleteListener != null){
+					final int tempRows = rows;
+					uiHandler.post(new Runnable() {
+						
+						@Override
+						public void run() {
+							msgObj.deleteListener.onDeleteCallback(msgObj.claz, tempRows);
+						}
+					});
+				}
+			}
+		}
+	}
+}
+```
+
+###4. `DatabaseTools.java`
+
+这个类的作用是：
+
+1. 数据库创建时进行建表，建索引: `onCreate(...)` 方法
+2. 数据库升级时，进行升级操作:`onUpgrade(...)`方法
+3. 删除表:`alterTable(...)`
+4. 根据 Class 获取数据库表名
+
+下面我们具体来分析：
+数据库创建时的相关操作：
+先建表，调用`generateCreateTableSQL(claz);`方法，再建索引`generateCreateTableIndexSQL(claz)`方法。具体实现如下：
+
+```Java
+/**
+ * 创建表和相应的索引
+ * @param claz
+ * @param db
+ */
+public static void onCreate(SQLiteDatabase db,Class<?> claz){
+	String tableSQL = generateCreateTableSQL(claz);//根据数据模型获取创建表的sql语句
+	if(!TextUtils.isEmpty(tableSQL) && db != null){
+		db.execSQL(tableSQL);//执行 SQL
+	}
+	ArrayList<String> indexSQLList = generateCreateTableIndexSQL(claz);//根据数据模型获取表的索引
+	if(indexSQLList != null && indexSQLList.size() > 0 && db != null){
+		for(String indexSQL : indexSQLList){
+			if(!TextUtils.isEmpty(indexSQL)){
+				db.execSQL(indexSQL);
+			}
+		}
+	}
+}
+```
+
+
+
+```Java
+/**
+ * 根据数据模型获取创建表的sql语句
+ */
+public static String generateCreateTableSQL(Class<?> claz) {
+	String sql = "";
+	ArrayList<String> fieldsSQL = getFieldsSQL(claz);//通过类反射的方式获取建表的字段名称
+	String tableName = getTableName(claz);
+	if(fieldsSQL != null && fieldsSQL.size() > 0 && !TextUtils.isEmpty(tableName)){//拼接字符串
+		sql = "create table if not exists " + tableName + " (";
+		for(String temp : fieldsSQL){
+			sql += temp;
+		}
+		int index = sql.lastIndexOf(",");
+		if (index != -1) {
+			sql = sql.substring(0, index);
+		}
+		sql += ");";
+	}
+	return sql;
+}
+```
+
+
+```Java
+/**
+ * 根据数据模型获取表的索引
+ * @param claz
+ * @return
+ */
+public static ArrayList<String> generateCreateTableIndexSQL(Class<?> claz) {
+	ArrayList<String> indexList = null;
+	if (claz != null) {
+		String tableName = getTableName(claz);
+		if (!TextUtils.isEmpty(tableName)) {
+			HashMap<DatabaseField,String> map = getDatabaseFields(claz);
+			if(map != null && map.size() > 0){
+				Iterator<Entry<DatabaseField,String>> iterator = map.entrySet().iterator();
+				if(iterator != null){
+					while(iterator.hasNext()){
+						Entry<DatabaseField,String> entry = iterator.next();
+						if(entry != null){
+							DatabaseField key = entry.getKey();
+							if(key != null && key.index()){
+								if (indexList == null) {
+									indexList = new ArrayList<String>();
+								}
+								String columnName = key.columnName();
+								String createIndex = "create index if not exists index_"
+										+ columnName
+										+ " on "
+										+ tableName
+										+ "(" + columnName + ");";
+								indexList.add(createIndex);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	return indexList;
+}
+```
+
+主要的代码都已经给出，应该都能理解，文章有点长，但其实代码占了大部分的篇幅。整个项目并不是非常复杂，甚至连流程图都不需要画。
+
+嗯，KopDB 框架的分析到这里就结束啦~~~
+
+
