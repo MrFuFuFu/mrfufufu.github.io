@@ -11,7 +11,7 @@ categories: Android
 
 项目地址：[ImageViewEx](https://github.com/MrFuFuFu/ImageViewEx)
 
-项目效果：![preview1](https://github.com/MrFuFuFu/ImageViewEx/blob/master/Image/screen.png)
+项目效果：![screen](https://raw.githubusercontent.com/MrFuFuFu/ImageViewEx/master/Image/screen.png)
 
 ##二、使用
 
@@ -45,7 +45,7 @@ roundimageview2.loadImage("http://f.hiphotos.baidu.com/image/pic/item/ae51f3deb4
 先给出类关系图
 
 
-![ImageViewEx](https://github.com/MrFuFuFu/ImageViewEx/blob/master/Image/ImageViewEx.png)
+![ImageViewEx](https://raw.githubusercontent.com/MrFuFuFu/ImageViewEx/master/Image/ImageViewEx.png)
 
 
 使用方式非常简单，现在大概来分析一下这个框架的原理：
