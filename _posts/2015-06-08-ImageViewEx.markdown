@@ -9,7 +9,7 @@ categories: Android
 
 最近在整理项目中的一些代码，以备即将开展的新项目中使用，刚刚整理到一个图片加载的 lib，用起来非常的简单，和 picasso 或者谷歌的 Volley 等都一样，只需要一行代码就能完成图片加载的逻辑。
 
-项目地址：[ImageViewEx](https://github.com/MrFuFuFu/ImageViewEx.git)
+项目地址：[ImageViewEx](https://github.com/MrFuFuFu/ImageViewEx)
 
 项目效果：![preview1](https://github.com/MrFuFuFu/ImageViewEx/blob/master/Image/screen.png)
 
@@ -45,15 +45,18 @@ roundimageview2.loadImage("http://f.hiphotos.baidu.com/image/pic/item/ae51f3deb4
 先给出类关系图
 
 
+![ImageViewEx](https://github.com/MrFuFuFu/ImageViewEx/blob/master/Image/ImageViewEx.png)
+
+
 使用方式非常简单，现在大概来分析一下这个框架的原理：
 
-框架的加载方式主要还是通过 http 请求的 get 方式拿到图片，然后将其保存在 SD 卡中，将 SD 卡中的图片转化为 Bitmap 对象，通过 LruMemoryCache 缓存方式存到内存中。并将其加载到对应 View 上去。
+框架的加载方式主要还是通过 http 请求的 get 方式拿到图片，然后将其保存在 SD 卡中，将 SD 卡中的图片转化为 Bitmap 对象，通过 `LruMemoryCache` 缓存方式存到内存中。并将其加载到对应 View 上去。
 
-主要类就是 ImageViewEx 和 ImageLoader 了
+主要类就是 `ImageViewEx` 和 `ImageLoader` 了
 
-1、 ImageViewEx.java
+###1、 ImageViewEx.java
 
-    这个类的主要功能就是设置加载时的默认图片，调用ImageLoader 类的loadImageAsync进行加载图片，对加载完成后的回调进行处理。都在loadImage(url)中体现了：
+这个类的主要功能就是设置加载时的默认图片，调用ImageLoader 类的loadImageAsync进行加载图片，对加载完成后的回调进行处理。都在loadImage(url)中体现了：
     
 ```Java
 public void loadImage(String url) {
@@ -100,10 +103,11 @@ AbsHttpCallback mHttpCallback = new AbsHttpCallback() {
     }
 ```
 
-2、 ImageLoader.java
+###2、 ImageLoader.java
 
-    使用最大运行内存的十六分之一作为 LruMemoryCache 的缓存大小，如果超过了这个大小，系统会自动将其释放掉。
-    在加载的过程中，线程池可以开启的最多任务数为 `MAX_BLOCK_QUEUE_SIZE` 个，balanceTasks()这个方法，保证了队列的最大任务数：
+使用最大运行内存的十六分之一作为 LruMemoryCache 的缓存大小，如果超过了这个大小，系统会自动将其释放掉。
+
+在加载的过程中，线程池可以开启的最多任务数为 `MAX_BLOCK_QUEUE_SIZE` 个，balanceTasks()这个方法，保证了队列的最大任务数：
 
 ```Java
 /**
@@ -214,11 +218,11 @@ private void notifyFailure(ImageRequest httpRequest, AbsHttpCallback callback, H
 }
 ```
 
-3、 HttpRequestGet.java
+###3、 HttpRequestGet.java
 
 get 请求成功后，创建文件路径，将请求到的数据存储到文件中，通知回调成功或者失败的结果。
 
-4、 RoundImageView.java
+###4、 RoundImageView.java
 
 这个类就比较简单了，继承自 ImageViewEx，功能是 设置圆形图片，主要就是重写了 onDraw(canvas); 方法，在这个方法里调用了 Canvas 的 drawRoundRect 方法。注意，如果要设置成圆角图片 则需要调用 setConer(x,y); 如果不调用表示圆形图片：
 
