@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  一个方便的图片加载框架: ImageViewEx
+title:  一个方便的图片加载框架——ImageViewEx
 date:   2015-06-08 20:12:00
 categories: Android
 ---
