@@ -9,9 +9,9 @@ categories: English
 
 VOA Special English: Words And Their Stories ---- records blog
 
-This article is used to record the learning Words And Their Stories. 
+This article is used to record the learning [Words And Their Stories](http://www.51voa.com/Words_And_Their_Stories_1.html). 
 
-Record content: study time, article title, article link.
+Record content: study time, article title and article link.
 
 I hope I can keep it updated.
 
@@ -21,7 +21,7 @@ Wish I could have been kept up to date.
 
 
 Time         | Title     
--------------|-----------
+:-----------:|:-----------:
 2015-05-26   | [Hold Your Horses!](http://www.51voa.com/VOA_Special_English/words-and-their-stories-hold-your-horses-idioms-expressions-63048.html)
 2015-05-27   | [Common French Words in American English](http://www.51voa.com/VOA_Special_English/french-words-in-american-english-62935.html)
 2015-05-28   | [Not All Mother Expressions Are As Nice As Mom](http://www.51voa.com/VOA_Special_English/mothers-day-expressions-62777.html)
