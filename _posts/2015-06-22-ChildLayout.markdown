@@ -14,7 +14,7 @@ categories: Android
 
 主要就是“大牌专场”这个栏目的布局问题，呈现一个，`左——右上——右下` 的形式，因为不能像 iOS 那样直接根据 UED 给的标注来写死布局尺寸，Android 混乱的分辨率决定了这个布局需要采用 `android:layout_height="wrap_content"` 的形式来决定它的高。
 
-##二. 解决方法1:使用 LinearLayout
+##二. 解决方法1:使用 LinearLayout——失败
 
 要画这个布局很简单的，比例都是确定的，那就能直接上 `LinearLayout` 嘛，为水平：`android:orientation="horizontal"` 。 左边使用 `ImageView` 设置 `weight="1"` ， 右边使用 `LinearLayout` 设置 `weight="1"` 以及垂直：`android:orientation="vertical"` ，里面包裹两个 `ImageView` 同时也设置它的 `weight="1"` 就行了，实际代码如下：
 
@@ -59,7 +59,7 @@ categories: Android
 
 根据上面的代码，得到的布局就是 `图1` 中的 `LinearLayout布局` 在 Android Studio 中的 `Design` 显示效果了。但是我们的需求不是直接从 `res` 中拿取图片文件，而是从服务器中获取到图片，然后显示到界面上的，然后从服务器中获取图片这个需求是异步进行的，界面肯定先画好的，然后再绘到 UI 上的，然后它会出现 `图2` 的中 `1` 的这种情况，即：右边的两张图片无法显示出来了。实际原因就是，由于我们设置的 `weight` 属性，系统无法计算出它是应该根据什么条件来画，因为右边两张的图片的高无法再进行计算了。（抱歉，这里我解释不了非常清楚）
 
-##三. 解决方法2:使用 GridLayout
+##三. 解决方法2:使用 GridLayout——成功
 为了这个问题，我花了一个下午来解决，在各种重写 LinearLayout 来计算高度再去绘制都无效的情况下，我换了一个角度：使用 `GridLayout` 来画，它是 Android4.0开始用的，刚好，我们这个新项目决定不再兼容 Android4.0以下的系统了，这样我们就可以使用更多酷炫的效果和 API 了，`GridLayout` 有一个很重要的说明：
 
     "GridLayout does not provide support for the principle of weight, 
@@ -118,7 +118,7 @@ private void setLayoutTODO(GridLayout gridLayoutParent, View child){
 
 这个方法在加载图片方法之后调用即可，不需要等到图片回调成功了再调的，实际效果就是 `图2` 中的 `2` 了
 
-##四. 解决方法3:使用 RelativeLayout
+##四. 解决方法3:使用 RelativeLayout——成功
 
 我们老大，在看到我这么艰辛的折腾一个这么 easy 的问题之后，深深的鄙视了我一番之后，回到了他自己的座位上，然后5分钟后丢给了我下面这段代码：
 
