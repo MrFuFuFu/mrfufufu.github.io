@@ -20,20 +20,20 @@ Wish I could have been kept up to date.
 ##Table
 
 
-Time         | Title           
--------------|-----------
-2015-05-26   | [Hold Your Horses!](http://www.51voa.com/VOA_Special_English/words-and-their-stories-hold-your-horses-idioms-expressions-63048.html)       
-2015-05-27   | [Common French Words in American English](http://www.51voa.com/VOA_Special_English/french-words-in-american-english-62935.html)         
-2015-05-28   | [Not All Mother Expressions Are As Nice As Mom](http://www.51voa.com/VOA_Special_English/mothers-day-expressions-62777.html)         
-2015-06-08   | [S.O.S. – In Other Words, Help!](http://www.51voa.com/VOA_Special_English/sos-international-call-for-help-morse-code-telegraph-operator-backronym-62687.html)
-2015-06-09   | [When It Comes to Money, Black Is Better Than Red](http://www.51voa.com/VOA_Special_English/when-it-comes-to-money-black-is-better-than-red-62593.html)
-2015-06-10   | [Early American Railroads Shape Modern Language](http://www.51voa.com/VOA_Special_English/early-american-railroads-shape-modern-language-62489.html)
-2015-06-11   | [American Expressions in the Home](http://www.51voa.com/VOA_Special_English/american-expressions-in-the-home-62372.html)
-2015-06-12   | [Expressions From the World of Bugs](http://www.51voa.com/VOA_Special_English/expressions-from-the-world-of-bugs-62261.html)
-2015-06-13   | [Don't Panic!](http://www.51voa.com/VOA_Special_English/dont-panic-62170.html)
-2015-06-15   | [Green Means Spring and Other Things](http://www.51voa.com/VOA_Special_English/words-and-their-stories-green-idioim-expressions-garden-jealousy-62061.html)
-2015-06-16   | [Maverick, A Truly American Word](http://www.51voa.com/VOA_Special_English/maverick-words-and-their-stories-63278.html)
-2015-06-17   | [Words That Are Their Own Opposites](http://www.51voa.com/VOA_Special_English/words-that-are-opposites-63174.html)
-2015-06-18   | [Let the Sun Shine In](http://www.51voa.com/VOA_Special_English/words-and-their-stories-sunshine-63411.html)
-...   | [...](...)
+| Time         | Title     | 
+| -------------|-----------| 
+| 2015-05-26   | [Hold Your Horses!](http://www.51voa.com/VOA_Special_English/words-and-their-stories-hold-your-horses-idioms-expressions-63048.html)    |    
+| 2015-05-27   | [Common French Words in American English](http://www.51voa.com/VOA_Special_English/french-words-in-american-english-62935.html)        | 
+| 2015-05-28   | [Not All Mother Expressions Are As Nice As Mom](http://www.51voa.com/VOA_Special_English/mothers-day-expressions-62777.html)    |      
+| 2015-06-08   | [S.O.S. – In Other Words, Help!](http://www.51voa.com/VOA_Special_English/sos-international-call-for-help-morse-code-telegraph-operator-backronym-62687.html) | 
+| 2015-06-09   | [When It Comes to Money, Black Is Better Than Red](http://www.51voa.com/VOA_Special_English/when-it-comes-to-money-black-is-better-than-red-62593.html) | 
+| 2015-06-10   | [Early American Railroads Shape Modern Language](http://www.51voa.com/VOA_Special_English/early-american-railroads-shape-modern-language-62489.html) | 
+| 2015-06-11   | [American Expressions in the Home](http://www.51voa.com/VOA_Special_English/american-expressions-in-the-home-62372.html) | 
+| 2015-06-12   | [Expressions From the World of Bugs](http://www.51voa.com/VOA_Special_English/expressions-from-the-world-of-bugs-62261.html) | 
+| 2015-06-13   | [Don't Panic!](http://www.51voa.com/VOA_Special_English/dont-panic-62170.html) | 
+| 2015-06-15   | [Green Means Spring and Other Things](http://www.51voa.com/VOA_Special_English/words-and-their-stories-green-idioim-expressions-garden-jealousy-62061.html) | 
+| 2015-06-16   | [Maverick, A Truly American Word](http://www.51voa.com/VOA_Special_English/maverick-words-and-their-stories-63278.html) | 
+| 2015-06-17   | [Words That Are Their Own Opposites](http://www.51voa.com/VOA_Special_English/words-that-are-opposites-63174.html) | 
+| 2015-06-18   | [Let the Sun Shine In](http://www.51voa.com/VOA_Special_English/words-and-their-stories-sunshine-63411.html) | 
+| ...   | [...](...) | 
 
