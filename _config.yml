@@ -11,3 +11,5 @@ github_username:  mrfufufu
 # Build settings
 #markdown: kramdown
 markdown: redcarpet
+redcarpet:
+    extensions: ["tables"]
