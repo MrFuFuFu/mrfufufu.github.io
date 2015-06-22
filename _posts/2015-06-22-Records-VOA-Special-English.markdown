@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Records: VOA Special English
+title:  Records——VOA Special English
 date:   2015-06-22 19:49:00
 categories: English
 ---
