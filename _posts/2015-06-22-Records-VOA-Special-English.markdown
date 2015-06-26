@@ -35,5 +35,7 @@ Time         | Title
 2015-06-16   | [Maverick, A Truly American Word](http://www.51voa.com/VOA_Special_English/maverick-words-and-their-stories-63278.html)
 2015-06-17   | [Words That Are Their Own Opposites](http://www.51voa.com/VOA_Special_English/words-that-are-opposites-63174.html)
 2015-06-18   | [Let the Sun Shine In](http://www.51voa.com/VOA_Special_English/words-and-their-stories-sunshine-63411.html) 
+06-23~24   | [Celebrating Fathers!](http://www.51voa.com/VOA_Special_English/happy-fathers-day-63528.html)
+06-25~26   | ['Beware the Ides of March'](http://www.51voa.com/VOA_Special_English/beware-the-ides-of-march-61964.html)
 ...   | [...](...)
 
