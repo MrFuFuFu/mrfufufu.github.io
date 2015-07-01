@@ -2,7 +2,7 @@
 layout: post
 title:  (翻-双语) Android Design Support Library 的 代码实验——几行代码，让你的 APP 变得花俏
 date:   2015-07-01 20:45:00
-categories: Android
+categories: English
 ---
 
 > 原文：[Codelab for Android Design Support Library used in I/O Rewind Bangkok session----Make your app fancy with few lines of code](http://inthecheesefactory.com/blog/android-design-support-library-codelab/en)
