@@ -41,19 +41,19 @@ Activity 已经调整为材料设计风格的主题。
 
 ##步骤一：从 Github 上拷贝源码
 
-我已经为这个 codelab 准备了源码，你可以从 [GitHub](https://github.com/nuuneoi/Lab-Android-DesignLibrary) 轻松的 clone 它。MainActivity 是上面所示的最终结果。请在这个 project 的 'CodeLabActivity' 中做我们的代码实验。
+我已经为这个 codelab 准备了源码，你可以从 [GitHub](https://github.com/nuuneoi/Lab-Android-DesignLibrary) 轻松的 clone 它。MainActivity 是上面所示的最终结果。请在这个 project 的 `CodeLabActivity` 中做我们的代码实验。
 
 你一定要自己做的一个任务是... 成功的运行它，它应该是通过简单的点击“运行”按钮来完成。
 
 
 ##步骤二：添加 Android Design Support Library 依赖
 
-第一件要做的事是在我们的项目中添加 Android Design Support Library，在 app 的 'build.gradle' 文件下添加一行依赖代码。
+第一件要做的事是在我们的项目中添加 Android Design Support Library，在 app 的 `build.gradle` 文件下添加一行依赖代码。
 
 ```XML
 compile 'com.android.support:design:22.2.0'
 ```
-
+`
 **请注意 Design Support Library 依赖于 Support v4 和 AppCompat v7。一旦你在你的项目中添加这个 library，你也将获得一个这些 libraries 的组件的入口。（译者注：就是说 Design Support Library 中就已经包含了 Support v4 和 AppCompat v7）**
 
 顺便说一下，从 Github 克隆的源码已经添加了上面这行代码。但是如果你创建了你自己的项目，你需要自己添加它。
@@ -61,7 +61,7 @@ compile 'com.android.support:design:22.2.0'
 
 ##步骤三：添加 FAB
 
-Floating Action Button (FAB) 是一个有一些阴影的圆形按钮，这个令人难以置信的，可以改变世界的设计。毫不奇怪它为什么会变成材料设计的标志。因此我们从这开始。添加一个 FAB 在布局文件，因为它需要一些父类来使它在屏幕的右下方位置对齐，所以用 'FrameLayout' 来包裹 'FloatingActionButton'。请做这样的事情作为 DrawerLayout 的内容：更换 'activity_code_lab.xml' 中已经存在的 'TextView' ，像下面的代码这样。
+Floating Action Button (FAB) 是一个有一些阴影的圆形按钮，这个令人难以置信的，可以改变世界的设计。毫不奇怪它为什么会变成材料设计的标志。因此我们从这开始。添加一个 FAB 在布局文件，因为它需要一些父类来使它在屏幕的右下方位置对齐，所以用 `FrameLayout` 来包裹 `FloatingActionButton`。请做这样的事情作为 DrawerLayout 的内容：更换 `activity_code_lab.xml` 中已经存在的 `TextView` ，像下面的代码这样。
 
 ```XML
 <android.support.v4.widget.DrawerLayout ...
@@ -83,7 +83,7 @@ Floating Action Button (FAB) 是一个有一些阴影的圆形按钮，这个令
 </android.support.v4.widget.DrawerLayout>
 ```
 
-'android:src' 是用来定义你想要的资源文件 ID（推荐 40dp 的清晰的 png 文件），而 'app:fabSize="normal"' 是用来定义 FAB 的大小的，'normal' 的意思是在大多数情况下标准尺寸为 56dp 的按钮，但是万一你想使用较小的一个， 'mini' 是另一个选择，它的大小将变成 40dp。
+`android:src` 是用来定义你想要的资源文件 ID（推荐 40dp 的清晰的 png 文件），而 `app:fabSize="normal"` 是用来定义 FAB 的大小的，`normal` 的意思是在大多数情况下标准尺寸为 56dp 的按钮，但是万一你想使用较小的一个， `mini` 是另一个选择，它的大小将变成 40dp。
 
 就这样，FAB 现在准备使用！下面是当我在 Android 4.4 上运行这段代码的结果。
 
@@ -124,15 +124,15 @@ Floating Action Button (FAB) 是一个有一些阴影的圆形按钮，这个令
 ![p2](https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/pic/2.jpg)
 
 
-这里有另一个 bug。阴影，你在哪里？这个 bug 和先前的那个是有关联的。你可以通过定义 'app:borderWidth="0"' 作为  FAB 的属性 作为一个快速的解决方案。
+这里有另一个 bug。阴影，你在哪里？这个 bug 和先前的那个是有关联的。你可以通过定义 `app:borderWidth="0"` 作为  FAB 的属性 作为一个快速的解决方案。
 
 ![p3](https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/pic/3.jpg)
 
-欢迎回来，阴影！其深度是自动设置的最佳实践之一：6dp 在空闲状态，12dp 是按下状态。反正你可以通过定义重写这些值，'app:elevation' 为空闲状态下的阴影深度，'andapp:pressedTranslationZ' 为按下状态的。
+欢迎回来，阴影！其深度是自动设置的最佳实践之一：6dp 在空闲状态，12dp 是按下状态。反正你可以通过定义重写这些值，`app:elevation` 为空闲状态下的阴影深度，`andapp:pressedTranslationZ` 为按下状态的。
 
-关于按钮的颜色，FAB 基本上使用强调色，但是你可以重写 'app:backgroundTint' 属性来修改。
+关于按钮的颜色，FAB 基本上使用强调色，但是你可以重写 `app:backgroundTint` 属性来修改。
 
-就像传统的按钮，你可以通过 'setOnClickListener()' 处理点击，在 'CodeLabActivity.java' 文件的 'initInstances' 方法中添加下面的代码。
+就像传统的按钮，你可以通过 `setOnClickListener()` 处理点击，在 `CodeLabActivity.java` 文件的 `initInstances` 方法中添加下面的代码。
 
 ```Java
 FloatingActionButton fabBtn;
@@ -168,7 +168,7 @@ Snackbar.make(someView, "Hello. I am Snackbar!", Snackbar.LENGTH_SHORT)
         .show();
 ```
 
-'make()' 的第一个参数是一个 View 或者 Layout，你想在它的底部位置显示一个 Snackbar。在这个例子中，一个 FrameLayout 包裹着一个 FAB 就是其中一个例子。'setAction()' 方法是用在设置动作显示在 Snackbar 的右侧并有对应的监听。这个方法不是必需的，可以移除。
+`make()` 的第一个参数是一个 View 或者 Layout，你想在它的底部位置显示一个 Snackbar。在这个例子中，一个 FrameLayout 包裹着一个 FAB 就是其中一个例子。`setAction()` 方法是用在设置动作显示在 Snackbar 的右侧并有对应的监听。这个方法不是必需的，可以移除。
 
 现在，让我们通过添加下面的代码去试试。
 
@@ -200,13 +200,13 @@ private void initInstances() {
 
 有用！但是... 还不是很完美。它是出现在放置 Snackbar 顶部的位置，长期的用户体验是很差的。不管怎么样，这个行为已经是正确的，因为这里没有为 Snackbar 和 FAB 定义任何关联。
 
-为了这个目的专门发明了一个特殊的布局，使子 Views 协调工作。这就不用奇怪为什么它的名字是 'CoordinatorLayout' 了。
+为了这个目的专门发明了一个特殊的布局，使子 Views 协调工作。这就不用奇怪为什么它的名字是 `CoordinatorLayout` 了。
 
 ##步骤五：使他们和 CoordinatorLayout 协作
 
 CoordinatorLayout 是一个让子 Views 协调工作的布局。这里没有任何魔法。每个 View 中肯定是设计和实现了和  CoordinatorLayout 协同工作的。FAB 和 Snackbar 就是这两个view。
 
-所以... 现在让我们将 FrameLayout 改成 'CoordinatorLayout' 包裹一个FAB。
+所以... 现在让我们将 FrameLayout 改成 `CoordinatorLayout` 包裹一个FAB。
 
 **res/layout/activity_code_lab.xml**
 
@@ -220,7 +220,7 @@ CoordinatorLayout 是一个让子 Views 协调工作的布局。这里没有任�
 </android.support.design.widget.CoordinatorLayout>
 ```
 
-而且，不要忘了在 'CodeLabActivity.java' 改变 rootLayout 的变量类型为 CoordinatorLayout，否则就会崩溃。
+而且，不要忘了在 `CodeLabActivity.java` 改变 rootLayout 的变量类型为 CoordinatorLayout，否则就会崩溃。
 
 ```XML
 //FrameLayout rootLayout;
@@ -299,7 +299,7 @@ private void initInstances() {
 }
 ```
 
-虽然它现在可以运行成功，但是根据我之前说的，放在 CoordinatorLayout 的东西必须被设计和实现成与它一起合作的，否则将不与任何其他兄弟 views(sibling views) 协作。但是... Toolbar是不合适的。别担心，这里没有任何新的特殊 Toolbar。只是一个组件是为了准备让 Toolbar 与 CoordinatorLayout 一起工作的更加完美。这是简单的任务，只是简单的用 'AppBarLayout' 包裹 Toolbar，就这样！
+虽然它现在可以运行成功，但是根据我之前说的，放在 CoordinatorLayout 的东西必须被设计和实现成与它一起合作的，否则将不与任何其他兄弟 views(sibling views) 协作。但是... Toolbar是不合适的。别担心，这里没有任何新的特殊 Toolbar。只是一个组件是为了准备让 Toolbar 与 CoordinatorLayout 一起工作的更加完美。这是简单的任务，只是简单的用 `AppBarLayout` 包裹 Toolbar，就这样！
 
 ```XML
 <android.support.design.widget.CoordinatorLayout
@@ -372,7 +372,7 @@ private void initInstances() {
 
 ##步骤8：玩转 TabLayout
 
-Tab 是在 Android 应用程序中用户体验(UX)最佳实践的一部分。在以前，如果我们想要使用新的材料设计风格的 Tab，我们需要自己去为项目中下载 SlidingTabLayout 和 SlidingTabStrip 的源码。现在，我们只需要使用这个库提供的 'TabLayout'，它也有很多可以调整的选项。
+Tab 是在 Android 应用程序中用户体验(UX)最佳实践的一部分。在以前，如果我们想要使用新的材料设计风格的 Tab，我们需要自己去为项目中下载 SlidingTabLayout 和 SlidingTabStrip 的源码。现在，我们只需要使用这个库提供的 `TabLayout`，它也有很多可以调整的选项。
 
 我们应该把 TabLayout 放在哪里？根据 Android 应用程序用户体验指导原则，Tab 应该放在屏幕的顶部而不是在底部。还有，它应该在阴影部分的上面。所以，我们将其放在 AppBarLayout 里面，沿着 Toolbar。这是可以做到的，**因为 AppBarLayout 是继承自一个垂直的 LinearLayout**。
 
@@ -415,13 +415,13 @@ private void initInstances() {
 
 ![p9](https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/pic/9.jpg)
 
-你可以像上面这样选择手动控制 TabLayout，或者让它和 ViewPager 一起工作，自动调用 'setupWithViewPager(...)'。我相信这种情况会很频繁的使用。
+你可以像上面这样选择手动控制 TabLayout，或者让它和 ViewPager 一起工作，自动调用 `setupWithViewPager(...)`。我相信这种情况会很频繁的使用。
 
 还有，我们可以调整两个属性来显示 TabLayout。
 
-'app:tabMode' - 如果你想在屏幕上显示出每个单独的 tab，就设置 tab 为 'fixed' 的， 。它适合只有少数 tab 的时候，但是如果有很多的 tab 的时候这是一个完全错误的选择。在这种情况下你是不确定所有的 tab 是否能很好的在同一时间显示出来的。所以，你可以设置这个属性为 'scrollable' 让用户去滚动 tab，就像 Google Play Store 那样。
+`app:tabMode` - 如果你想在屏幕上显示出每个单独的 tab，就设置 tab 为 `fixed` 的， 。它适合只有少数 tab 的时候，但是如果有很多的 tab 的时候这是一个完全错误的选择。在这种情况下你是不确定所有的 tab 是否能很好的在同一时间显示出来的。所以，你可以设置这个属性为 `scrollable` 让用户去滚动 tab，就像 Google Play Store 那样。
 
-'app:tabGravity' - 如果你想要分配所有的可用空间给每个 tab，就设置这个属性为 'fill'。如果你想要所有的 tab 在屏幕的中间，就设置这个属性为 'center'。请注意，如果 tabMode 是设置成 scrollable 的，则这个属性将会被忽略。
+`app:tabGravity` - 如果你想要分配所有的可用空间给每个 tab，就设置这个属性为 `fill`。如果你想要所有的 tab 在屏幕的中间，就设置这个属性为 `center`。请注意，如果 tabMode 是设置成 scrollable 的，则这个属性将会被忽略。
 
 每个模式的样子就像下面这样：
 
@@ -481,7 +481,7 @@ TabLayout 完成了！
 
 额... 原先假定的 Toolbar 会随着内容的滚动滚出屏幕的，但是为什么它看起来什么都没有实现呢？
 
-同样的老原因啦... **ScrollView 没有被设计成与 CoordinatorLayout 协同工作(又来)**。你需要另一个 view：'NestedScrollView'，Android Support Library v4 中有提供。这个 NestedScrollView 设计出来的目的就是为了与 CoordinatorLayout 协同工作的。
+同样的老原因啦... **ScrollView 没有被设计成与 CoordinatorLayout 协同工作(又来)**。你需要另一个 view：`NestedScrollView`，Android Support Library v4 中有提供。这个 NestedScrollView 设计出来的目的就是为了与 CoordinatorLayout 协同工作的。
 
 ```XML
 <android.support.v4.widget.NestedScrollView ...>
@@ -491,7 +491,7 @@ TabLayout 完成了！
 </android.support.v4.widget.NestedScrollView>
 ```
 
-同样的原因，请注意了： ListView 类也是和 CoordinatorLayout 不能协同工作的。只有 'RecyclerView' 可以。也许需要时间来改变咯~
+同样的原因，请注意了： ListView 类也是和 CoordinatorLayout 不能协同工作的。只有 `RecyclerView` 可以。也许需要时间来改变咯~
 
 这里将 ScrollView 改变成 NestedScrollView 后的结果。
 
@@ -511,21 +511,21 @@ TabLayout 完成了！
 
 这里会有一些手势上的 bug。我发现拉它回到屏幕是非常困难的。看来我们得等下一个版本了。
 
-现在，让我们来看看它的一些细节。很好奇这些标志的真实意思是什么：'scroll' 和 'enterAlways'？事实上我们可以在这里设置4个属性值。
+现在，让我们来看看它的一些细节。很好奇这些标志的真实意思是什么：`scroll` 和 `enterAlways`？事实上我们可以在这里设置4个属性值。
 
-'scroll' - 你想你想要设置这个 view 随着内容滚动，你需要应用这个标志。
+`scroll` - 你想你想要设置这个 view 随着内容滚动，你需要应用这个标志。
 
-'enterAlwaysCollapsed' - 这个标志定义了 View 是如何回到屏幕的。当你的 view 已经声明了一个最小高度(minHeight) 并且你使用了这个标志，你的 View 只有在回到这个最小的高度的时候才会展开，只有当 view 已经到达顶部之后它才会重新展开全部高度。滚动标志像这样来使用它：'scroll|enterAlwaysCollapsed'。
+`enterAlwaysCollapsed` - 这个标志定义了 View 是如何回到屏幕的。当你的 view 已经声明了一个最小高度(minHeight) 并且你使用了这个标志，你的 View 只有在回到这个最小的高度的时候才会展开，只有当 view 已经到达顶部之后它才会重新展开全部高度。滚动标志像这样来使用它：`scroll|enterAlwaysCollapsed`。
 
 ![9](https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/9.gif)
 
 它好像在这个 minHeight 部分死活不工作。这里和 TabLayout 有另一个问题。很难把这些 View 拉回到屏幕来。
 
-'enterAlways' - 这个标志确保了任何向下滚动的操作都会让这个 view 变得可见，达到“快速返回”(‘quick return’ )的效果，滚动标志像这样来使用它： 'scroll|enterAlways'
+`enterAlways` - 这个标志确保了任何向下滚动的操作都会让这个 view 变得可见，达到“快速返回”(‘quick return’ )的效果，滚动标志像这样来使用它： `scroll|enterAlways`
 
 ![10](https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/10.gif)
 
-'exitUntilCollapsed' - View 将关闭滚动直到它被折叠起来(有 minHeight) 并且一直保持这样，举个例子：
+`exitUntilCollapsed` - View 将关闭滚动直到它被折叠起来(有 minHeight) 并且一直保持这样，举个例子：
 
 ```XML
 <android.support.v7.widget.Toolbar
@@ -566,13 +566,13 @@ TabLayout 完成了！
 
 就像在 exitUntilCollapsed 部分所示的例子中，Toolbar 可以展开和折叠，但是你会看到它还不是很完美。Toolbar 仍然离开了屏幕，最好的体验是让这些 icon (汉堡等-即菜单栏) 应该留在屏幕内。
 
-Design Support Library 已经为这个准备好了。用 'CollapsingToolbarLayout' 你可以像魔术一样让 Toolbar 折叠起来，就像其他组件一样，它是非常容易使用的，具体操作步骤如下：
+Design Support Library 已经为这个准备好了。用 `CollapsingToolbarLayout` 你可以像魔术一样让 Toolbar 折叠起来，就像其他组件一样，它是非常容易使用的，具体操作步骤如下：
 
-- 用 'CollapsingToolbarLayout' 包裹 'Toolbar'，但仍然在 'AppBarLayout' 中
+- 用 `CollapsingToolbarLayout` 包裹 `Toolbar`，但仍然在 `AppBarLayout` 中
 
-- 从 'Toolbar' 中删除 'layout_scrollFlags'
+- 从 `Toolbar` 中删除 `layout_scrollFlags`
 
-- 为 'CollapsingToolbarLayout' 声明 'layout_scrollFlags'，并且将 'layout_scrollFlags' 设置成 'scroll|exitUntilCollapsed'
+- 为 `CollapsingToolbarLayout` 声明 `layout_scrollFlags`，并且将 `layout_scrollFlags` 设置成 `scroll|exitUntilCollapsed`
 - 改变 AppBarLayout 扩张状态时的布局高度大小。在这个例子中，我用 256dp
 
 这是最终代码。
@@ -614,7 +614,7 @@ Toolbar现在被定住了！
 
 ![13](https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/13.gif)
 
-但是，等一下…标题的文字在哪里？！不幸的是，在用 CollapsingToolbarLayout 包裹住 Toolbar 后，它随风而逝了。我们必须通过在 Java 代码中手动设置 'setTitle(String)' 来实现。
+但是，等一下…标题的文字在哪里？！不幸的是，在用 CollapsingToolbarLayout 包裹住 Toolbar 后，它随风而逝了。我们必须通过在 Java 代码中手动设置 `setTitle(String)` 来实现。
 
 ```Java
 CollapsingToolbarLayout collapsingToolbarLayout;
@@ -629,7 +629,7 @@ private void initInstances() {
 
 ![14](https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/14.gif)
 
-这里的字体颜色仍然是黑的的。这是因为我们还没有为 App Ba 设置任何主题。要做到这一点，只需要简单的为 'AppBarLayout' 声明 'android:theme' 属性就可以了，就像这样：
+这里的字体颜色仍然是黑的的。这是因为我们还没有为 App Ba 设置任何主题。要做到这一点，只需要简单的为 `AppBarLayout` 声明 `android:theme` 属性就可以了，就像这样：
 
 ```XML
 <android.support.design.widget.AppBarLayout
@@ -641,9 +641,9 @@ private void initInstances() {
 
 ![15](https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/15.gif)
 
-由于CollapsingToolbarLayout 的 特点，应用的标题文字在收缩和展开状态是会自动过渡的。如果你想要在展开状态改变标题文字的位置，你可以这样做：通过应用的 margin 的4个属性，就是：'app:expandedTitleMargin', 'app:expandedTitleMarginBottom', 'app:expandedTitleMarginEnd' 以及 'app:expandedTitleMarginStart'
+由于CollapsingToolbarLayout 的 特点，应用的标题文字在收缩和展开状态是会自动过渡的。如果你想要在展开状态改变标题文字的位置，你可以这样做：通过应用的 margin 的4个属性，就是：`app:expandedTitleMargin`, `app:expandedTitleMarginBottom`, `app:expandedTitleMarginEnd` 以及 `app:expandedTitleMarginStart`
 
-或者如果你想要在折叠和展开状态时改变文本的显示。你可以这样来简单的实现：设置 TextAppearance，分别通过 'app:collapsedTitleTextAppearance' 和 'app:expandedTitleTextAppearance' 来设置。
+或者如果你想要在折叠和展开状态时改变文本的显示。你可以这样来简单的实现：设置 TextAppearance，分别通过 `app:collapsedTitleTextAppearance` 和 `app:expandedTitleTextAppearance` 来设置。
 
 让我们从试着改变 margin 为64dp 开始。
 
@@ -787,7 +787,7 @@ app:layout_collapseParallaxMultiplier="0.7"
 </menu>
 ```
 
-'NavigationView' 与两个资源文件绑定起来，作为 Drawer Menu 的菜单区域，用下面的代码来替换一个已经存在的 白色的 LinearLayout ：
+`NavigationView` 与两个资源文件绑定起来，作为 Drawer Menu 的菜单区域，用下面的代码来替换一个已经存在的 白色的 LinearLayout ：
 
 ```XML
         ...
@@ -810,7 +810,7 @@ app:layout_collapseParallaxMultiplier="0.7"
 
 NavigationView 就是为了 Drawer Menu 而特别设计的。所以，所有的东西都会被创建并且自动测量包括菜单的宽度等，我们自己定义案例来配置以前的设计。
 
-为了处理这些菜单项的点击事件，你可以声明 'setNavigationItemSelectedListener' 来监听，就像下面这样：
+为了处理这些菜单项的点击事件，你可以声明 `setNavigationItemSelectedListener` 来监听，就像下面这样：
 
 ```Java
 NavigationView navigation;
@@ -869,8 +869,8 @@ Android Design Support Library 是非常有前途的支持库，它非常值得�
 
 
 
-
-![p11](https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/pic/11.jpg)
+`
+![p11](https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/pic/11.png)
 Author: nuuneoi (Android GDE, CTO & CEO at The Cheese Factory)
 A full-stack developer with more than 6 years experience on Android Application Development and more than 12 years in Mobile Application Development industry. Also has skill in Infrastucture, Service Side, Design, UI&UX, Hardware, Optimization, Cooking, Photographing, Blogging, Training, Public Speaking and do love to share things to people in the world!
 
