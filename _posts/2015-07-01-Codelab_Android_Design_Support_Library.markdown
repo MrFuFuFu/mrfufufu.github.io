@@ -5,6 +5,8 @@ date:   2015-07-01 20:56:00
 categories: Android
 ---
 
+> 译者地址：[【翻】Android Design Support Library 的 代码实验——几行代码，让你的 APP 变得花俏](http://mrfufufu.github.io/android/2015/07/01/Codelab_Android_Design_Support_Library.html)
+
 > 原文：[Codelab for Android Design Support Library used in I/O Rewind Bangkok session----Make your app fancy with few lines of code](http://inthecheesefactory.com/blog/android-design-support-library-codelab/en)
 
 > 原文项目 demo: [Lab-Android-DesignLibrary](https://github.com/nuuneoi/Lab-Android-DesignLibrary)
@@ -13,6 +15,11 @@ categories: Android
 
 >* 翻译: [MrFu](http://mrfufufu.github.io/)
 >* 校验: [MrFu](http://mrfufufu.github.io/)
+>* 能去这里小小的点一下 star 吗？非常感谢：[Codelab](https://github.com/MrFuFuFu/Codelab)
+
+> 说明：嗯，这是我的翻译的第一篇 Android 文章，有些语句可能读着不是那么通顺，所以，但是对意思的理解应该还是没有问题的。
+
+>说明2：嗯，转载的话，请加上这些引用文字，既是对原作者的尊重，也是对我辛苦好几个晚上的感谢。
 
 目前，我相信，没有任何 Android 开发者不知道**材料设计**的，因为它的设计在过去的一年震惊了世界，正式的变成了一个设计理念。
 
