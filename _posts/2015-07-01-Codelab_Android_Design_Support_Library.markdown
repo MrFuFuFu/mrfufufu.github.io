@@ -17,10 +17,6 @@ categories: Android
 >* 校验: [MrFu](http://mrfufufu.github.io/)
 >* 能去这里小小的点一下 star 吗？非常感谢：[Codelab](https://github.com/MrFuFuFu/Codelab)
 
-> 说明：嗯，这是我的翻译的第一篇 Android 文章，有些语句可能读着不是那么通顺，所以，但是对意思的理解应该还是没有问题的。
-
->说明2：嗯，转载的话，请加上这些引用文字，既是对原作者的尊重，也是对我辛苦好几个晚上的感谢。
-
 目前，我相信，没有任何 Android 开发者不知道**材料设计**的，因为它的设计在过去的一年震惊了世界，正式的变成了一个设计理念。
 
 令人惊讶的是，在 Android 应用中材料设计是不容易实现的，因为材料设计的 UI 组件  如: Floating Action Button (FAB) 在低于 Android L 系统上是不可用的。我们只能选择使用由独立开发者公布出来的第三方库。
