@@ -38,5 +38,6 @@ Time         | Title
 06-23~24   | [Celebrating Fathers!](http://www.51voa.com/VOA_Special_English/happy-fathers-day-63528.html)
 06-25~26   | ['Beware the Ides of March'](http://www.51voa.com/VOA_Special_English/beware-the-ides-of-march-61964.html)
 06-27,29   | [Is Your Plan Sustainable?](http://www.51voa.com/VOA_Special_English/sustainable-words-stories-61510.html)
+07-02~03   | [Don't Be Caught With Your Pants Down](http://www.51voa.com/VOA_Special_English/dont-be-caught-with-your-pants-down-words-and-their-stories-63656.html)
 ...   | [...](...)
 
