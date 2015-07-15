@@ -41,5 +41,6 @@ Time         | Title
 07-02~03   | [Don't Be Caught With Your Pants Down](http://www.51voa.com/VOA_Special_English/dont-be-caught-with-your-pants-down-words-and-their-stories-63656.html)
 07-04      | [Let's Do Business!](http://www.51voa.com/VOA_Special_English/lets-do-business-61200.html)
 07-05~06   | [Independence Day](http://www.51voa.com/VOA_Special_English/indepedence-day-63751.html)
+07-10,15   | [Are You in the Homeland Generation?](http://www.51voa.com/VOA_Special_English/are-you-in-the-homeland-generation-60669.html)
 ...   | [...](...)
 
