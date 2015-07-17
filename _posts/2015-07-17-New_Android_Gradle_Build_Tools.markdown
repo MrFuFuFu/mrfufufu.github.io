@@ -139,7 +139,7 @@ dependencies {
 
 ![run](https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/Gradle/run.png)
 
-试试 NDK 的支持
+##试试 NDK 的支持
 
 Android Studio 1.3 嘚瑟的宣布了完全支持 NDK。所以，让我们用一个非常简单的 native 代码例子来做尝试。首先，你需要在项目的 `local.properties` 文件里定义一个 NDK 的目录。请注意你可以在 [Android NDK Downloads Page](https://developer.android.com/ndk/downloads/index.html) 中显示的 NDK r10e 和在 SDK Manager 中显示的 NDK Bundle 都是可以使用的。
 

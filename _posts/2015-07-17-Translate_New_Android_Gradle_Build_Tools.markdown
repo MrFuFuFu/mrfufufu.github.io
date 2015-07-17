@@ -176,9 +176,9 @@ And then simply run it. Everything works fine as expected with the more meaningf
 ![run](https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/Gradle/run.png)
 
 
-Give NDK support a try
+##Give NDK support a try
 
-试试 NDK 的支持
+##试试 NDK 的支持
 
 Android Studio 1.3 was proudly announced with full NDK Support. So let's give a try with some very simple native codes. First of all, you need to define a NDK's directiory to project's `local.properties` file. Please note that you can use both NDK r10e available in [Android NDK Downloads Page](https://developer.android.com/ndk/downloads/index.html) and NDK Bundle available in SDK Manager.
 
