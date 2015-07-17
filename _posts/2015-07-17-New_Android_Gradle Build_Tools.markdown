@@ -6,13 +6,11 @@ categories: Android
 ---
 
 
-> 译者地址：[【翻】Android Design Support Library 的 代码实验——几行代码，让你的 APP 变得花俏](http://mrfufufu.github.io/android/2015/07/17/New_Android_Gradle%20Build_Tools.html)
+> 译者地址：[【翻】一览新的 Android Gradle Build Tools：新的 DSL 结构 和 Gradle 2.5](http://mrfufufu.github.io/android/2015/07/17/New_Android_Gradle%20Build_Tools.html)
 
-> 原文：[Codelab for Android Design Support Library used in I/O Rewind Bangkok session----Make your app fancy with few lines of code](http://inthecheesefactory.com/blog/android-design-support-library-codelab/en)
+> 原文：[First Look at New Android Gradle Build Tools: The new DSL structure and Gradle 2.5](http://inthecheesefactory.com/blog/new-gradle-build-tools-with-gradle-2.5/en)
 
-> 原文项目 demo: [Lab-Android-DesignLibrary](https://github.com/nuuneoi/Lab-Android-DesignLibrary)
-
-> 双语对照地址: [【翻-双语】Android Design Support Library 的 代码实验——几行代码，让你的 APP 变得花俏](http://mrfufufu.github.io/english/2015/07/01/Translate_Codelab_Android_Design_Support_Library.html)
+> 双语对照地址: [【翻-双语】一览新的 Android Gradle Build Tools：新的 DSL 结构 和 Gradle 2.5](http://mrfufufu.github.io/english/2015/07/17/Translate_New_Android_Gradle_Build_Tools.html)
 
 >* 翻译: [MrFu](http://mrfufufu.github.io/)
 >* 校验: [MrFu](http://mrfufufu.github.io/)
