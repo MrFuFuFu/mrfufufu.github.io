@@ -8,9 +8,9 @@ categories: Android
 
 > 译者地址：[【翻】一览新的 Android Gradle 构建工具：新的 DSL 结构 和 Gradle 2.5](http://mrfufufu.github.io/android/2015/07/17/New_Android_Gradle%20Build_Tools.html)
 
-> 原文：[First Look at New Android Gradle 构建工具: The new DSL structure and Gradle 2.5](http://inthecheesefactory.com/blog/new-gradle-build-tools-with-gradle-2.5/en)
+> 原文：[First Look at New Android Gradle Build Tools: The new DSL structure and Gradle 2.5](http://inthecheesefactory.com/blog/new-gradle-build-tools-with-gradle-2.5/en)
 
-> 双语对照地址: [【翻-双语】一览新的 Android Gradle Build Tools：新的 DSL 结构 和 Gradle 2.5](http://mrfufufu.github.io/english/2015/07/17/Translate_New_Android_Gradle_Build_Tools.html)
+> 双语对照地址: [【翻-双语】一览新的 Android Gradle 构建工具：新的 DSL 结构 和 Gradle 2.5](http://mrfufufu.github.io/english/2015/07/17/Translate_New_Android_Gradle_Build_Tools.html)
 
 >* 翻译: [MrFu](http://mrfufufu.github.io/)
 >* 校验: [MrFu](http://mrfufufu.github.io/)
