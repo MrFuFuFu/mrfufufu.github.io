@@ -6,6 +6,17 @@ categories: Android
 ---
 
 
+> 译者地址：[【翻】Android Design Support Library 的 代码实验——几行代码，让你的 APP 变得花俏](http://mrfufufu.github.io/android/2015/07/17/New_Android_Gradle%20Build_Tools.html)
+
+> 原文：[Codelab for Android Design Support Library used in I/O Rewind Bangkok session----Make your app fancy with few lines of code](http://inthecheesefactory.com/blog/android-design-support-library-codelab/en)
+
+> 原文项目 demo: [Lab-Android-DesignLibrary](https://github.com/nuuneoi/Lab-Android-DesignLibrary)
+
+> 双语对照地址: [【翻-双语】Android Design Support Library 的 代码实验——几行代码，让你的 APP 变得花俏](http://mrfufufu.github.io/english/2015/07/01/Translate_Codelab_Android_Design_Support_Library.html)
+
+>* 翻译: [MrFu](http://mrfufufu.github.io/)
+>* 校验: [MrFu](http://mrfufufu.github.io/)
+
 Android Studio 1.3 的平台已经接近于稳定的发布版，新的功能不断推出，包括对NDK 的完美支持。它看起来有一些重大的改变也正在等待合适的孵化时机，如：新的 Gradle 构建工具以及新设计的 DSL (gradle 脚本代码结构)
 
 在我把玩了一个小时之后，我发现它是非常有趣的，所以，我决定去写下这篇博客来向你们这些家伙介绍这个构建工具即将带来的改变，好让你们做好准备。
