@@ -8,6 +8,8 @@ permalink: /about/
 
 [Github](https://github.com/MrFuFuFu)
 
+[简书](http://www.jianshu.com/users/c1b9d1faa7b5/latest_articles)
+
 [Facebook](https://www.facebook.com/profile.php?id=100006538561748)
 
 [Twitter](https://twitter.com/15068728607)
