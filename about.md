@@ -8,6 +8,8 @@ permalink: /about/
 
 [Github](https://github.com/MrFuFuFu)
 
+[LinkedIn](https://cn.linkedin.com/pub/yuan-fu/bb/69/368)
+
 [简书](http://www.jianshu.com/users/c1b9d1faa7b5/latest_articles)
 
 [Facebook](https://www.facebook.com/profile.php?id=100006538561748)
