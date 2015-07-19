@@ -8,6 +8,8 @@ header-img: "img/about-bg.jpg"
 
 我叫傅圆，我是一名来自中国的 Android 开发者，你可以通过这些地方找到我或者看到我，^ ^
 
+<mrfuyuan@gmail.com> 
+
 [Github](https://github.com/MrFuFuFu)
 
 [LinkedIn](https://cn.linkedin.com/pub/yuan-fu/bb/69/368)
