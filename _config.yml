@@ -1,15 +1,31 @@
 # Site settings
 title: MrFu-傅圆的个人博客
+author: MrFu
+header-img: img/home-bg.jpg
+background-color: black
 email: mrfuyuan@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-  我叫傅圆，我是一名 Android 开发者.
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://yourdomain.com" # the base hostname & protocol for your site
+description: 我叫傅圆，我是一名 Android 开发者.
+baseurl: ""
+url: "http://mrfufufu.github.io/"
 twitter_username: 15068728607
 github_username:  mrfufufu
+facebook_username:  mrfufufu
+linkedin_username: mrfufufu
+instagram_username: mrfufufufu
 
 # Build settings
-#markdown: kramdown
-markdown: redcarpet
-redcarpet:
-  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
+markdown: kramdown 
+
+# markdown: redcarpet
+# redcarpet can auto highlight code, but the lack of header-id make the catalog impossible 
+
+highlighter: pygments
+permalink: pretty
+paginate: 20
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+
+# use Github Flavored Markdown !important
+# document: http://jekyllrb.com/docs/configuration/#kramdown
+
+kramdown:
+  input: GFM

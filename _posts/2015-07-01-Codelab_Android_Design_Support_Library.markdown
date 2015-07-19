@@ -1,8 +1,12 @@
 ---
 layout: post
 title:  【翻】Android Design Support Library 的 代码实验——几行代码，让你的 APP 变得花俏
+author: MrFu
 date:   2015-07-01 20:56:00
 categories: Android
+header-img: "img/codelab-android-lib.jpg"
+tags:
+    - Android
 ---
 
 > 译者地址：[【翻】Android Design Support Library 的 代码实验——几行代码，让你的 APP 变得花俏](http://mrfufufu.github.io/android/2015/07/01/Codelab_Android_Design_Support_Library.html)
@@ -33,7 +37,7 @@ categories: Android
 
 Activity 已经调整为材料设计风格的主题。
 
-```XML
+```xml
 <item name="colorPrimary">#2196F3</item>
 <item name="colorPrimaryDark">#1565C0</item>
 <item name="colorAccent">#E91E63</item>
@@ -42,18 +46,18 @@ Activity 已经调整为材料设计风格的主题。
 好了，让我们开始吧！
 
 
-##步骤一：从 Github 上拷贝源码
+## 步骤一：从 Github 上拷贝源码
 
 我已经为这个 codelab 准备了源码，你可以从 [GitHub](https://github.com/nuuneoi/Lab-Android-DesignLibrary) 轻松的 clone 它。MainActivity 是上面所示的最终结果。请在这个 project 的 `CodeLabActivity` 中做我们的代码实验。
 
 你一定要自己做的一个任务是... 成功的运行它，它应该是通过简单的点击“运行”按钮来完成。
 
 
-##步骤二：添加 Android Design Support Library 依赖
+## 步骤二：添加 Android Design Support Library 依赖
 
 第一件要做的事是在我们的项目中添加 Android Design Support Library，在 app 的 `build.gradle` 文件下添加一行依赖代码。
 
-```XML
+```xml
 compile 'com.android.support:design:22.2.0'
 ```
 `
@@ -62,11 +66,11 @@ compile 'com.android.support:design:22.2.0'
 顺便说一下，从 Github 克隆的源码已经添加了上面这行代码。但是如果你创建了你自己的项目，你需要自己添加它。
 
 
-##步骤三：添加 FAB
+## 步骤三：添加 FAB
 
 Floating Action Button (FAB) 是一个有一些阴影的圆形按钮，这个令人难以置信的，可以改变世界的设计。毫不奇怪它为什么会变成材料设计的标志。因此我们从这开始。添加一个 FAB 在布局文件，因为它需要一些父类来使它在屏幕的右下方位置对齐，所以用 `FrameLayout` 来包裹 `FloatingActionButton`。请做这样的事情作为 DrawerLayout 的内容：更换 `activity_code_lab.xml` 中已经存在的 `TextView` ，像下面的代码这样。
 
-```XML
+```xml
 <android.support.v4.widget.DrawerLayout ...
     xmlns:app="http://schemas.android.com/apk/res-auto"
     ....>
@@ -100,21 +104,21 @@ Floating Action Button (FAB) 是一个有一些阴影的圆形按钮，这个令
 
 **res/values/dimens.xml**
 
-```XML
+```xml
 <dimen name="codelab_fab_margin_right">0dp</dimen>
 <dimen name="codelab_fab_margin_bottom">0dp</dimen>
 ```
 
 **res/values-v21/dimens.xml**
 
-```XML
+```xml
 <dimen name="codelab_fab_margin_right">16dp</dimen>
 <dimen name="codelab_fab_margin_bottom">16dp</dimen>
 ```
 
 **res/layout/activity_code_lab.xml**
 
-```XML
+```xml
 <android.support.design.widget.FloatingActionButton
     ...
     android:layout_marginBottom="@dimen/codelab_fab_margin_bottom"
@@ -137,7 +141,7 @@ Floating Action Button (FAB) 是一个有一些阴影的圆形按钮，这个令
 
 就像传统的按钮，你可以通过 `setOnClickListener()` 处理点击，在 `CodeLabActivity.java` 文件的 `initInstances` 方法中添加下面的代码。
 
-```Java
+```java
 FloatingActionButton fabBtn;
 ...
 private void initInstances() {
@@ -153,7 +157,7 @@ private void initInstances() {
 
 完成！
 
-##步骤四：使用 Snackbar
+## 步骤四：使用 Snackbar
 
 Snackbar，在屏幕的地步一个微小的黑色条显示着一条简短的消息，在这个 library 中也是可用的。Snackbar 和 Toast 有着相同的概念，但是不同于 Toast，它的表现是作为 UI 的一部分而不是覆盖在屏幕上。
 
@@ -161,7 +165,7 @@ Snackbar，在屏幕的地步一个微小的黑色条显示着一条简短的消
 
 不只是概念相同，编码风格也是由 Toast 所启发，你可以通过下面的代码唤起 Snackbar。
 
-```Java
+```java
 Snackbar.make(someView, "Hello. I am Snackbar!", Snackbar.LENGTH_SHORT)
         .setAction("Undo", new View.OnClickListener() {
             @Override
@@ -175,7 +179,7 @@ Snackbar.make(someView, "Hello. I am Snackbar!", Snackbar.LENGTH_SHORT)
 
 现在，让我们通过添加下面的代码去试试。
 
-```Java
+```java
 FrameLayout rootLayout;
 ...
 private void initInstances() {
@@ -205,7 +209,7 @@ private void initInstances() {
 
 为了这个目的专门发明了一个特殊的布局，使子 Views 协调工作。这就不用奇怪为什么它的名字是 `CoordinatorLayout` 了。
 
-##步骤五：使他们和 CoordinatorLayout 协作
+## 步骤五：使他们和 CoordinatorLayout 协作
 
 CoordinatorLayout 是一个让子 Views 协调工作的布局。这里没有任何魔法。每个 View 中肯定是设计和实现了和  CoordinatorLayout 协同工作的。FAB 和 Snackbar 就是这两个view。
 
@@ -213,7 +217,7 @@ CoordinatorLayout 是一个让子 Views 协调工作的布局。这里没有任�
 
 **res/layout/activity_code_lab.xml**
 
-```XML
+```xml
 <android.support.design.widget.CoordinatorLayout
     android:id="@+id/rootLayout"
     android:layout_width="match_parent"
@@ -225,7 +229,7 @@ CoordinatorLayout 是一个让子 Views 协调工作的布局。这里没有任�
 
 而且，不要忘了在 `CodeLabActivity.java` 改变 rootLayout 的变量类型为 CoordinatorLayout，否则就会崩溃。
 
-```XML
+```xml
 //FrameLayout rootLayout;
 CoordinatorLayout rootLayout;
 //rootLayout = (FrameLayout) findViewById(R.id.rootLayout);
@@ -246,7 +250,7 @@ rootLayout = (CoordinatorLayout) findViewById(R.id.rootLayout);
 
 **res/values/dimens.xml**
 
-```XML
+```xml
 <dimen name="codelab_fab_margin_right">0.1dp</dimen>
 <dimen name="codelab_fab_margin_bottom">0.1dp</dimen>
 ```
@@ -258,7 +262,7 @@ rootLayout = (CoordinatorLayout) findViewById(R.id.rootLayout);
 从现在起，如果你计划使用 Android Design Support Library。请首先考虑 CoordinatorLayout，因为它就像是这个 library 的核心。
 
 
-##步骤六：再见 ActionBar，你好，Toolbar
+## 步骤六：再见 ActionBar，你好，Toolbar
 
 Toolbar 不是 Android Design Support Library 的一部分，而是在这个库中需要与其他组件一起使用。
 
@@ -266,7 +270,7 @@ Toolbar 是一个替代传统的 Action Bar 具有更灵活的行为。我鼓励
 
 很容易切换到 Toolbar。只需要从 Activity 定义的 AppTheme 的 style 属性隐藏掉 Action Bar 开始。
 
-```XML
+```xml
 <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
     <item name="windowActionBar">false</item>
     <item name="windowNoTitle">true</item>
@@ -275,7 +279,7 @@ Toolbar 是一个替代传统的 Action Bar 具有更灵活的行为。我鼓励
 
 然后在 CoordinatorLayout 里面的 FAB 之前正确的放一个 Toolbar 组件。
 
-```XML
+```xml
 <android.support.design.widget.CoordinatorLayout
     ...>
     <android.support.v7.widget.Toolbar
@@ -293,7 +297,7 @@ Toolbar 是一个替代传统的 Action Bar 具有更灵活的行为。我鼓励
 
 现在写代码来告诉系统，我们将使用 Toolbar 作为一个 Action Bar，更换下面的 Java 代码。
 
-```Java
+```java
 Toolbar toolbar;
 private void initInstances() {
     toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -304,7 +308,7 @@ private void initInstances() {
 
 虽然它现在可以运行成功，但是根据我之前说的，放在 CoordinatorLayout 的东西必须被设计和实现成与它一起合作的，否则将不与任何其他兄弟 views(sibling views) 协作。但是... Toolbar是不合适的。别担心，这里没有任何新的特殊 Toolbar。只是一个组件是为了准备让 Toolbar 与 CoordinatorLayout 一起工作的更加完美。这是简单的任务，只是简单的用 `AppBarLayout` 包裹 Toolbar，就这样！
 
-```XML
+```xml
 <android.support.design.widget.CoordinatorLayout
     ...>
     <android.support.design.widget.AppBarLayout
@@ -326,13 +330,13 @@ private void initInstances() {
 这个步骤现在完成了。从现在开始，我建议你总是用 AppBarLayout 包裹 ToolBar 元素。光凭它能带回来阴影的能力就足够有说服力。
 
 
-##步骤7：在内容区域放东西
+## 步骤7：在内容区域放东西
 
 我们已经得到了 FAB 和 Toolbar，现在是时候在 Activity 的内容区域放上东西了。
 
 额。如果是两个简单的按钮呢？好吧，让我们把它们放在在 AppBarLayout 和 FAB 之间。
 
-```XML
+```xml
     ...
 </android.support.design.widget.AppBarLayout>
 <LinearLayout
@@ -360,7 +364,7 @@ private void initInstances() {
 
 是的，一些古老的原因，*LinearLayout 没有被设计成与 CoordinatorLayout 协同工作*。在这样的情况下，没有任何布局用来包裹 LinearLayout，使它像 Toolbar 的做法那样。但它是更加容易的，你只需要在 LinearLayout 添加一个属性告诉它的滚动行为，就像下面写的这样：
 
-```XML
+```xml
 <LinearLayout
     ...
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
@@ -373,13 +377,13 @@ private void initInstances() {
 
 完成！=)
 
-##步骤8：玩转 TabLayout
+## 步骤8：玩转 TabLayout
 
 Tab 是在 Android 应用程序中用户体验(UX)最佳实践的一部分。在以前，如果我们想要使用新的材料设计风格的 Tab，我们需要自己去为项目中下载 SlidingTabLayout 和 SlidingTabStrip 的源码。现在，我们只需要使用这个库提供的 `TabLayout`，它也有很多可以调整的选项。
 
 我们应该把 TabLayout 放在哪里？根据 Android 应用程序用户体验指导原则，Tab 应该放在屏幕的顶部而不是在底部。还有，它应该在阴影部分的上面。所以，我们将其放在 AppBarLayout 里面，沿着 Toolbar。这是可以做到的，**因为 AppBarLayout 是继承自一个垂直的 LinearLayout**。
 
-```XML
+```xml
 <android.support.design.widget.AppBarLayout ...>
     <android.support.v7.widget.Toolbar ... />
     <android.support.design.widget.TabLayout
@@ -391,7 +395,7 @@ Tab 是在 Android 应用程序中用户体验(UX)最佳实践的一部分。在
 
 在 Java 代码中添加一些 tabs。
 
-```Java
+```java
 TabLayout tabLayout;
 private void initInstances() {
     tabLayout = (TabLayout) findViewById(R.id.tabLayout);
@@ -408,7 +412,7 @@ private void initInstances() {
 
 背景色会自动设置成 primary color(主题色)，而导航线的颜色是强调色。但是你将会注意到 Tab 的字体仍然是黑色的，但是我们希望字体是白色的。这是因为我们还没有为 TabLayout 提供任何主题呢。TabLayout 定义主题是简单的，就像这样：
 
-```XML
+```xml
 <android.support.design.widget.TabLayout
     ...
     app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
@@ -433,13 +437,13 @@ private void initInstances() {
 TabLayout 完成了！
 
 
-##步骤9：当随着内容滚动时，让 AppBarLayout 退出屏幕
+## 步骤9：当随着内容滚动时，让 AppBarLayout 退出屏幕
 
 一个优美的 Android 用户体验是引导 App Bar 可以随着内容滚动出屏幕的，以获得额外的空间来显示内容，并且，这已经是被证明这样的用户体验是很棒的。以前有一些应用程序已经实现了这种行为，但是开发者必须自己来实现。现在它只需要用一行代码就能轻松的完成。
 
 首先，我们需要让内容能够滚动，先往 LinearLayout 加入一些 Button。大约20个？
 
-```XML
+```xml
 <Button
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -455,7 +459,7 @@ TabLayout 完成了！
 
 然后用 ScrollView 包裹这个 LinearLayout，还有，**不要忘了将 LinearLayout 里的 layout_behavior 移动到 ScrollView**，因为现在 ScrollView 是 CoordinatorLayout的最直接的子 view。
 
-```XML
+```xml
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -472,7 +476,7 @@ TabLayout 完成了！
 
 然后给 Toolbar 添加一个滚动标志，就像这样：
 
-```XML
+```xml
 <android.support.v7.widget.Toolbar
     ...
     app:layout_scrollFlags="scroll|enterAlways" />
@@ -486,7 +490,7 @@ TabLayout 完成了！
 
 同样的老原因啦... **ScrollView 没有被设计成与 CoordinatorLayout 协同工作(又来)**。你需要另一个 view：`NestedScrollView`，Android Support Library v4 中有提供。这个 NestedScrollView 设计出来的目的就是为了与 CoordinatorLayout 协同工作的。
 
-```XML
+```xml
 <android.support.v4.widget.NestedScrollView ...>
     <LinearLayout ...>
         ...
@@ -502,7 +506,7 @@ TabLayout 完成了！
 
 运行起来真赞！你会注意到 Toolbar 滚出了屏幕，但是 TabLayout 仍然还在。这是因为我们没有给 TabLayout 设置任何滚动标志。如果你想要 TabLayout 同样从屏幕上消失，只需要给 TabLayout 定义相同的属性就可以了。
 
-```XML
+```xml
 <android.support.design.widget.TabLayout
     ...
     app:layout_scrollFlags="scroll|enterAlways" />
@@ -530,7 +534,7 @@ TabLayout 完成了！
 
 `exitUntilCollapsed` - View 将关闭滚动直到它被折叠起来(有 minHeight) 并且一直保持这样，举个例子：
 
-```XML
+```xml
 <android.support.v7.widget.Toolbar
     ...
     android:layout_height="192dp"
@@ -546,17 +550,17 @@ TabLayout 完成了！
 
 这种模式在组件中经常使用，我将在下一个部分讨论。
 
-##步骤10: 移除 TabLayout
+## 步骤10: 移除 TabLayout
 
 从实验来看，在上述情况下当我们用 TabLayout 来滚动的时候，有一些明显的 bug。我相信这只是一个 bug，而且以后会被修复的。现在，让我们首先从代码中移除 TabLayout，确保下一步运行是流畅的。
 
-```XML
+```xml
 <!--android.support.design.widget.TabLayout -->
 ```
 
 从 Java 代码中也删除
 
-```XML
+```xml
 //tabLayout = (TabLayout) findViewById(R.id.tabLayout);
 //tabLayout.addTab(tabLayout.newTab().setText("Tab 1"));
 //tabLayout.addTab(tabLayout.newTab().setText("Tab 2"));
@@ -565,7 +569,7 @@ TabLayout 完成了！
 
 好了，让我们去做下一步！
 
-##Step 11: Make Toolbar collapsable 步骤11：使工具栏可折叠
+## Step 11: Make Toolbar collapsable 步骤11：使工具栏可折叠
 
 就像在 exitUntilCollapsed 部分所示的例子中，Toolbar 可以展开和折叠，但是你会看到它还不是很完美。Toolbar 仍然离开了屏幕，最好的体验是让这些 icon (汉堡等-即菜单栏) 应该留在屏幕内。
 
@@ -580,7 +584,7 @@ Design Support Library 已经为这个准备好了。用 `CollapsingToolbarLayou
 
 这是最终代码。
 
-```XML
+```xml
 <android.support.design.widget.AppBarLayout
     android:layout_width="match_parent"
     android:layout_height="256dp">
@@ -607,7 +611,7 @@ Design Support Library 已经为这个准备好了。用 `CollapsingToolbarLayou
 
 看起来不错，但是这些 Toolbar icons 仍然滚出了屏幕。我们可以声明这个属性给 Toolbar 来固定住它，让它总是在屏幕的顶部。
 
-```XML
+```xml
 <android.support.v7.widget.Toolbar
     ...
     app:layout_collapseMode="pin"/>
@@ -619,7 +623,7 @@ Toolbar现在被定住了！
 
 但是，等一下…标题的文字在哪里？！不幸的是，在用 CollapsingToolbarLayout 包裹住 Toolbar 后，它随风而逝了。我们必须通过在 Java 代码中手动设置 `setTitle(String)` 来实现。
 
-```Java
+```java
 CollapsingToolbarLayout collapsingToolbarLayout;
 private void initInstances() {
     ...
@@ -634,7 +638,7 @@ private void initInstances() {
 
 这里的字体颜色仍然是黑的的。这是因为我们还没有为 App Ba 设置任何主题。要做到这一点，只需要简单的为 `AppBarLayout` 声明 `android:theme` 属性就可以了，就像这样：
 
-```XML
+```xml
 <android.support.design.widget.AppBarLayout
     ...
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
@@ -650,7 +654,7 @@ private void initInstances() {
 
 让我们从试着改变 margin 为64dp 开始。
 
-```XML
+```xml
 <android.support.design.widget.CollapsingToolbarLayout
     ...
     app:expandedTitleMarginStart="64dp">
@@ -662,11 +666,11 @@ private void initInstances() {
 
 真棒！
 
-##步骤12：为 App Bar 添加背景图片
+## 步骤12：为 App Bar 添加背景图片
 
 在这种情况下，我们想要用一张美丽的图片作为 App Bar 的背景，而不只是像现在这样的一个普通的颜色。幸运的是 CollapsingToolbarLayout 是继承自 FrameLayout 所以我们可以轻松的添加一个 ImageView 作为 Toolbar 的背景图层，就像这样：
 
-```XML
+```xml
 <ImageView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -682,7 +686,7 @@ private void initInstances() {
 
 图片已经显示出来了，但是这里有一点还没有达到预期，蓝色的导航条仍旧显示着。有一个 Toolbar 的背景看起来不是酷炫的。从 Toolbar 移除它，只需要下面这行代码就行了。
 
-```XML
+```xml
 android:background="?attr/colorPrimary"
 ```
 
@@ -692,7 +696,7 @@ android:background="?attr/colorPrimary"
 
 现在图片是随着内容的滚动了，但是看起来太呆了。我们可以使用视差模式让它变得更优雅一些，只需要声明 collapse 就行了，像下面这样：
 
-```XML
+```xml
 <ImageView
    ...
    app:layout_collapseMode="parallax" />
@@ -704,7 +708,7 @@ android:background="?attr/colorPrimary"
 
 你也可以设置视差的系数，介于 0.0-1.0之间。
 
-```XML
+```xml
 app:layout_collapseParallaxMultiplier="0.7"
 ```
 
@@ -712,7 +716,7 @@ app:layout_collapseParallaxMultiplier="0.7"
 
 最后你可能会注意到 App Bar 的背景总显示一张图片。你可以让它在收缩的时候自动的变化到普通的颜色，通过声明属性 app:contentScrim 像下面这样来实现：
 
-```XML
+```xml
 <android.support.design.widget.CollapsingToolbarLayout
     ...
     app:contentScrim="?attr/colorPrimary">
@@ -725,7 +729,7 @@ app:layout_collapseParallaxMultiplier="0.7"
 只用了几行代码，就让 App Bar 变得这么漂亮了 =)
 
 
-##步骤13：玩转 Navigation Drawer
+## 步骤13：玩转 Navigation Drawer
 
 现在从左侧拉出 Drawer Menu 仍然只是一个空白的面板。在以前，实现这个菜单是非常麻烦的，因为我们不得不手动的用 LinearLayout 或者 ListView 去实现。
 
@@ -735,7 +739,7 @@ app:layout_collapseParallaxMultiplier="0.7"
 
 **res/layout/nav_header.xml**
 
-```XML
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -766,7 +770,7 @@ app:layout_collapseParallaxMultiplier="0.7"
 
 **res/menu/navigation_drawer_items.xml**
 
-```XML
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="all">
@@ -792,7 +796,7 @@ app:layout_collapseParallaxMultiplier="0.7"
 
 `NavigationView` 与两个资源文件绑定起来，作为 Drawer Menu 的菜单区域，用下面的代码来替换一个已经存在的 白色的 LinearLayout ：
 
-```XML
+```xml
         ...
     </android.support.design.widget.CoordinatorLayout>
     <android.support.design.widget.NavigationView
@@ -815,7 +819,7 @@ NavigationView 就是为了 Drawer Menu 而特别设计的。所以，所有的�
 
 为了处理这些菜单项的点击事件，你可以声明 `setNavigationItemSelectedListener` 来监听，就像下面这样：
 
-```Java
+```java
 NavigationView navigation;
 private void initInstances() {
     ...
@@ -841,13 +845,13 @@ private void initInstances() {
 在实际使用中，请随意的区声明你想要定义的 header view 和修改菜单项。
 
 
-##步骤14：用上 TextInputLayout 让 EditText 变的更风骚
+## 步骤14：用上 TextInputLayout 让 EditText 变的更风骚
 
 这是 Codelab 的最后一部分了。你可以改变一个旧的 EditText 的风格，让它变得更时髦，即：总是会显示一个提示或者一个错误信息。
 
 要做到这一点，只需要简单的用 TextInputLayout 包裹住一个 EditText ，就这么简单！
 
-```XML
+```xml
 <android.support.design.widget.TextInputLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -864,7 +868,7 @@ private void initInstances() {
 
 难以置信的容易吧？=)
 
-##结论
+## 结论
 
 Android Design Support Library 是非常有前途的支持库，它非常值得在你的产品上使用。虽然它仍然包含了很多错误，我建议你再等等，直到每个错误都被修复。
 

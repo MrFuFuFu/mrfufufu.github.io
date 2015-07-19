@@ -1,8 +1,12 @@
 ---
 layout: post
 title:  【翻】一览新的 Android Gradle 构建工具：新的 DSL 结构 和 Gradle 2.5
+author: MrFu
 date:   2015-07-17 21:27:00
 categories: Android
+header-img: "img/gradle-tools.jpg"
+tags:
+    - Android
 ---
 
 
@@ -19,13 +23,13 @@ Android Studio 1.3 的平台已经接近于稳定的发布版，新的功能不�
 
 在我把玩了一个小时之后，我发现它是非常有趣的，所以，我决定去写下这篇博客来向你们这些家伙介绍这个构建工具即将带来的改变，好让你们做好准备。
 
-##Android Gradle 构建工具(Android Gradle Build Tools)是什么？
+## Android Gradle 构建工具(Android Gradle Build Tools)是什么？
 
 万一你还不知道它呢！Android Gradle 构建工具是一个运行时用于处理 module 下的 `build.gradle` 文件的，在这个文件传递到 Gradle 去做进一步操作之前进行的。
 
 Gradle Build Tools 在项目中的 `build.gradle` 声明就像下面这样：
 
-```XML
+```xml
 dependencies {
     classpath 'com.android.tools.build:gradle:1.2.3'
 }
@@ -42,7 +46,7 @@ dependencies {
 
 在 Android Gradle Build Tools 中定义了语法规则，和我们使用的语法规则在 `build.gradle` 文件中来写 Gradle 脚本(And the syntax we use these days to write Gradle Script in build.gradle file is defined in Android Gradle Build Tools.). 我们称它为 `DSL`(Domain-Specific Language).
 
-##新的 Android Gradle 构建工具
+## 新的 Android Gradle 构建工具
 
 从 Gradle Build Tools 1.0 问世以来， DSL 还没有被动过， Android Studio 团队决定对新的 Gradle Build Tools 做出重大的改变。它仍然在试验阶段，通过改变其基础的 Gradle 的新组件模型机制使其显著的减少在配置上花费的时间。然而开发团队正在努力尝试去移除这些通用的变化，以尽量减少从传统的插件在未来的迁移过程。(However development teams are working hard trying to remove these current changes to minimize the migration process from the traditional plugin in the future.)
 
@@ -50,7 +54,7 @@ dependencies {
 
 尝试新的 Gradle Build Tools 只需要简单的在项目的 `build.gradle` 文件中更改 build tools 的版本：
 
-```XML
+```xml
 dependencies {
     classpath 'com.android.tools.build:gradle-experimental:0.1.0'
 }
@@ -58,7 +62,7 @@ dependencies {
 
 请注意， 新版本的 build tools 要与刚刚发布的 Gradle 2.5 一起使用才行，所以你需要首先安装 Gradle2.5，在你的项目的 `gradle/gradle-wrapper.properties` 文件下修改 `distributionUrl` 这一行：
 
-```XML
+```xml
 distributionUrl=https\://services.gradle.org/distributions/gradle-2.5-bin.zip
 ```
 
@@ -69,7 +73,7 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-2.5-bin.zip
 
 然后修改 module 的 `build.gradle` 文件从这样：
 
-```XML
+```xml
 apply plugin: 'com.android.application'
 android {
     compileSdkVersion 22
@@ -98,7 +102,7 @@ dependencies {
 
 改成这样：
 
-```XML
+```xml
 apply plugin: 'com.android.model.application'
 
 model {
@@ -139,17 +143,17 @@ dependencies {
 
 ![run](https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/Gradle/run.png)
 
-##试试 NDK 的支持
+## 试试 NDK 的支持
 
 Android Studio 1.3 嘚瑟的宣布了完全支持 NDK。所以，让我们用一个非常简单的 native 代码例子来做尝试。首先，你需要在项目的 `local.properties` 文件里定义一个 NDK 的目录。请注意你可以在 [Android NDK Downloads Page](https://developer.android.com/ndk/downloads/index.html) 中显示的 NDK r10e 和在 SDK Manager 中显示的 NDK Bundle 都是可以使用的。
 
-```XML
+```xml
 ndk.dir=PATH_TO_NDK_ROOT
 ```
 
 创建 `HelloJni.java` 放在你的 Java 包下。
 
-```Java
+```java
 public class HelloJni {
     public native String stringFromJNI();
 }
@@ -159,7 +163,7 @@ public class HelloJni {
 
 **hello-jni.c**
 
-```C
+```c
 #include <string.h>
 #include <jni.h>
 
@@ -213,7 +217,7 @@ Java_com_inthecheesefactory_hellojni25_HelloJni_stringFromJNI( JNIEnv* env,
 
 现在，让我们在 `MainActivity.java` 中测试这段 JNI 代码，把下面这段代码放到 **MainActivity** 类的最后一行：
 
-```Java
+```java
 public class MainActivity extends AppCompatActivity {
     ...
     static {
@@ -224,7 +228,7 @@ public class MainActivity extends AppCompatActivity {
 
 修改 `onCreate` 就像这样：
 
-```Java
+```java
 @Override
 protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -247,7 +251,7 @@ duang~完成！现在，你可以通过 Java 代码来使用 native 代码了，
 
 不管怎么说，它仍然处于实验阶段，某些功能仍在开发中。对于严肃的用户来说，最好等到它最终发布吧。
 
-##结论
+## 结论
 
 我必须说新的 Gradle Build Tools 是非常有趣的。主要改变的 DSL 看起来非常有前途，并且对于现在的来说具有更深远的意义。优秀的代码应该能告诉我们它能做什么（译者：能从字面意思理解这段代码的意思），对吧？
 

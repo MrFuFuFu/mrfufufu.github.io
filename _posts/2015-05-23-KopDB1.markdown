@@ -1,11 +1,14 @@
 ---
 layout: post
 title:  KopDB 框架学习1——使用
+author: MrFu
 date:   2015-05-23 16:10:00
 categories: Android
+tags:
+    - Android
 ---
 
-### 前言
+##  前言
 最近项目中要用到数据库，因为之前需要本地存储的数据量并不是非常大，SharedPreferences 足以解决大部分的数据存储问题，所以，我们一直没有用到 SQLite。现在产品需要优化私信模块体验，所以增加私信本地存储是非常必要的。这时候用上 SQLite 就非常必要了。好在我们的老大之前就已经封装好了一份非常完善的数据库框架了，拿来就能用。看了源码研究了一天，大概有了写心得体会，整理出来，学习使用。
 
 就给他起名叫 `KopDB` 吧（Kop 是我们老大打 log 的时候用的 tag），`KopDB` 采用的是对象关系映射(ORM)的模式，并将我们平时开发时最常用到的一些数据库功能进行了封装，使得不用编写一行SQL语句就可以完成各种建表、増删改查的操作。
@@ -20,7 +23,7 @@ Github 项目地址，里面包含了 lib 和对应的 demo
 
 先给出 demo 中的数据 model 模型方便后面阅读理解：
 
-```Java
+```java
 public class PersonModel extends BaseModel {
     private static final long serialVersionUID = 3462436436344054489L;
 			
@@ -54,9 +57,9 @@ public class PersonModel extends BaseModel {
 
 其中 id 的写法就表示它是主键啦，注意：必须继承 BaseModel 。
 
-###1、初始化：
+## 1、初始化：
 
-```Java
+```java
 public void initDB() {
     if (DatabaseManager.getInstance().isInited())
         return;
@@ -78,17 +81,17 @@ public void initDB() {
 
 根据对象关系映射模式的理念就是每一张表都应该对应一个模型(Model)，也就是说，如果我们想要建一张 person 表，就应该有一个对应的 Person 模型类。
 
-###2、insert 数据
+## 2、insert 数据
 
 一行代码就能搞定：
 
-```Java
+```java
 DatabaseManager.getInstance().insert(PersonModel.class, model);
 ```
 
 如果想要监听插入是否失败，则可以调用如下 insert 方法
 
-```Java
+```java
 DatabaseManager.getInstance().insert(PersonModel.class, model, new DatabaseManager.getInstance().insert(PersonModel.class, model, new DBOperateAsyncListener() {
     @Override
     public <T extends BaseModel> void onPostExecute(DatabaseOptionType optionType, Class<T> claz, List<T> successModels, List<T> failModels) {
@@ -103,66 +106,66 @@ DatabaseManager.getInstance().insert(PersonModel.class, model, new DatabaseManag
 
 当然，如果我的数据是一个 list 的形式的，也可也直接插入，而不需要写 for 循环一条一条插入，
 
-```Java
+```java
 DatabaseManager.getInstance().insert(PersonModel.class, models);
 ```
 
-###3、update 数据
+## 3、update 数据
 
 同样也是一行代码的事情：
 
-```Java
+```java
 DatabaseManager.getInstance().update(PersonModel.class, model1);
 ```
 
 他同样支持4个重载方法，insert 没有实际给出，这里给出他的四个重载方法，insert 类似
 
-```Java
+```java
 DatabaseManager.getInstance().update(Class<T> claz, T t);
 DatabaseManager.getInstance().update(Class<T> claz, List<T> models);
 DatabaseManager.getInstance().update(Class<T> claz, T t, DBOperateAsyncListener listener);
 DatabaseManager.getInstance().update(Class<T> claz, List<T> models, DBOperateAsyncListener listener);
 ```
 
-###4、replace 数据
+## 4、replace 数据
 
 同样也是一行代码就能搞定啦，同样支持4个重载方法：
 
-```Java
+```java
 DatabaseManager.getInstance().replace(Class<T> claz, T t);
 DatabaseManager.getInstance().replace(Class<T> claz, List<T> models);
 DatabaseManager.getInstance().replace(Class<T> claz, T t, DBOperateAsyncListener listener);
 DatabaseManager.getInstance().replace(Class<T> claz, List<T> models, DBOperateAsyncListener listener);
 ```
 
-###5、delete 数据
+## 5、delete 数据
 
 同样也是喔，其中 whereClause 是 delete 的条件，whereArgs就是 whereClause 的占位符啦：
 
-```Java
+```java
 DatabaseManager.getInstance().delete(Class<T> claz, String whereClause, String[] whereArgs);
 DatabaseManager.getInstance().delete(Class<T> claz, String whereClause, String[] whereArgs, DBOperateDeleteListener listener);
 ```
 
 举个例子，删除 id 为 1 的数据
 
-```Java
+```java
 DatabaseManager.getInstance().delete(PersonModel.class, PersonModel.PERSON_ID + " = ?", new String[] {"1"});
 ```
 
 这就表示删除 PersonModel 表中的 person_id 为 1 的数据。
 
-###6、select 数据
+## 6、select 数据
 
 如果需要查询整张表的数据，只需要按照下面的写法就可以咯：
 
-```Java
+```java
 DatabaseManager.getInstance().select(PersonModel.class, null, null, null, null, null, null, null);
 ```
 
 其实这么写还是多余了。所以，我觉得我应该添加这么个方法：
 
-```Java
+```java
 List<PersonModel> list = DatabaseManager.getInstance().select(PersonModel.class);
 ```
 
@@ -170,7 +173,7 @@ List<PersonModel> list = DatabaseManager.getInstance().select(PersonModel.class)
 
 其中 SQLiteDateBase 的 query 方法如下，可以根据这个方法的参数对应这来重载 select 方法，参数都是相同的：
 
-```Java
+```java
 /**
 * Query the given table, returning a {@link Cursor} over the result set.
 *

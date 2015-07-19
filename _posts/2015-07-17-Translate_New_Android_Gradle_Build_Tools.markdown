@@ -1,8 +1,12 @@
 ---
 layout: post
 title:  【翻-双语】一览新的 Android Gradle 构建工具：新的 DSL 结构 和 Gradle 2.5
+author: MrFu
 date:   2015-07-17 21:26:00
 categories: English
+header-img: "img/gradle-tools.jpg"
+tags:
+    - English
 ---
 
 > 译者地址：[【翻】一览新的 Android Gradle 构建工具：新的 DSL 结构 和 Gradle 2.5](http://mrfufufu.github.io/android/2015/07/17/New_Android_Gradle_Build_Tools.html)
@@ -34,7 +38,7 @@ Gradle Build Tools' version is declared in project's `build.gradle` like below:
 
 Gradle Build Tools 在项目中的 `build.gradle` 声明就像下面这样：
 
-```XML
+```xml
 dependencies {
     classpath 'com.android.tools.build:gradle:1.2.3'
 }
@@ -70,7 +74,7 @@ To try the new Gradle Build Tools, just simply change the build tools' version i
 
 尝试新的 Gradle Build Tools 只需要简单的在项目的 `build.gradle` 文件中更改 build tools 的版本：
 
-```XML
+```xml
 dependencies {
     classpath 'com.android.tools.build:gradle-experimental:0.1.0'
 }
@@ -80,7 +84,7 @@ Please note that this new version of build tools works with just-released Gradle
 
 请注意， 新版本的 build tools 要与刚刚发布的 Gradle 2.5 一起使用才行，所以你需要首先安装 Gradle2.5，在你的项目的 `gradle/gradle-wrapper.properties` 文件下修改 `distributionUrl` 这一行：
 
-```XML
+```xml
 distributionUrl=https\://services.gradle.org/distributions/gradle-2.5-bin.zip
 ```
 
@@ -96,7 +100,7 @@ And then modify module's `build.gradle` file from:
 
 然后修改 module 的 `build.gradle` 文件从这样：
 
-```XML
+```xml
 apply plugin: 'com.android.application'
 android {
     compileSdkVersion 22
@@ -126,7 +130,7 @@ to
 
 改成这样：
 
-```XML
+```xml
 apply plugin: 'com.android.model.application'
 
 model {
@@ -184,7 +188,7 @@ Android Studio 1.3 was proudly announced with full NDK Support. So let's give a 
 
 Android Studio 1.3 嘚瑟的宣布了完全支持 NDK。所以，让我们用一个非常简单的 native 代码例子来做尝试。首先，你需要在项目的 `local.properties` 文件里定义一个 NDK 的目录。请注意你可以在 [Android NDK Downloads Page](https://developer.android.com/ndk/downloads/index.html) 中显示的 NDK r10e 和在 SDK Manager 中显示的 NDK Bundle 都是可以使用的。
 
-```XML
+```xml
 ndk.dir=PATH_TO_NDK_ROOT
 ```
 
@@ -192,7 +196,7 @@ Create `HelloJni.java` somewhere in your java package.
 
 创建 `HelloJni.java` 放在你的 Java 包下。
 
-```Java
+```java
 public class HelloJni {
     public native String stringFromJNI();
 }
@@ -204,7 +208,7 @@ Make a **jni** folder inside **src/main** and create `hello-jni.c` file with the
 
 **hello-jni.c**
 
-```C
+```c
 #include <string.h>
 #include <jni.h>
 
@@ -266,7 +270,7 @@ Now let's test the JNI code in `MainActivity.java` by placing code below at the 
 
 现在，让我们在 `MainActivity.java` 中测试这段 JNI 代码，把下面这段代码放到 **MainActivity** 类的最后一行：
 
-```Java
+```java
 public class MainActivity extends AppCompatActivity {
     ...
     static {
@@ -274,12 +278,12 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 ```
-
+```java
 Modify `onCreate` like this.
 
 修改 `onCreate` 就像这样：
 
-```Java
+```java
 @Override
 protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);

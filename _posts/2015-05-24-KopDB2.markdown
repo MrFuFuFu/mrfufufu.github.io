@@ -1,8 +1,11 @@
 ---
 layout: post
 title:  KopDB 框架学习2——源码分析
+author: MrFu
 date:   2015-05-24 15:41:00
 categories: Android
+tags:
+    - Android
 ---
 
 上次我们主要是对 `KopDB` 框架的使用进行了分析，它是非常简单有用的。这次主要是对它的源码进行分析，进一步的来了解它的真面目。
@@ -15,13 +18,13 @@ categories: Android
 
 根据 ORM 模式的理念，我们每张表都应该对应一个模型，即，如果我们想要建一张 Person 表，就应该有一个 Person 类。
 
-##类关系图
+## 类关系图
 
 ![MrFuDB](https://raw.githubusercontent.com/MrFuFuFu/KopDB/master/Image/MrFuDB.png)
 
-##核心类功能的介绍：
+## 核心类功能的介绍：
 
-###1. BaseModel.java
+### 1. BaseModel.java
 
 所有的模型都应继承这个类，这个类的主要有两个方法：
 
@@ -29,36 +32,36 @@ categories: Android
 
 `getModels(Cursor curor):List<T>`: 为查询数据库操作以后得到的数据进行解析，返回对应的 model 类型 的List。方法是将查询完数据库以后会得到一个 Cursor，所有的查询操作得到值都通过这个变量返回，对这个 cursor 中的对应列的值映射到对应的 model 中去。
 
-###2. DatabaseManager.java
+### 2. DatabaseManager.java
 
 最主要用到的类就是`DatabaseManager`类的，通过这类，我们完全了所有的数据库的操作，包括建表，增删查改等操作。注意，需要通过单例得到它的实例，主要方法有：
 
-####a. 初始化操作
+#### a. 初始化操作
 
-```Java
+```java
 initDataBase(Context context, String dbName, int version, List<Class<?>> models)
 ```
 
 数据库的初始化相关的操作，dbName为数据库的名称，version 就是数据库的版本，models 为需要映射到数据库中去的 model，具体映射方法我们在`DatabaseTools.java`类中来讲。
 
-####b. 查询操作
+#### b. 查询操作
 
-```Java
+```java
 select(Class<T> claz, String[] columns, String selection, String[] selectionArgs, String groupBy, String having, String orderBy, String limit)
 ```
 
 直接通过 claz 拿到数据库名字，根据 SQLiteDatabase 的实例直接去进行 query 的操作，query 的到 Cursor 的对象，所有的数据都在这里面，然后调用`BaseModel.java`中的`getModels(Cursor curor)`方法得到 List 数据，即完成。
 
-####c. 插入操作
+#### c. 插入操作
 `insert` 插入操作，有4个重载方法，这里只分析
 
-```Java
+```java
 insert(Class<T> claz, T t, DBOperateAsyncListener listener)
 ```
 
 方法的实现，其他的大同小异。先是创建了 DBMsgObject<T> 对象，用来作为 Message 的 obj，所有的操作数据库操作都会到对应的 handle 去进行。具体 `insert` 方法如下：
 
-```Java
+```java
 public <T extends BaseModel> void insert(Class<T> claz, T t, DBOperateAsyncListener listener) {
     if (claz != null && t != null) {
         DBMsgObject<T> msgObj = new DBMsgObject<T>();//创建DBMsgObject 对象，作为Message 的 obj 
@@ -90,14 +93,14 @@ public <T extends BaseModel> void insert(Class<T> claz, T t, DBOperateAsyncListe
 ```
 如果是如下重载方法的话，只是对 models 多了一个 for 循环，具体代码就不再给出
 
-```Java
+```java
 insert(Class<T> claz, List<T> models, DBOperateAsyncListener listener)
 ```
 
-####d. 同步插入操作
+#### d. 同步插入操作
 `syncInsert` 同步插入操作，即在当前线程中去操作，而不是在子线程进行。除了`syncInsert`，其他所有的操作都是在 Handler 中完成的。代码如下：
 
-```Java
+```java
 public  <T extends BaseModel> long syncInsert( Class<T> claz, T value,boolean bNeedNotify) {
     if(appAppDatabase == null){
         return -1;
@@ -150,11 +153,11 @@ public  <T extends BaseModel> long syncInsert( Class<T> claz, T value,boolean bN
 }
 ```
 
-####e.更新操作
+#### e.更新操作
 
 大部分和 insert 相同，这里给出不同的地方，只要是增加了条件，需要更新的条件通过调用`getUniqueColumn(claz);`方法得到唯一列，`getUniqueColumn(claz);`内部是通过调用`getDatabaseFields(claz);`方法得到HashMap<DatabaseField,String>对象，这个里面是通过反射的方式解析出来得到这个 HaspMap 的。在`getUniqueColumn(claz);`中遍历这个 HashMap，判断 key: DatabaseField 中`unique()`为 true 的值。`getUniqueColumn(claz);`和`getDatabaseFields(claz)`方法的实现如下：
 
-```Java
+```java
 private <T extends BaseModel> String getUniqueColumn(Class<T> claz) {
     String unique = uniqueMap.get(claz);
     if (TextUtils.isEmpty(unique)) {
@@ -252,7 +255,7 @@ public static String getTypeSQL(Field field) {
 ```
 `Update` 的具体不同点的操作如下：完整的方法可以看 Github 上 lib 中的实现
 
-```Java
+```java
 if (contentValues != null) {
     String unique = getUniqueColumn(claz);//获取唯一列的列名，这个唯一列，是在 model 里定义的
     if (!TextUtils.isEmpty(unique)) {
@@ -273,19 +276,19 @@ if (contentValues != null) {
 }
 ```
 
-####f.替换操作
+#### f.替换操作
 
 replace 的操作和 `DatabaseManager`中的 `insert` 四个重载方法类似，只是Message 中的类型不同：
 
-```Java
+```java
 msg.what = DatabaseOptionType.OPTION_REPLACE.VALUE;
 ```
 
-####g.删除操作
+#### g.删除操作
 
 delete 的实现方式也比较简单，主要就是加入了删除的条件，具体可以看下面的代码，
 
-```Java
+```java
 public <T extends BaseModel> void delete(Class<T> claz, String whereClause, String[] whereArgs, DBOperateDeleteListener listener) {
     if (claz != null) {
         DBMsgObject<T> msgObj = new DBMsgObject<T>();
@@ -309,13 +312,13 @@ public <T extends BaseModel> void delete(Class<T> claz, String whereClause, Stri
 }
 ```
 
-###3、`DataBaseHandler.java`
+### 3、`DataBaseHandler.java`
 
 这个类的作用就是进行数据库的`insert`,`update`,`replace`,`delete`的处理。
 
-####我们通过 `insert` 方法来进行分析
+#### 我们通过 `insert` 方法来进行分析
 
-```Java
+```java
 private <T extends BaseModel> void insert(Message msg){
 	if(msg.obj == null){
 		return;
@@ -352,7 +355,7 @@ private <T extends BaseModel> void insert(Message msg){
 
 四个步骤，1.得到 Message 的消息对象，这个 Message 就是我们在`DatabaseManager.java`中设置的 Message；2. 根据 Class 得到表名；3. 进行数据库插入操作；4. 调用 `postToMainLoop(...)` 方法回调到主线程中去，`postToMainLoop(...)`方法如下：
 
-```Java
+```java
 private <T extends BaseModel> void postToMainLoop(final DBOperateAsyncListener listener,final DatabaseOptionType type,final Class<T> claz,final List<T> successModels,final List<T> failModels){
 	if(listener != null){
 		uiHandler.post(new Runnable() {
@@ -369,9 +372,9 @@ private <T extends BaseModel> void postToMainLoop(final DBOperateAsyncListener l
 }
 ```
 
-####update 操作在数据库操作的时候增加了条件判断，如下：
+#### update 操作在数据库操作的时候增加了条件判断，如下：
 
-```Java
+```java
 int count = database.update(tableName, condition.contentValues, condition.whereClause, condition.whereArgs);
 if(count > 0){//更新条数大于0，表示更新成功
 	successModels.add(condition.model);
@@ -380,9 +383,9 @@ if(count > 0){//更新条数大于0，表示更新成功
 }
 ```
 
-####replace 操作就更加简单啦，直接把 insert 换个单词就行 ^ ^ 
+#### replace 操作就更加简单啦，直接把 insert 换个单词就行 ^ ^ 
 
-```Java
+```java
 long id = database.replace(tableName, null, condition.contentValues);
 if(id != -1){
 	successModels.add(condition.model);
@@ -391,10 +394,10 @@ if(id != -1){
 }
 ```
 
-####delete 操作，我们直接代码搞起：
+#### delete 操作，我们直接代码搞起：
 
 
-```Java
+```java
 private <T extends BaseModel> void delete(Message msg){
 	if(msg.obj == null){
 		return;
@@ -432,7 +435,7 @@ private <T extends BaseModel> void delete(Message msg){
 }
 ```
 
-###4. `DatabaseTools.java`
+### 4. `DatabaseTools.java`
 
 这个类的作用是：
 
@@ -445,7 +448,7 @@ private <T extends BaseModel> void delete(Message msg){
 数据库创建时的相关操作：
 先建表，调用`generateCreateTableSQL(claz);`方法，再建索引`generateCreateTableIndexSQL(claz)`方法。具体实现如下：
 
-```Java
+```java
 /**
  * 创建表和相应的索引
  * @param claz
@@ -469,7 +472,7 @@ public static void onCreate(SQLiteDatabase db,Class<?> claz){
 
 
 
-```Java
+```java
 /**
  * 根据数据模型获取创建表的sql语句
  */
@@ -493,7 +496,7 @@ public static String generateCreateTableSQL(Class<?> claz) {
 ```
 
 
-```Java
+```java
 /**
  * 根据数据模型获取表的索引
  * @param claz

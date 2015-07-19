@@ -1,11 +1,14 @@
 ---
 layout: post
 title:  Records——VOA Special English
+author: MrFu
 date:   2015-06-22 19:49:00
 categories: English
+tags:
+    - English
 ---
 
-##Records VOA Special English
+## Records VOA Special English
 
 VOA Special English: Words And Their Stories ---- records blog
 
@@ -17,11 +20,11 @@ I hope I can keep it updated.
 
 Wish I could have been kept up to date.
 
-##Table
+## Table
 
 
-Time         | Title     
-:------------:|:-----------:
+|     Time   |   Title   |
+|------------|-----------|
 2015-05-26   | [Hold Your Horses!](http://www.51voa.com/VOA_Special_English/words-and-their-stories-hold-your-horses-idioms-expressions-63048.html)
 2015-05-27   | [Common French Words in American English](http://www.51voa.com/VOA_Special_English/french-words-in-american-english-62935.html)
 2015-05-28   | [Not All Mother Expressions Are As Nice As Mom](http://www.51voa.com/VOA_Special_English/mothers-day-expressions-62777.html)
@@ -42,5 +45,6 @@ Time         | Title
 07-04      | [Let's Do Business!](http://www.51voa.com/VOA_Special_English/lets-do-business-61200.html)
 07-05~06   | [Independence Day](http://www.51voa.com/VOA_Special_English/indepedence-day-63751.html)
 07-10,15   | [Are You in the Homeland Generation?](http://www.51voa.com/VOA_Special_English/are-you-in-the-homeland-generation-60669.html)
+07-16,17   | [What Is That Thing Called?](http://www.51voa.com/VOA_Special_English/what-is-this-thing-called-words-and-their-stories-63901.html)
 ...   | [...](...)
 
