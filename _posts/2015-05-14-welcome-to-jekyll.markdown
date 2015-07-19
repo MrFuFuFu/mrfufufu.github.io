@@ -3,9 +3,9 @@ layout: post
 title:  Hello, This is my first blog~~
 author: MrFu
 date:   2015-05-14 11:07:36
-categories: Android
+categories: Life
 tags:
-    - Android
+    - Life
 ---
 My name is Yuan Fu, I’m from China, developement Android of my job. Recently, I am learning English. Yes, Just you look it, My English is very bad, I had learning Enligsh 153 days, you can see here : [my shanbay page][shanbay].
 
