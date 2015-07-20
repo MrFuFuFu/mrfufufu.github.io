@@ -5,6 +5,8 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <ul class="list-inline text-center">
                     
+                    <!-- delete rss -->
+                    <!--
                     <li>
                         <a href="{{ "/feed.xml" | prepend: site.baseurl }}">
                             <span class="fa-stack fa-lg">
@@ -13,7 +15,7 @@
                             </span>
                         </a>
                     </li>
-                    
+                     -->
                     {% if site.github_username %}
                     <li>
                         <a target="_blank" href="https://github.com/{{ site.github_username }}">
@@ -59,6 +61,8 @@
                     </li>
                     {% endif %}
                     
+                    <!-- delete twitter -->
+                    <!--
                     {% if site.twitter_username %}
                     <li>
                         <a href="https://twitter.com/{{ site.twitter_username }}">
@@ -69,6 +73,7 @@
                         </a>
                     </li>
                     {% endif %}
+                    -->
                     
                 </ul>
                 <p class="copyright text-muted">Copyright &copy; {{ site.author }} {{ site.time | date: '%Y' }}</p>
