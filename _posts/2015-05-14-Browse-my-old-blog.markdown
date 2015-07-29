@@ -4,6 +4,7 @@ author: MrFu
 title:  浏览我旧的博客
 date:   2015-05-14 17:18:00
 categories: Android
+header-img: "img/post-bg-miui6.jpg"
 tags:
     - Android
 ---

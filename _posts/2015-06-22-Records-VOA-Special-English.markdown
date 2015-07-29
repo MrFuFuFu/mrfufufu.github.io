@@ -4,6 +4,7 @@ title:  Records——VOA Special English
 author: MrFu
 date:   2015-06-22 19:49:00
 categories: English
+header-img: "img/post-bg-rwd.jpg"
 tags:
     - English
 ---

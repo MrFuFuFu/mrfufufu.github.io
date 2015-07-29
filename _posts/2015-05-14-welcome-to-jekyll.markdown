@@ -4,6 +4,7 @@ title:  Hello, This is my first blog~~
 author: MrFu
 date:   2015-05-14 11:07:36
 categories: Life
+header-img: "img/post-bg-rwd.jpg"
 tags:
     - Life
 ---

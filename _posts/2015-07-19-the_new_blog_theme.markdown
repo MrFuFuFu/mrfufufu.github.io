@@ -4,6 +4,7 @@ title:  Hello, this is my new theme of blog
 author: MrFu
 date:   2015-07-19 19:57:00
 categories: Life
+header-img: "img/post-bg-os-metro.jpg"
 tags:
     - Life
 ---

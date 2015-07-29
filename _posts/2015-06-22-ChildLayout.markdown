@@ -4,6 +4,7 @@ title:  LinearLayout设置 weight 无法绘制的问题
 author: MrFu
 date:   2015-06-22 18:55:00
 categories: Android
+header-img: "img/post-bg-e2e-ux.jpg"
 tags:
     - Android
 ---

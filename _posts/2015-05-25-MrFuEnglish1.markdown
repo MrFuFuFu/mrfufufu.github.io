@@ -4,6 +4,7 @@ title:  英语学习的计划调整
 author: MrFu
 date:   2015-05-25 15:10:00
 categories: English
+header-img: "img/post-bg-rwd.jpg"
 tags:
     - English
 ---
