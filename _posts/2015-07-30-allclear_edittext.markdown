@@ -9,6 +9,15 @@ tags:
     - Android
 ---
 
+
+> 原文地址：[让你的 EditText 全部清除](http://mrfufufu.github.io/android/2015/07/30/allclear_edittext/)
+
+> 参考原文：[Giving your Edit Texts the All Clear](https://medium.com/engineering-at-depop/giving-your-edit-texts-the-all-clear-8ad2579a11ff)
+
+> 项目地址(欢迎 Star)：[ClearEditText](https://github.com/MrFuFuFu/ClearEditText)
+
+
+
 在输入文本的时候，通常当前输入的地方的末尾会有一个 'x' 来结束，它的作用是，如果我们想要清空这一整行输入的时候，点一下 'x' 就可以了。它的存在，还是很有必要的。
 
 然后，Android UI 组件并没有提供这样的功能，如果 Android 用户在输入了一段很长的文本的时候，发现他完全输错了，这时候想要删除整行内容的话，他必须一直按删除键，或者长按选中整段文字，然后删除。所以说，其实，这样一个简单 'x' 的存在是非常又必要的。
