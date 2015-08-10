@@ -29,10 +29,6 @@ header-img: "img/about-bg.jpg"
 [CSDN](http://blog.csdn.net/fu222cs98)
 
 
-### 我是丑陋无比的分割分割~~~~~~
-
-[TEST]({{site.baseUrl}}/src/index.html)
-
 
 
 
