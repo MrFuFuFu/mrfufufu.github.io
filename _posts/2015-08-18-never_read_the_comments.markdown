@@ -14,9 +14,6 @@ tags:
 > 原文链接：[Never Read The Comments](https://medium.com/@saraheadler/never-read-the-comments-9cba93b5712a)
 
 
-
-[[文件:Never_read_the_comments.png]]
-
 ## 前言
 
 ***翻译的...嗯…双语在下面….***
