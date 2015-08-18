@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  Never Read The Comments——永远不读评论
+title:  Never Read The Comments
+subtitle: "永远不读评论"
 author: MrFu
 date:   2015-08-18 20:44:00
 categories: English
