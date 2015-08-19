@@ -28,7 +28,7 @@ tags:
 
 我是一个全栈工程师，并且我在 Rails 这个 APP 上完全自定义了 Ruby，用来帮助处理我公司的新员工入职，培训和分析。我是一个 WordPress 开发者，在 world 上很多所谓的“牛逼”开发者拒绝阅读 WordPress 文档，在我们的多站点网络，我建立了跨站点自定义内容共享功能。
 
-我大学的学习的是新闻学和宗教学。[https://en.wikipedia.org/wiki/Larry_Wall Larry Wall]，Perl 的创造者，学习的是化学和音乐。比尔·盖茨甚至都没有毕业！我不是说我有比尔·盖茨这么牛逼，但是我想说，[只有27%的人大学毕业会从事他们做学的专业相关的工作](http://www.washingtonpost.com/blogs/wonkblog/wp/2013/05/20/only-27-percent-of-college-grads-have-a-job-related-to-their-major/)。
+我大学的学习的是新闻学和宗教学。[Larry Wall](https://en.wikipedia.org/wiki/Larry_Wall)，Perl 的创造者，学习的是化学和音乐。比尔·盖茨甚至都没有毕业！我不是说我有比尔·盖茨这么牛逼，但是我想说，[只有27%的人大学毕业会从事他们做学的专业相关的工作](http://www.washingtonpost.com/blogs/wonkblog/wp/2013/05/20/only-27-percent-of-college-grads-have-a-job-related-to-their-major/)。
 
 而且，Snapchat 和 FaceBook 都是在宿舍创建的并且吸引了众多牛逼的工程师团队，我大胆假设一个老板在20多岁时不会遭受严重的生命问题吧。我要承担风险并且说的真正的问题是：我是一个女人，我看来不像是一个你想要的 CTO。
 
@@ -73,7 +73,7 @@ tags:
 
 **I studied Journalism and Religious Studies in college. Larry Wall, the creator of Perl, studied chemistry and music. Bill Gates didn’t even graduate. I’m not saying I’m Bill Gates, but I am saying that only 27% of college graduates end up doing work related to their majors.**
 
-我大学的学习的是新闻学和宗教学。[https://en.wikipedia.org/wiki/Larry_Wall Larry Wall]，Perl 的创造者，学习的是化学和音乐。比尔·盖茨甚至都没有毕业！我不是说我有比尔·盖茨这么牛逼，但是我想说，[只有27%的人大学毕业会从事他们做学的专业相关的工作](http://www.washingtonpost.com/blogs/wonkblog/wp/2013/05/20/only-27-percent-of-college-grads-have-a-job-related-to-their-major/)。
+我大学的学习的是新闻学和宗教学。[Larry Wall](https://en.wikipedia.org/wiki/Larry_Wall)，Perl 的创造者，学习的是化学和音乐。比尔·盖茨甚至都没有毕业！我不是说我有比尔·盖茨这么牛逼，但是我想说，[只有27%的人大学毕业会从事他们做学的专业相关的工作](http://www.washingtonpost.com/blogs/wonkblog/wp/2013/05/20/only-27-percent-of-college-grads-have-a-job-related-to-their-major/)。
 
 **And, in a world where Snapchat and Facebook were built in dorm rooms and attracted great engineering teams, I’m going to guess that having a boss in their 20s isn’t cause for serious life-questioning either. I’m going to go out on a limb and say that the real problem is that I’m a woman, and I don’t look like you want a CTO to look.**
 
