@@ -103,7 +103,3 @@ compile 'com.android.support:percent:23.0.0'
 
 请去尝试一下，它是有助于让你的代码更加干净，更加好 =)
 
-
-![p11](https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/pic/11.png)
-Author: nuuneoi (Android GDE, CTO & CEO at The Cheese Factory)
-A full-stack developer with more than 6 years experience on Android Application Development and more than 12 years in Mobile Application Development industry. Also has skill in Infrastucture, Service Side, Design, UI&UX, Hardware, Optimization, Cooking, Photographing, Blogging, Training, Public Speaking and do love to share things to people in the world!
