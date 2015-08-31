@@ -3,7 +3,7 @@ layout: post
 title:  百分比布局支持库
 subtitle: RelativeLayout 和 FrameLayout 的尺寸用 % 来表示
 author: MrFu
-date:   2015-07-30 16:10:00
+date:   2015-08-31 17:52:00
 categories: Android
 header-img: "img/percentcover.jpg"
 tags:
