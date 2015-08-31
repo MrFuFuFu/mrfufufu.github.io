@@ -13,7 +13,7 @@ tags:
 
 > 原文地址：[百分比布局支持库](http://mrfu.me/android/2015/08/31/percent_support_library/)
 
-> 参考原文：[Giving your Edit Texts the All Clear](http://inthecheesefactory.com/blog/know-percent-support-library/en)
+> 参考原文：[Percent Support Library: Bring dimension in % to RelativeLayout and FrameLayout](http://inthecheesefactory.com/blog/know-percent-support-library/en)
 
 
 虽然有很多的布局可以在 Android 应用程序开发的世界供我们使用，但我们总是只用这三种布局：LinearLayout, RelativeLayout and FrameLayout。
