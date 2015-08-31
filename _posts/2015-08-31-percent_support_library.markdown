@@ -11,7 +11,7 @@ tags:
 ---
 
 
-> 原文地址：[让你的 EditText 全部清除](http://mrfufufu.github.io/android/2015/07/30/allclear_edittext/)
+> 原文地址：[百分比布局支持库](http://mrfu.me/android/2015/08/31/percent_support_library/)
 
 > 参考原文：[Giving your Edit Texts the All Clear](http://inthecheesefactory.com/blog/know-percent-support-library/en)
 
