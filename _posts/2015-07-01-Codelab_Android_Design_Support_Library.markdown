@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  【翻】Android Design Support Library 的 代码实验——几行代码，让你的 APP 变得花俏
+title:  Android Design Support Library 的 代码实验——几行代码，让你的 APP 变得花俏
 author: MrFu
 date:   2015-07-01 20:56:00
 categories: Android

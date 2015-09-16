@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  【翻】一览新的 Android Gradle 构建工具：新的 DSL 结构 和 Gradle 2.5
+title:  一览新的 Android Gradle 构建工具：新的 DSL 结构 和 Gradle 2.5
 author: MrFu
 date:   2015-07-17 21:27:00
 categories: Android
