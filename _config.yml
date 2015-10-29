@@ -1,31 +1,87 @@
 # Site settings
-title: MrFu-傅圆的个人博客
-author: MrFu
+title: MrFu Blog
+SEOTitle: 傅圆的博客 | MrFu Blog
 header-img: img/home-bg.jpg
-background-color: black
 email: mrfuyuan@gmail.com
-description: 我叫傅圆，我是一名 Android 开发者.
+description: "我叫傅圆，我是一名 Android 开发者."
+keyword: “傅圆, MrFu, 傅傅傅先生, MrFuFuFu, Mr.Fu, @傅圆, 傅圆的博客, MrFu Blog, 博客, 个人网站, 互联网, Android"
+url: "http://mrfu.me"
 baseurl: ""
-url: "http://mrfufufu.github.io/"
-twitter_username: 15068728607
+
+
+
+# SNS settings
+RSS: false
+#twitter_username: 15068728607
 github_username:  mrfufufu
 facebook_username:  mrfufufu
 linkedin_username: mrfufufu
 instagram_username: mrfufufufu
 
+
 # Build settings
-markdown: kramdown 
-
-# markdown: redcarpet
-# redcarpet can auto highlight code, but the lack of header-id make the catalog impossible 
-
 highlighter: pygments
 permalink: pretty
 paginate: 20
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 
-# use Github Flavored Markdown !important
+
+# PAGINATION
+gems: [jekyll-paginate]
+paginate: 5
+paginate_path: "page:num"
+
+
+
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
 # document: http://jekyllrb.com/docs/configuration/#kramdown
-
+markdown: kramdown
 kramdown:
-  input: GFM
+  input: GFM                            # use Github Flavored Markdown !important
+
+
+
+# Duoshuo settings
+duoshuo_username: mrfu
+# Share component is depend on Comment so we can NOT use share only.
+duoshuo_share: true                     # set to false if you want to use Comment without Sharing
+
+
+
+
+# Analytics settings
+# Baidu Analytics
+ba_track_id: c3407349cc1129e07d0c33c8714b6175
+# Google Analytics
+ga_track_id: 'UA-69471101-1'            # Format: UA-xxxxxx-xx
+ga_domain: mrfu
+
+
+
+# Sidebar settings
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "开朗 活跃 靠谱 好人 | 航模 马拉松 电影"
+sidebar-avatar: /img/avatar-mrfu.png     # use absolute URL.
+
+
+
+# Featured Tags
+featured-tags: true                     # whether or not using Feature-Tags
+featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+
+
+
+# Friends
+friends: [
+    {
+        title: "程序亦非猿的OnePiece",
+        href: "http://yifeiyuan.me/"
+    },{
+        title: "y521263的专栏",
+        href: "http://blog.csdn.net/y521263"
+    }
+]
+

@@ -1,0 +1,63 @@
+---
+layout: page
+title: "About"
+description: "Hey, this is MrFu."
+header-img: "img/about-bg.jpg"
+---
+
+<div class="zh">
+    <blockquote>
+        开朗 活跃 靠谱 好人 | 航模 马拉松 电影
+    </blockquote>
+
+    <p>我叫傅圆，我是一名来自中国的 Android 开发者，你可以通过这些地方找到我或者看到我，^ ^</p>
+
+    <p>mrfuyuan@gmail.com</p>
+
+    <p><a href="https://github.com/MrFuFuFu">Github</a></p>
+    <p><a href="https://cn.linkedin.com/pub/yuan-fu/bb/69/368">LinkedIn</a></p>
+    <p><a href="http://www.jianshu.com/users/c1b9d1faa7b5/latest_articles">简书</a></p>
+    <p><a href="https://www.facebook.com/profile.php?id=100006538561748">Facebook</a></p>
+    <p><a href="https://twitter.com/15068728607">Twitter</a></p>
+    <p><a href="https://instagram.com/mrfufufufu/">Instagram</a></p>
+    <p><a href="http://www.shanbay.com/bdc/review/progress/12563734">扇贝</a></p>
+    <p><a href="http://www.zhihu.com/people/fu-yuan-58">知乎</a></p>
+    <p><a href="http://blog.csdn.net/fu222cs98">CSDN</a></p>
+</div>
+
+
+{% if site.duoshuo_username %}
+<!-- 多说评论框 start -->
+    <div class="comment">
+        <div class="ds-thread"
+        {% if site.duoshuo_username == "huxblog" %}
+            data-thread-id="1187623191091085319"
+        {% else %}
+            data-thread-key="{{site.duoshuo_username}}/about"
+        {% endif %}
+
+        data-title="{{page.title}}"
+        data-url="{{site.url}}/about/"></div>
+    </div>
+<!-- 多说评论框 end -->
+
+<!-- Duoshuo hacking -->
+<input id="dsUser" type="hidden" value="{{site.duoshuo_username}}"  />
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User hacking by Hux
+    var _user = document.getElementById('dsUser').value;
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+{% endif %}
