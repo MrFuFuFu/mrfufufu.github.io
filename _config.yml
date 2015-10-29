@@ -64,7 +64,7 @@ ga_domain: mrfu
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "开朗 活跃 靠谱 好人 | 航模 马拉松 电影"
-sidebar-avatar: /img/avatar-mrfu.png     # use absolute URL.
+sidebar-avatar: img/avatar-mrfu.png     # use absolute URL.
 
 
 
