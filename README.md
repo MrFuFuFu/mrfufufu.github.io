@@ -1,6 +1,16 @@
 [MrFu.Me](http://mrfu.me/)
 =====================
 
+##### Version2.0
+
+From [HuangXuan](http://huangxuan.me/), modify by [New Feature (V1.5)](https://github.com/Huxpro/huxpro.github.io#new-feature-v15)
+
+##### Version1.0
+
+[Old Version](https://github.com/MrFuFuFu/mrfufufu.github.io/tree/master/version)
+
+#### About
+
 最近翻译了两篇 [The Cheese Factory](http://inthecheesefactory.com/blog) 的 blog，所以，这家网站上的略微多了点，然后一不小心在看 jekyll 主题的时候发现了现在使用的这个主题，顺藤摸瓜，找到了这个 [Clean Blog](https://github.com/IronSummitMedia/startbootstrap-clean-blog-jekyll)，是从 jekyll 的一个主题网站 [jekyllthemes](http://jekyllthemes.org/) 的 [jekyllthemes -- Clean Blog](http://jekyllthemes.org/themes/clean-blog/) 上看到的，又顺藤摸瓜（大夏天的，老是摸瓜...）在知乎上看到了 [黄玄](http://www.zhihu.com/people/huxpro) 的回答 [有推荐的简洁明快的jekyll模板吗？](http://www.zhihu.com/question/20223939/answer/50966881)，这位大帅哥的 [博客](http://huangxuan.me/) 就是基于 [Clean Blog](https://github.com/IronSummitMedia/startbootstrap-clean-blog-jekyll) 修改的。他说，他是这么改的：
 
 >* 添加了对标签的全套支持（原主题不支持 Tags ）
