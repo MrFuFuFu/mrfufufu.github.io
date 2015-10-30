@@ -5,6 +5,9 @@
 
 From [HuangXuan](http://huangxuan.me/), modify by [New Feature (V1.5)](https://github.com/Huxpro/huxpro.github.io#new-feature-v15)
 
+>* Add comment, previous, I think it’s unnecessary. But many people ask me why my blog no comment tools in [jianshu](http://www.jianshu.com/users/c1b9d1faa7b5/latest_articles). so, in this version, I add it.
+
+
 ##### Version1.0
 
 [Old Version](https://github.com/MrFuFuFu/mrfufufu.github.io/tree/master/version)
