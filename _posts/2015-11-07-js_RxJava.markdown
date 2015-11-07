@@ -1,10 +1,10 @@
 ---
 layout:     keynote
-title:      指尖上的RxJava
-subtitle:   Keynote: A finger tips of RxJava
-iframe:     http://mrfu.me/rxjava-keynote/
+title:      "指尖上的RxJava"
+subtitle:   "Keynote: A finger tips of RxJava"
+iframe:     "http://mrfu.me/rxjava-keynote/"
 date:       2015-11-07
-author:     MrFu
+author:     "MrFu"
 header-img: "img/post-bg-js-version.jpg"
 tags:
     - Android
@@ -18,7 +18,7 @@ RxJava
 
 ### [Watch Slides →](http://mrfu.me/rxjava-keynote)
 
-<img src="http://huangxuan.me/js-module-7day/attach/qrcode.png" width="350" height="350"/>
+
 
 <small class="img-hint">你也可以通过扫描二维码在手机上观看</small>
 
