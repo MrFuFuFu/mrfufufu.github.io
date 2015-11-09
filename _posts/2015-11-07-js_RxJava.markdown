@@ -18,7 +18,7 @@ RxJava
 
 ### [Watch Slides →](http://mrfu.me/rxjava-keynote)
 
-<img src="http://mrfu.me/rxjava-keynote/attach/qrcode.png" width="350" height="350"/>
+<img src="http://mrfu.me/rxjava-keynote/attach/qrcode.png" width="300" height="300"/>
 
 
 
