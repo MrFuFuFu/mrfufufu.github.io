@@ -11,7 +11,7 @@ tags:
 ---
 
 
-> 原文地址：[保持 EditText 的简洁](http://mrfu.me/android/2015/11/16/Keeping_it_clean/)
+> 原文地址：[保持 EditText 的简洁](http://mrfu.me/android/2015/11/15/Keeping_it_clean/)
 
 > 翻译原文：[Keeping it clean](https://medium.com/engineering-at-depop/keeping-it-clean-bba792c001bf)
 
