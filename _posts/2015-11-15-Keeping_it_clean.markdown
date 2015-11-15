@@ -15,23 +15,25 @@ tags:
 
 > 翻译原文：[Keeping it clean](https://medium.com/engineering-at-depop/keeping-it-clean-bba792c001bf)
 
+> 项目地址(欢迎 Star)：[ClearEditText](https://github.com/MrFuFuFu/ClearEditText/tree/textWatchers)
+
 
 ![keeping-it-clean](/img/keeping-it-clean.jpeg)
 
 
-在 Android design support 包中提供了一种在输入不合适字符时一直显示的提示方式来显示，现在已经开始在更多的应用上被使用了；这些 Android app 在显示他们的错误错误提示时采用的不同的方式常常让人感觉非常的不和谐。
+在 Android design support 包中提供了一种在输入不合适字符时一直显示的提示方式来显示，现在已经开始在更多的应用上被使用了；这些 Android app 在显示他们的错误提示时采用的不同的方式常常让人感觉非常的不和谐。
 
 即这个一直显示的错误消息是在 TextInputLayout 中的 EditText 周围的。这也是，作为一个奖励，提供了材料设计风格中，活泼的浮动标签在一个 APP 的用户体验中常常是最无聊的部分。
 
->每次一个新版本【指Android support library】发布的时候我就像一个小孩在过圣诞节：我冲下楼去看圣诞老人送来的新玩具是什么，但是发现他带来新玩具的时候，我的新玩具火车缺少一些零件，圣诞老人弄坏了一些我最喜欢的玩具，还把烟囱里的烟灰踩到了地摊上。
+>每次一个新版本【指Android support library】发布的时候我就像一个小孩在过圣诞节：我冲下楼去看圣诞老人送来的新玩具是什么，但是发现他带来新玩具的时候，我的新玩具火车缺少一些零件，他还弄坏了一些我最喜欢的玩具，还把烟囱里的烟灰踩到了地摊上。
 
 在这篇文章中，我将讨论如何在你的输入表单上去创建一个通用的、可重用的组件来实现所有的字段验证。因为你想要在用户改正了错误的输入时就去隐藏错误提示。我们可以通过使用 TextWatchers 来实现验证。
 
-不幸的是，在最新的support library (23.1)中，一旦你隐藏了错误提示，让它们再显示的时候，会有一个 bug。所以这个例子是建立在这个 23.0.1 support library 上的。此时我对这个 support library 是又爱又恨的关系——每次一个新版本发布的时候我就像一个小孩在过圣诞节：我冲下楼去看圣诞老人送来的新玩具是什么，但是发现他带来新玩具的时候，我的新玩具火车缺少一些零件，圣诞老人弄坏了一些我最喜欢的玩具，还把烟囱里的烟灰踩到了地摊上。
+不幸的是，在最新的support library (23.1)中，一旦你隐藏了错误提示，让它们再显示的时候，会有一个 bug。所以这个例子是建立在这个 23.0.1 support library 上的。此时我对这个 support library 是又爱又恨的关系——每次一个新版本发布的时候我就像一个小孩在过圣诞节：我冲下楼去看圣诞老人送来的新玩具是什么，但是发现他带来新玩具的时候，我的新玩具火车缺少一些零件，他还弄坏了一些我最喜欢的玩具，还把烟囱里的烟灰踩到了地摊上。
 
 ## 创建我们通用的类
 
-把我的小埋怨放到一边，让我们创建一个实现了 TextWatcher 的接口的抽象的 ErrorTextWatcher 类。对于这个简单的例子，我想说我们的 TextWatcher 总是带有 TextInputLayout，而且它可以显示一个简单的错误消息。你的用户体验设计团队可能想要显示不同的错误——如：“密码不能为空”，“密码必须包含至少一个数字”，“请输入至少 4 个字符”等。—— 但为了简单起见，每个 TextWatcher 我将展示如何实现一个简单的消息。
+把我的小埋怨放到一边，让我们创建一个实现了 TextWatcher 的接口的抽象的 ErrorTextWatcher 类。对于这个简单的例子，我想说我们的 TextWatcher 总是带有 TextInputLayout，而且它可以显示一个简单的错误消息。你的用户体验设计团队可能想要显示不同的错误——如：“密码不能为空”，“密码必须包含至少一个数字”，“请输入至少 4 个字符”等。—— 但为了简单起见，每个 TextWatcher 我将只展示如何实现一个简单的消息。
 
 ```java
 public abstract class ErrorTextWatcher implements TextWatcher {
@@ -76,7 +78,7 @@ protected void showError(final boolean error) {
 }
 ```
 
-在我的代码上，这个库在这里有另外一个功能：在我看来通过设置错误的 enabled 为 false，你就应该能隐藏错误，但是这会让 EditText 的下划线仍然显示不正确的颜色，所以你既需要设置错误消息为空，也需要让下划线的颜色恢复。同样，如果你不断地设置相同的错误字符串，这个错误消息会随着动画不断的闪烁，所以只有当错误消息有新的值时才要去重写。
+在我的代码上，这个库在这里有另外一个功能：在我看来通过设置错误提示的 enabled 为 false，你就应该能隐藏错误提示，但是这会让 EditText 的下划线仍然显示不正确的颜色，所以你既需要设置错误提示为空，也需要让下划线的颜色恢复。同样，如果你不断地设置相同的错误字符串，这个错误提示会随着动画不断的闪烁，所以只有当错误提示有新的值时才要去重写。
 
 最后，当焦点在 TextWatcher 内的 EditText 上时，我有一点点调皮的要求 ——当你看到我是如何验证输入表单的，希望你能明白我为什么这么做，但是对于你的需求，你可能想要把这段逻辑移到其他地方。
 
@@ -102,7 +104,7 @@ public class MinimumLengthTextWatcher extends ErrorTextWatcher {
     }
 ```
 
-这里有两个构造方法：一个是具有默认的消息，还有一个是对于特殊的文本字段你可以创建一个更具体的值。因为我们想要支持本地化，我们采用 Android string 资源文件，而不是硬编码 String 的值。
+这里有两个构造方法：一个是具有默认的消息，还有一个是对于特殊的文本字段你可以创建一个更具体的值。因为我们想要支持当地化，我们采用 Android string 资源文件，而不是硬编码 String 的值。
 
 我们文本的改变和验证方法现在已经像下面这样简单的实现了：
 
@@ -203,7 +205,10 @@ private boolean allFieldsAreValid() {
 }
 ```
 
-你可以找到上述所有代码的例子在 [GitHub](https://github.com/depop/ClearableEditText/tree/textWatchers) 上。这是一个在 ClearableEditText 上的分支，我是基于 [Giving your Edit Texts the All Clear](https://medium.com/engineering-at-depop/giving-your-edit-texts-the-all-clear) 这篇博客上的代码来进行阐述的，但是把它用在标准的 EditText 上也是一样的。它还包括了一些更多的技巧和 bug 处理，我没有时间在这里提了。
+你可以找到上述所有代码的例子在 [GitHub](https://github.com/MrFuFuFu/ClearEditText/tree/textWatchers)[^clearGithub] 上。这是一个在 ClearableEditText 上的分支，我是基于 [让你的 EditText 全部清除](http://mrfu.me/android/2015/07/30/allclear_edittext/)[^clearBlog] 这篇博客上的代码来进行阐述的，但是把它用在标准的 EditText 上也是一样的。它还包括了一些更多的技巧和 bug 处理，我没有时间在这里提了。
 
 尽管我只显示了两个 TextWatcher 的例子，但我希望你能看到这是多么简单，你现在能添加其他的 TextWatcher 去给任何文本输入添加不同的验证方法，并在你的 APP 中去请求验证和重用。
 
+[^clearGithub]: [ClearableEditText](https://github.com/depop/ClearableEditText/tree/textWatchers)
+
+[^clearBlog]: [Giving your Edit Texts the All Clear]( https://medium.com/engineering-at-depop/giving-your-edit-texts-the-all-clear)
