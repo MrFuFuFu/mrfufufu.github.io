@@ -15,6 +15,9 @@ tags:
 
 RxJava
 
+这是我在我们无线内部技术分享会上分享的一篇关于响应式编程以 RxJava 的形式应用在 Android 上的文章，做成了 Keynote 的形式。
+
+
 
 ### [Watch Slides →](http://mrfu.me/rxjava-keynote)
 
