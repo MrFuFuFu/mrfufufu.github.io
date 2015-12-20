@@ -29,7 +29,7 @@ anchorjs: true                          # if you want to customize anchor. check
 
 # PAGINATION
 gems: [jekyll-paginate]
-paginate: 20
+paginate: 50
 paginate_path: "page:num"
 
 
