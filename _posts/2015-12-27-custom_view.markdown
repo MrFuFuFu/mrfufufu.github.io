@@ -36,7 +36,8 @@ private int measureWidth(int measureSpec){
 		result = specSize;
 	}else{
 		result = 200;//先设置一个默认大小
-		if(specMode == MeasureSpec.AT_MOST){//最大值模式，layout_width 或 layout_height 为 wrap_content 时，控件大小随控件的内容变化而变化，此时控件尺寸只要不超过父控件允许的最大尺寸即可。
+		//最大值模式，layout_width 或 layout_height 为 wrap_content 时，控件大小随控件的内容变化而变化，此时控件尺寸只要不超过父控件允许的最大尺寸即可。
+		if(specMode == MeasureSpec.AT_MOST){
 			result = Math.min(result, specSize);//取出我们指定的大小和 specSize 中最小的一个来作为最后的测量值
 		}
 		//MeasureSpec.UNSPECIFIED 不指定其大小，View 想多大就多大
@@ -58,14 +59,15 @@ Canvas canvas = new Canvas(bitmap);
 传进去的 bitmap 是与这个 bitmap 创建的 Canvas 画布紧密联系的，这个过程称为装载画布。该 bitmap 用来存储所有绘制在 Canvas 上的像素信息。所有的 Canvas.drawXXX 方法都发生在这个 bitmap 上。
 
 ```java
-public void onDraw(Canvas canvas){
+@Override
+protected void onDraw(Canvas canvas){
 	//...
 	//在 onDraw 方法中绘制两个 bitmap
 	canvas.drawBitmap(bitmap1, 0, 0, null);
 	canvas.drawBitmap(bitmap2, 0, 0, null);
 	//...
 }
-public void otherMethod(){
+private void otherMethod(){
 	//将 bitmap2 装载到另一个 Canvas 对象中
 	Canvas mCanvas = new Canvas(bitmap2);
 	//其他地方使用 Canvas 对象的绘图方法在装载 bitmap2 的 Canvas 对象上进行绘图
@@ -79,7 +81,7 @@ public void otherMethod(){
 
 当 ViewGroup 的大小为 wrap_content 时，ViewGroup 需要对子 View 进行遍历，以便获得所有子 View 大小从而决定自己的大小，即调用子 View 的 Measure 方法来获得每一个子 View 的测量结果。
 
-子 View 测量完毕吼，ViewGroup 执行 Layout 过程时，同样是遍历调用子 View 的 Layout 方法，并指定其具体显示的位置，从而来决定其布局位置。
+子 View 测量完毕后，ViewGroup 执行 Layout 过程时，同样是遍历调用子 View 的 Layout 方法，并指定其具体显示的位置，从而来决定其布局位置。
 
 ## 自定义 View
 
