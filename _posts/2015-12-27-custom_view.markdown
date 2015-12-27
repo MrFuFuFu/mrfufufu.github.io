@@ -4,7 +4,7 @@ title:  Android 控件架构与自定义控件详解
 subtitle: 《Android 群英传》读书笔记
 author: MrFu
 date:   2015-12-27 14:22:00
-header-img: "img/post-bg-custom-view.jpg"
+header-img: "img/post-bg-android-heros.jpg"
 tags:
     - Android
 ---
