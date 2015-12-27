@@ -228,9 +228,9 @@ ViewGroupA onTouchEvent
 
 即：
 
-* **分发、拦截**：如果某个 ViewGroup 直接使用 `dispatchTouchEvent()` 返回了 true ，则不再向其子 View 传递，则，直接执行该 ViewGroup 的 `onTouchEvent()`，然后继续向上处理对应 ViewGroup 的 `onTouchEvent()`。
+* **分发、拦截**：如果某个 ViewGroup 直接使用 `dispatchTouchEvent()` 返回了 true ，则分发拦截结束，不再向其子 View 传递，则，直接执行该 ViewGroup 的 `onTouchEvent()`，然后继续向上*处理*对应 ViewGroup 的 `onTouchEvent()`。
 
-* **处理**：如果某个 View 直接在 `onTouchEvent()` 中返回了 true。则上级不再执行 `onTouchEvent()`。所有的处理在此结束。
+* **处理**：如果某个 View 直接在 `onTouchEvent()` 中返回了 true。则上级不再执行 `onTouchEvent()`。所有的*处理*在此结束。
 
 
 
