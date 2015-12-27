@@ -207,7 +207,7 @@ public void computeScroll(){
 
 ## 事件拦截机制
 
-![tu1](/img/article/custom_view_viewgroup.png)
+![custom_view_viewgroup](/img/article/custom_view_viewgroup.jpeg)
 
 点击 View 的 log:
 
