@@ -24,25 +24,25 @@ tags:
 ```java
 @Override
 protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec){
-	setMeasureDimension(measureWidth(widthMeasureSpec), measureHeight(heightMeasureSpec));
+    setMeasureDimension(measureWidth(widthMeasureSpec), measureHeight(heightMeasureSpec));
 }
 
 //可作为模板代码！
 private int measureWidth(int measureSpec){
-	int result = 0;
-	int specMode = MeasureSpec.getMode(measureSpec);
-	int specSize = MeasureSpec.getSize(measureSpec);
-	if(specMode == MeasureSpec.EXACTLY){//精确值模式，指定具体数值
-		result = specSize;
-	}else{
-		result = 200;//先设置一个默认大小
-		//最大值模式，layout_width 或 layout_height 为 wrap_content 时，控件大小随控件的内容变化而变化，此时控件尺寸只要不超过父控件允许的最大尺寸即可。
-		if(specMode == MeasureSpec.AT_MOST){
-			result = Math.min(result, specSize);//取出我们指定的大小和 specSize 中最小的一个来作为最后的测量值
-		}
-		//MeasureSpec.UNSPECIFIED 不指定其大小，View 想多大就多大
-	}
-	return result;
+    int result = 0;
+    int specMode = MeasureSpec.getMode(measureSpec);
+    int specSize = MeasureSpec.getSize(measureSpec);
+    if(specMode == MeasureSpec.EXACTLY){//精确值模式，指定具体数值
+        result = specSize;
+    }else{
+        result = 200;//先设置一个默认大小
+        //最大值模式，layout_width 或 layout_height 为 wrap_content 时，控件大小随控件的内容变化而变化，此时控件尺寸只要不超过父控件允许的最大尺寸即可。
+        if(specMode == MeasureSpec.AT_MOST){
+            result = Math.min(result, specSize);//取出我们指定的大小和 specSize 中最小的一个来作为最后的测量值
+        }
+        //MeasureSpec.UNSPECIFIED 不指定其大小，View 想多大就多大
+    }
+    return result;
 }
 ```
 
@@ -61,17 +61,17 @@ Canvas canvas = new Canvas(bitmap);
 ```java
 @Override
 protected void onDraw(Canvas canvas){
-	//...
-	//在 onDraw 方法中绘制两个 bitmap
-	canvas.drawBitmap(bitmap1, 0, 0, null);
-	canvas.drawBitmap(bitmap2, 0, 0, null);
-	//...
+    //...
+    //在 onDraw 方法中绘制两个 bitmap
+    canvas.drawBitmap(bitmap1, 0, 0, null);
+    canvas.drawBitmap(bitmap2, 0, 0, null);
+    //...
 }
 private void otherMethod(){
-	//将 bitmap2 装载到另一个 Canvas 对象中
-	Canvas mCanvas = new Canvas(bitmap2);
-	//其他地方使用 Canvas 对象的绘图方法在装载 bitmap2 的 Canvas 对象上进行绘图
-	mCanvas.drawXXX
+    //将 bitmap2 装载到另一个 Canvas 对象中
+    Canvas mCanvas = new Canvas(bitmap2);
+    //其他地方使用 Canvas 对象的绘图方法在装载 bitmap2 的 Canvas 对象上进行绘图
+    mCanvas.drawXXX
 }
 ```
 
@@ -88,9 +88,9 @@ private void otherMethod(){
 ```java
 @Override
 protected void onDraw(Canvas canvas){
-	//在回调父类方法前，对 TextView 来说是在绘制文本内容之前，实现逻辑
-	super.onDraw(canvas);
-	//之后，绘制文本之后
+    //在回调父类方法前，对 TextView 来说是在绘制文本内容之前，实现逻辑
+    super.onDraw(canvas);
+    //之后，绘制文本之后
 }
 ```
 
@@ -114,13 +114,13 @@ ta.recycle();
 ```java
 @override
 protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec){
-	super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-	int count = getChildCount();
-	//遍历通知子 View 对其自身进行测量
-	for(int i = 0;i < count; ++i){
-		View childView = getChildAt(i);
-		measureChild(childView, widthMeasureSpec, heightMeasureSpec);
-	}
+    super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+    int count = getChildCount();
+    //遍历通知子 View 对其自身进行测量
+    for(int i = 0;i < count; ++i){
+        View childView = getChildAt(i);
+        measureChild(childView, widthMeasureSpec, heightMeasureSpec);
+    }
 }
 ```
 
@@ -129,18 +129,18 @@ protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec){
 ```java
 @Override
 protected void onLayout(boolean changed, int l, int t, int r, int b){
-	int childCount = getChildCount();
-	//设置 ViewGroup 高度
-	MarginLayoutParams mlp = (MarginLayoutParams)getLayoutParams();
-	mlp.height = mScreenHeight.childCount;
-	setLayoutParams(mlp);
-	//修改子 View 的 top 和 bottom 属性，使它们依次排列
-	for(int i=0; i<childCount; i++){
-		View child = getChildAt(t);
-		if(child.getVisibility() != View.GONE){
-			child.layout(l, i*mScreenHeight, r, (i+1)*mScreenHeight);
-		}
-	}
+    int childCount = getChildCount();
+    //设置 ViewGroup 高度
+    MarginLayoutParams mlp = (MarginLayoutParams)getLayoutParams();
+    mlp.height = mScreenHeight.childCount;
+    setLayoutParams(mlp);
+    //修改子 View 的 top 和 bottom 属性，使它们依次排列
+    for(int i=0; i<childCount; i++){
+        View child = getChildAt(t);
+        if(child.getVisibility() != View.GONE){
+            child.layout(l, i*mScreenHeight, r, (i+1)*mScreenHeight);
+        }
+    }
 }
 ```
 
@@ -150,46 +150,46 @@ protected void onLayout(boolean changed, int l, int t, int r, int b){
 ```java
 @Override
 public boolean onTouchEvent(MotionEvent event){
-	int y = (int)event.getY();
-	switch(event.getAction()){
-		case MotionEvent.ACTION_DOWN:
-			mLastY = y;
-			mStart = getScrollY();//记录按下位置
-			break;
-		case MotionEvent.ACTION_MOVE:
-			if(!mScroller.isFinished()){
-				mScroller.abortAnimation();
-			}
-			int dy = mLastY - y;
-			if(getScrollY() < 0){
-				dy = 0;
-			}
-			if(getScrollY() >getHeight - mScreenHeight){
-				dy = 0;
-			}
-			scrollBy(0, dy);//随手指滚动 dy
-			mLastY = y;
-			break;
-		case MotionEvent.ACTION_UP:
-			mEnd = getScrollY();
-			int dScrollY = mEnd - mStart;
-			if(dScrollY > 0){//上滑
-				if(dScrollY < mScreenHeight / 3){//小于一定距离, 滚回去
-					mScroller.startScroll(0,getScrollY(), 0, -dScrollY);
-				}else{//大于，则滚动完剩余的距离
-					mScroller.startScroll(0,getScrollY(), 0, mScreenHeight-dScrollY);
-				}
-			}else{//同理
-				if(-dScrollY < mScreenHeight /3){
-					mScroller.startScroll(0, getScrollY(), 0, -dScrollY);
-				}else{
-					mScroller.startScroll(0, getScrollY(), 0, -mScreenHeight - dScrollY);
-				}
-			}
-			break;
-	}
-	postInvalidata();
-	return true;
+    int y = (int)event.getY();
+    switch(event.getAction()){
+        case MotionEvent.ACTION_DOWN:
+            mLastY = y;
+            mStart = getScrollY();//记录按下位置
+            break;
+        case MotionEvent.ACTION_MOVE:
+            if(!mScroller.isFinished()){
+                mScroller.abortAnimation();
+            }
+            int dy = mLastY - y;
+            if(getScrollY() < 0){
+                dy = 0;
+            }
+            if(getScrollY() >getHeight - mScreenHeight){
+                dy = 0;
+            }
+            scrollBy(0, dy);//随手指滚动 dy
+            mLastY = y;
+            break;
+        case MotionEvent.ACTION_UP:
+            mEnd = getScrollY();
+            int dScrollY = mEnd - mStart;
+            if(dScrollY > 0){//上滑
+                if(dScrollY < mScreenHeight / 3){//小于一定距离, 滚回去
+                    mScroller.startScroll(0,getScrollY(), 0, -dScrollY);
+                }else{//大于，则滚动完剩余的距离
+                    mScroller.startScroll(0,getScrollY(), 0, mScreenHeight-dScrollY);
+                }
+            }else{//同理
+                if(-dScrollY < mScreenHeight /3){
+                    mScroller.startScroll(0, getScrollY(), 0, -dScrollY);
+                }else{
+                    mScroller.startScroll(0, getScrollY(), 0, -mScreenHeight - dScrollY);
+                }
+            }
+            break;
+    }
+    postInvalidata();
+    return true;
 }
 
 /**
@@ -197,11 +197,11 @@ public boolean onTouchEvent(MotionEvent event){
 **/
 @Override
 public void computeScroll(){
-	super.computeScroll();
-	if(mScroller.computeScrollOffset()){
-		scrollTo(0, mScroller.getCurrY());
-		postInvalidate();
-	}
+    super.computeScroll();
+    if(mScroller.computeScrollOffset()){
+        scrollTo(0, mScroller.getCurrY());
+        postInvalidate();
+    }
 }
 ```
 
