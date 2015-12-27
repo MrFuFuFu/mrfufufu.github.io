@@ -77,11 +77,14 @@ featured-condition-size: 1              # A tag will be featured if the size of 
 # Friends
 friends: [
     {
+        title: "y521263的专栏",
+        href: "http://blog.csdn.net/y521263"
+    },{
         title: "程序亦非猿的OnePiece",
         href: "http://yifeiyuan.me/"
     },{
-        title: "y521263的专栏",
-        href: "http://blog.csdn.net/y521263"
+        title: "小鄧子 - 简书“,
+        href: "http://www.jianshu.com/users/df40282480b4/latest_articles"
     }
 ]
 
