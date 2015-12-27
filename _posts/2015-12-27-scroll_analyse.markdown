@@ -6,7 +6,7 @@ author: MrFu
 date:   2015-12-27 16:40:00
 header-img: "img/post-bg-android-heros.jpg"
 tags:
-    - Android
+    - 《Android 群英传》
 ---
 
 > 这是我重读《Android 群英传》的时候做的读书笔记，这里主要讲了 Android 坐标系和视图坐标系，以及实现滑动的多种实现方法。

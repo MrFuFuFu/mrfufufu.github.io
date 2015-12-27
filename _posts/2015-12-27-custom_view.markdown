@@ -6,7 +6,7 @@ author: MrFu
 date:   2015-12-27 14:22:00
 header-img: "img/post-bg-android-heros.jpg"
 tags:
-    - Android
+    - 《Android 群英传》
 ---
 
 > 这是我重读《Android 群英传》的时候做的读书笔记，在 View 这块，医生讲解真的非常深入浅出，非常值得一读，并且多次重读。
