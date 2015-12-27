@@ -9,7 +9,7 @@ tags:
     - Android
 ---
 
-> 这是我重读《Android 群英传》的时候做的读书笔记，这里主要讲了 Android 坐标系和视图坐标系的区别，以及实现滑动的多种实现方法。
+> 这是我重读《Android 群英传》的时候做的读书笔记，这里主要讲了 Android 坐标系和视图坐标系，以及实现滑动的多种实现方法。
  
 
 ## Android 坐标系和视图坐标系
@@ -40,31 +40,31 @@ tags:
 ```java
 @Override
 public boolean onTouchEvent(MotionEvent event){
-	//绝对坐标，当然也可以通过 getX() 视图坐标获取偏移量, 两种方式得到的偏移量都是相同的
-	//但是注意，使用绝对坐标系，一定要在每次执行完 ACTION_MOVE 的逻辑后，重设初始坐标，才能准确地获取偏移量
-	int rawX = (int)event.getRawX();
-	int rawY = (int)event.getRawY();
-	switch(event.getAction()){
-		case MotionEvent.ACTION_DOWN:
-			//记录触摸点坐标
-			lastX = rawX;
-			lastY = rawY;
-			break;
-		case MotionEvent.ACTION_MOVE:
-			//计算偏移量
-			int offsetX = rawX - lastX;
-			int offsetY = rawY - lastY;
-			//在当前 left, top, right, bottom 的基础上加上偏移量
-			layout(getLeft() + offsetX,
-				getTop() + offsetY,
-				getRight() + offsetX,
-				getBottom() + offsetY);
-			//重设初始坐标
-			lastX = rawX;
-			lastY = rawY;
-			break;
-	}
-	return true;
+    //绝对坐标，当然也可以通过 getX() 视图坐标获取偏移量, 两种方式得到的偏移量都是相同的
+    //但是注意，使用绝对坐标系，一定要在每次执行完 ACTION_MOVE 的逻辑后，重设初始坐标，才能准确地获取偏移量
+    int rawX = (int)event.getRawX();
+    int rawY = (int)event.getRawY();
+    switch(event.getAction()){
+        case MotionEvent.ACTION_DOWN:
+            //记录触摸点坐标
+            lastX = rawX;
+            lastY = rawY;
+            break;
+        case MotionEvent.ACTION_MOVE:
+            //计算偏移量
+            int offsetX = rawX - lastX;
+            int offsetY = rawY - lastY;
+            //在当前 left, top, right, bottom 的基础上加上偏移量
+            layout(getLeft() + offsetX,
+                getTop() + offsetY,
+                getRight() + offsetX,
+                getBottom() + offsetY);
+            //重设初始坐标
+            lastX = rawX;
+            lastY = rawY;
+            break;
+    }
+    return true;
 }
 ```
 
@@ -131,15 +131,15 @@ mScroller = new Scroller(context);
 //该方法实际上就是使用 scrollTo 方法, 不断的瞬间移动一个小距离实现整体的平滑移动效果
 @Override
 public void computeScroll(){
-	super.computeScroll();
-	//判断 Scroller 是否执行完毕
-	if(mScroller.computeScrollOffset()){
-		((View)getParent()).scrollTo(
-			mScroller.getCurrX(),//获得当前的滑动坐标
-			mScroller.getCurrY());
-		//通过重绘不断调用 computeScroll
-		invalidate();
-	}
+    super.computeScroll();
+    //判断 Scroller 是否执行完毕
+    if(mScroller.computeScrollOffset()){
+        ((View)getParent()).scrollTo(
+            mScroller.getCurrX(),//获得当前的滑动坐标
+            mScroller.getCurrY());
+        //通过重绘不断调用 computeScroll
+        invalidate();
+    }
 }
 ```
 
@@ -149,16 +149,16 @@ public void computeScroll(){
 
 ```java
 case MotionEvent.ACTION_UP:
-	//手指离开时，执行滑动过程，让子 View 平滑移动到初始位置，即屏幕左上角
-	View viewGroup = ((View)getParent());
-	mScroller.startScroll(
-		viewGroup.getScrollX(),//起始坐标
-		viewGroup.getScrollY(),
-		-viewGroup.getScrollX(),//偏移量
-		-viewGroup.getScrollY());
-	//通知重绘！
-	invalidate();
-	break;
+    //手指离开时，执行滑动过程，让子 View 平滑移动到初始位置，即屏幕左上角
+    View viewGroup = ((View)getParent());
+    mScroller.startScroll(
+        viewGroup.getScrollX(),//起始坐标
+        viewGroup.getScrollY(),
+        -viewGroup.getScrollX(),//偏移量
+        -viewGroup.getScrollY());
+    //通知重绘！
+    invalidate();
+    break;
 ```
 
 ### 6. 属性动画
@@ -192,7 +192,7 @@ public class DragViewGroup extends FrameLayout {
         initView();
     }
 
-	//加载布局文件完成后调用
+    //加载布局文件完成后调用
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
@@ -209,10 +209,10 @@ public class DragViewGroup extends FrameLayout {
         mWidth = mMenuView.getMeasuredWidth();
     }
 
-	//步骤二：拦截
+    //步骤二：拦截
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-    	//将事件传递给 ViewDragHelper 处理
+        //将事件传递给 ViewDragHelper 处理
         return mViewDragHelper.shouldInterceptTouchEvent(ev);
     }
 
@@ -223,15 +223,15 @@ public class DragViewGroup extends FrameLayout {
         return true;
     }
 
-	//步骤一：初始化
+    //步骤一：初始化
     private void initView() {
-    	//使用静态工厂方法初始化
-    	//参数1 通常是一个 ViewGroup,即parentView
-    	//参数2 是一个 Callback 回调，是整个 ViewDragHelper 的逻辑核心
+        //使用静态工厂方法初始化
+        //参数1 通常是一个 ViewGroup,即parentView
+        //参数2 是一个 Callback 回调，是整个 ViewDragHelper 的逻辑核心
         mViewDragHelper = ViewDragHelper.create(this, callback);
     }
 
-	//步骤四：处理回调 Callback
+    //步骤四：处理回调 Callback
     private ViewDragHelper.Callback callback =
             new ViewDragHelper.Callback() {
 
@@ -300,9 +300,9 @@ public class DragViewGroup extends FrameLayout {
                 }
             };
 
-	//步骤三：处理 computeScroll()
-	//因为 ViewDragHelper 内部同样是通过 Scroller 来实现平滑移动的，所以重写该方法
-	//可作为模板代码
+    //步骤三：处理 computeScroll()
+    //因为 ViewDragHelper 内部同样是通过 Scroller 来实现平滑移动的，所以重写该方法
+    //可作为模板代码
     @Override
     public void computeScroll() {
         if (mViewDragHelper.continueSettling(true)) {
