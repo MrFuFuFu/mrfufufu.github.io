@@ -9,6 +9,8 @@ tags:
     - 《Android 群英传》
 ---
 
+> 链接 [Android Scroll 分析](http://mrfu.me/2015/12/27/scroll_analyse/)
+
 > 这是我重读《Android 群英传》的时候做的读书笔记，在 View 这块，医生讲解真的非常深入浅出，非常值得一读，并且多次重读。
  
 ## 架构：
