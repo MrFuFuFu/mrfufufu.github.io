@@ -3,7 +3,6 @@ layout: post
 title:  2016年，学习目录
 author: MrFu
 date:   2016-01-03 15:46:00
-header-img: "img/post-bg-android-heros.jpg"
 tags:
     - Life
 ---
@@ -34,6 +33,8 @@ tags:
 
 * **听力**：2015年的听力计划完成情况如下图，（阅读计划和听力计划属于同一时间开始，故用同一张图）
 
+
+![allplans](/img/article/allplans.jpeg)
 
 ***
 ***
