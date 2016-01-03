@@ -1,0 +1,69 @@
+---
+layout: post
+title:  2016年，学习目录
+author: MrFu
+date:   2016-01-03 15:46:00
+header-img: "img/post-bg-android-heros.jpg"
+tags:
+    - Life
+---
+
+> 2016-01-03 15:46:00
+
+## 2016年，学习目录
+
+并不是做学习计划，只是想统计一下新一年的学习工作任务，好让年底的时候，也有个数
+
+目前进行中的计划：
+
+## ESL_Pod
+
+《English as a second language podcast presents -- Introduction to the United States》截止2015年12月31日：学到第60课，总共100课。
+
+预期完成时间：2016年1月17日
+
+## 扇贝
+
+* **单词**：在背单词书：《新东方雅思词汇词根+联想》单词数 1886，学习进度：39.28%（重背的单词书）
+
+`单词总数： 8945    已经掌握/简单词： 7145    正在学习： 1580    新词： 220`
+
+* **阅读**：在读书籍：《The Little Prince》进度：48%，2015年的阅读计划完成情况见下图
+
+`截止到今天我已经累计在扇贝网上阅读了 1421 篇文章， 激活了4580 个学过的单词， 阅读量达到了566550 `
+
+* **听力**：2015年的听力计划完成情况如下图，（阅读计划和听力计划属于同一时间开始，故用同一张图）
+
+
+***
+***
+***
+***
+
+准备中的计划：
+
+* 考研词汇5500：（未开始，并不是为了考研使用，只是想多理解单词，课程量有点大~需要合理安排学习时间！）
+
+* The Economist Espresso：每日一篇吧，结合扇贝新闻一起
+
+* 《Scientific American 60》安排：每天听一个，一个一分钟，听到能默写为止，背诵，换成1.5倍速度，依然能听懂为止。计划开始时间：未开始
+
+***
+***
+***
+***
+***
+
+## Android 的相关的
+
+* Effective Java 目前进度： Chapter 3
+
+* RxJava Essentials
+
+* Learning Reactive Programming with Java 8
+
+* Android 开发艺术探索
+
+* [Android Training](http://developer.android.com/intl/zh-cn/training/index.html)
+
+* udacity 里的 Android 所有课程。目前在看课程：[Android Development for Beginners](https://www.udacity.com/course/viewer#!/c-ud837/l-4330701752/e-4199918639/m-4329550835)
