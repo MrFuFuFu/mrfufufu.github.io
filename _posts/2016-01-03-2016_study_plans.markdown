@@ -68,3 +68,13 @@ tags:
 * [Android Training](http://developer.android.com/intl/zh-cn/training/index.html)
 
 * udacity 里的 Android 所有课程。目前在看课程：[Android Development for Beginners](https://www.udacity.com/course/viewer#!/c-ud837/l-4330701752/e-4199918639/m-4329550835)
+
+
+
+## update 2016.1.9
+已完成：
+
+**RxJava Essentials**
+
+阅读次数：2，笔记：已做
+备注：英文版2次，[中文翻译版](http://rxjava.yuxingxin.com/)1次
