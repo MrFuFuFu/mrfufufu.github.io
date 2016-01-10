@@ -8,7 +8,7 @@ tags:
     -  RxJava
 ---
 
->周五的时候就打算这个周末就看 RxJava 了，于是周六把 *RxJava Essentials* 英文版再看了一遍，顺便看了一遍[翻译版](http://rxjava.yuxingxin.com/index.html)，然后就有了以下的笔记~ 
+>周五的时候就打算这个周末就看 RxJava 了，于是利用一个周末的时间把咖啡变成了文字，对，就是咖啡，不是啤酒和炸鸡，周六把 *RxJava Essentials* 英文版再看了一遍，顺便看了一遍[翻译版](http://rxjava.yuxingxin.com/index.html)，周日把[小鄧子](http://www.jianshu.com/users/df40282480b4/latest_articles)的博客以及他引述的其他文章全部看了一遍。
 >[Part1](#part-1-rxjava-essentials----operators) 部分主要是 *RxJava Essentials* 的操作符
 >[Part2](#part-2-tips) 部分主要是一些 tips
 >对于Part1我更建议你去看 [*RxJava Essentials*](https://www.google.co.jp/search?q=RxJava+Essentials&oq=RxJava+Essentials&aqs=chrome..69i57j69i60j69i65j69i60l2.304j0j7&sourceid=chrome&es_sm=91&ie=UTF-8) 这本书，我这里的解释可能是非常非常抽象的，都是一些总结性的解释。
