@@ -8,10 +8,10 @@ tags:
     -  RxJava
 ---
 
+周五的时候就打算这个周末就看 RxJava 了，于是周六把 *RxJava Essentials* 英文版再看了一遍，顺便看了一遍[翻译版](http://rxjava.yuxingxin.com/index.html)
 
 
 ## Part 1: *RxJava Essentials* -- Operators
-
 
 ### Basic
 
@@ -23,7 +23,7 @@ tags:
 
 * `Observable.throw()` 创建一个不发射数据并且以错误结束的 Observable
 
-subject 可以同时是一个 Observable 也可以是一个 Observer，一个 Subject 可以订阅一个 Observable，就像一个观察者，并发射新数据，或者传递它接受到的数据，就像一个 Observable。[see more](http://rxjava.yuxingxin.com/chapter2/subject_observable_observer.html)
+`subject` 可以同时是一个 Observable 也可以是一个 Observer，一个 Subject 可以订阅一个 Observable，就像一个观察者，并发射新数据，或者传递它接受到的数据，就像一个 Observable。[see more](http://rxjava.yuxingxin.com/chapter2/subject_observable_observer.html)
 
 对于空的 subscribe() 意为仅仅是为了开启 Observable，而不用管已发出的值。
 
@@ -56,9 +56,9 @@ if (!subscriber.isUnsubscribed()){
 
 ![distinctuntilchanged](/img/article/rxweekend_distinctuntilchanged.png)
 
-* `first()` `last()` `firstOrDefault()` `lastOrDefault()`
+* `first()`, `last()`, `firstOrDefault()`, `lastOrDefault()`
 
-* `skip()` `skipLast()` 跳过前几个或者最后几个元素
+* `skip()`, `skipLast()` 跳过前几个或者最后几个元素
 
 * `elementAt()` 发射指定元素。但如果元素不足可以使用：`elementAtOrDefault()`
 
