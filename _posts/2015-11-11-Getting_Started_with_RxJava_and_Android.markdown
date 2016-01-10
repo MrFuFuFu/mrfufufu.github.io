@@ -7,7 +7,7 @@ date:   2015-11-11 16:25:00
 categories: Android
 header-img: "img/reactivex_bg.jpg"
 tags:
-    - Android
+    - RxJava
 ---
 
 

@@ -7,7 +7,7 @@ date:       2015-11-07
 author:     "MrFu"
 header-img: "img/post-bg-js-version.jpg"
 tags:
-    - Android
+    - RxJava
 ---
 
 
