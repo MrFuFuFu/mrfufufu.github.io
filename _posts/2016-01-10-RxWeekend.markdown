@@ -8,7 +8,11 @@ tags:
     -  RxJava
 ---
 
-周五的时候就打算这个周末就看 RxJava 了，于是周六把 *RxJava Essentials* 英文版再看了一遍，顺便看了一遍[翻译版](http://rxjava.yuxingxin.com/index.html)
+>周五的时候就打算这个周末就看 RxJava 了，于是周六把 *RxJava Essentials* 英文版再看了一遍，顺便看了一遍[翻译版](http://rxjava.yuxingxin.com/index.html)，然后就有了以下的笔记~ 
+
+>[Part1](#part-1-rxjava-essentials----operators) 部分主要是 *RxJava Essentials* 的操作符
+
+>[Part2](#part-2-tips) 部分主要是一些 tips
 
 
 ## Part 1: *RxJava Essentials* -- Operators
