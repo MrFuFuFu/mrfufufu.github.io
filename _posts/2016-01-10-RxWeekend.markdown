@@ -25,18 +25,6 @@ tags:
 
 * `Observable.throw()` 创建一个不发射数据并且以错误结束的 Observable
 
-`subject` 可以同时是一个 Observable 也可以是一个 Observer，一个 Subject 可以订阅一个 Observable，就像一个观察者，并发射新数据，或者传递它接受到的数据，就像一个 Observable。[see more](http://rxjava.yuxingxin.com/chapter2/subject_observable_observer.html)
-
-对于空的 subscribe() 意为仅仅是为了开启 Observable，而不用管已发出的值。
-
-在 `subscriber.onNext` 或 `subscriber.onCompleted()` 前检测观察者的订阅情况，使代码更高效，因为如果没有观察者等待时我们就不生成没必要的数据项。就像这样：
-
-```java
-if (!subscriber.isUnsubscribed()){
-    subscriber.onCompleted();
-}
-```
-
 * `repeat()`
 
 * `defer()` 在观察者订阅时创建 Observable，而不是创建后立即执行，这篇文章有着更棒的解释：[小鄧子:使用RxJava实现延迟订阅](http://www.jianshu.com/p/c83996149f5b)
@@ -238,4 +226,16 @@ public static void storeBitmap(Context context, Bitmap bitmap, String filename){
 }
 ```
 
+### Tips6
 
+* `subject` 可以同时是一个 Observable 也可以是一个 Observer，一个 Subject 可以订阅一个 Observable，就像一个观察者，并发射新数据，或者传递它接受到的数据，就像一个 Observable。[see more](http://rxjava.yuxingxin.com/chapter2/subject_observable_observer.html)
+
+* 对于空的 subscribe() 意为仅仅是为了开启 Observable，而不用管已发出的值。
+
+* 在 `subscriber.onNext` 或 `subscriber.onCompleted()` 前检测观察者的订阅情况，使代码更高效，因为如果没有观察者等待时我们就不生成没必要的数据项。就像这样：
+
+```java
+if (!subscriber.isUnsubscribed()){
+    subscriber.onCompleted();
+}
+```
