@@ -106,7 +106,7 @@ observableA产生结果生命周期控制函数，
 observableB产生结果生命周期控制函数， 
 observableA产生的结果与observableB产生的结果的合并规则）
 
-蓝线和粉色的线表示对应的Observable 上的元素的生命周期[](http://blog.csdn.net/Job_Hesc/article/details/46612015)
+蓝线和粉色的线表示对应的Observable 上的元素的生命周期。[Android RxJava使用介绍（四） RxJava的操作符](http://blog.csdn.net/Job_Hesc/article/details/46612015)
 
 * `combineLatest()` 像 `zip()` 的特殊形式，`zip()`作用于最近未打包的两个 Observables，相反 `combineLatest()` 作用于最近发射的数据项
 
