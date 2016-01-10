@@ -11,6 +11,7 @@ tags:
 >周五的时候就打算这个周末就看 RxJava 了，于是周六把 *RxJava Essentials* 英文版再看了一遍，顺便看了一遍[翻译版](http://rxjava.yuxingxin.com/index.html)，然后就有了以下的笔记~ 
 >[Part1](#part-1-rxjava-essentials----operators) 部分主要是 *RxJava Essentials* 的操作符
 >[Part2](#part-2-tips) 部分主要是一些 tips
+>对于Part1我更建议你去看 [*RxJava Essentials*](https://www.google.co.jp/search?q=RxJava+Essentials&oq=RxJava+Essentials&aqs=chrome..69i57j69i60j69i65j69i60l2.304j0j7&sourceid=chrome&es_sm=91&ie=UTF-8) 这本书，我这里的解释可能是非常非常抽象的，都是一些总结性的解释。
 
 
 ## Part 1: *RxJava Essentials* -- Operators
