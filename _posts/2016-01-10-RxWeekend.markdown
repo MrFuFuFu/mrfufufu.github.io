@@ -11,7 +11,7 @@ tags:
 >周五的时候就打算这个周末就看 RxJava 了，于是利用一个周末的时间把咖啡变成了文字，对，就是咖啡，不是啤酒和炸鸡，周六把 *RxJava Essentials* 英文版再看了一遍，顺便看了一遍[翻译版](http://rxjava.yuxingxin.com/index.html)，周日把[小鄧子](http://www.jianshu.com/users/df40282480b4/latest_articles)的博客以及他引述的其他文章全部看了一遍。
 >[Part1](#part-1-rxjava-essentials----operators) 部分主要是 *RxJava Essentials* 的操作符
 >[Part2](#part-2-tips) 部分主要是一些 tips
->对于Part1我更建议你去看 [*RxJava Essentials*](https://www.google.co.jp/search?q=RxJava+Essentials&oq=RxJava+Essentials&aqs=chrome..69i57j69i60j69i65j69i60l2.304j0j7&sourceid=chrome&es_sm=91&ie=UTF-8) 这本书，我这里的解释可能是非常非常抽象的，都是一些总结性的解释。
+>对于Part1我更建议你先去看 [*RxJava Essentials*](https://www.google.co.jp/search?q=RxJava+Essentials&oq=RxJava+Essentials&aqs=chrome..69i57j69i60j69i65j69i60l2.304j0j7&sourceid=chrome&es_sm=91&ie=UTF-8) 这本书，再回过头来看这部分。我这里的解释可能是非常抽象的，都是一些总结性的解释。
 
 
 ## Part 1: *RxJava Essentials* -- Operators
@@ -144,13 +144,13 @@ Observable<Data> network = ...;
 
 // Retrieve the first source with data
 Observable<Data> source = Observable
-
   .concat(memory, disk, network)
-  .first();//先取 memory 中的数据，如果有，就取出，然后停止检索队列。
+  .first();
+//先取 memory 中的数据，如果有，就取出，然后停止检索队列；没有就取 disk 的数据，有就取出，然后停止检索队列；最后才是网络请求
 ```
 
 ```java
- //持久化数据/缓存数据
+ //持久化数据or缓存数据
  Observable<Data> networkWithSave = network.doOnNext(new Action1<Data>() {
  @Override public void call(Data data) {
  saveToDisk(data);
@@ -236,7 +236,151 @@ public static void storeBitmap(Context context, Bitmap bitmap, String filename){
 * 在 `subscriber.onNext` 或 `subscriber.onCompleted()` 前检测观察者的订阅情况，使代码更高效，因为如果没有观察者等待时我们就不生成没必要的数据项。就像这样：
 
 ```java
+if (!subscriber.isUnsubscribed()){//避免生成不必要的数据项
+    return;
+}
+subscriber.onNext();
+
 if (!subscriber.isUnsubscribed()){
     subscriber.onCompleted();
 }
 ```
+
+### Tips7
+
+我觉得这个 Tips 是最有用的
+
+先祭出两个工具类
+
+对于 `SchedulersCompat` 类，我们的目的，是为了写出这样的代码：
+
+```java
+.compose(SchedulersCompat.<SomeEntity>applyExecutorSchedulers());
+```
+
+场景是这样的：work thread 中处理数据，然后 UI thread 中处理结果。当然，我们知道是要使用 `subscribeOn()` 和 `observeOn()` 进行处理。最常见的场景是，调server 的 API 接口取数据的时候，那么，那么多接口，反复写这两个操作符是蛋疼的，为了避免这种情况，我们可以通过 `compse()` 操作符来实现复用，上面这段代码就实现了这样的功能。
+
+`SchedulersCompat ` 类中有这么一段 `Schedulers.from(ExecutorManager.eventExecutor)`，哇喔，这里`ExecutorManager` 类里维护了一个线程池！目的呢！避免线程反复创建，实现线程复用！！！这样，我就不需要每次都通过`Schedulers.newThread()`来实现了！！
+
+如果你想了解更多，关于 `compose()`操作符，可以看这里：[小鄧子-避免打断链式结构：使用.compose( )操作符](http://www.jianshu.com/p/e9e03194199e) 
+
+```java
+/**
+ * 这个类是 小鄧子 提供的！
+ */
+public class SchedulersCompat {
+    private static final Observable.Transformer computationTransformer =
+            new Observable.Transformer() {
+                @Override public Object call(Object observable) {
+                    return ((Observable) observable).subscribeOn(Schedulers.computation())
+                            .observeOn(AndroidSchedulers.mainThread());
+                }
+            };
+    private static final Observable.Transformer ioTransformer = new Observable.Transformer() {
+        @Override public Object call(Object observable) {
+            return ((Observable) observable).subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread());
+        }
+    };
+    private static final Observable.Transformer newTransformer = new Observable.Transformer() {
+        @Override public Object call(Object observable) {
+            return ((Observable) observable).subscribeOn(Schedulers.newThread())
+                    .observeOn(AndroidSchedulers.mainThread());
+        }
+    };
+    private static final Observable.Transformer trampolineTransformer = new Observable.Transformer() {
+        @Override public Object call(Object observable) {
+            return ((Observable) observable).subscribeOn(Schedulers.trampoline())
+                    .observeOn(AndroidSchedulers.mainThread());
+        }
+    };
+    private static final Observable.Transformer executorTransformer = new Observable.Transformer() {
+        @Override public Object call(Object observable) {
+            return ((Observable) observable).subscribeOn(Schedulers.from(ExecutorManager.eventExecutor))
+                    .observeOn(AndroidSchedulers.mainThread());
+        }
+    };
+    /**
+     * Don't break the chain: use RxJava's compose() operator
+     */
+    public static <T> Observable.Transformer<T, T> applyComputationSchedulers() {
+        return (Observable.Transformer<T, T>) computationTransformer;
+    }
+    public static <T> Observable.Transformer<T, T> applyIoSchedulers() {
+        return (Observable.Transformer<T, T>) ioTransformer;
+    }
+    public static <T> Observable.Transformer<T, T> applyNewSchedulers() {
+        return (Observable.Transformer<T, T>) newTransformer;
+    }
+    public static <T> Observable.Transformer<T, T> applyTrampolineSchedulers() {
+        return (Observable.Transformer<T, T>) trampolineTransformer;
+    }
+    public static <T> Observable.Transformer<T, T> applyExecutorSchedulers() {
+        return (Observable.Transformer<T, T>) executorTransformer;
+    }
+}
+```
+
+```java
+/**
+ * 这个类也是 小鄧子 提供的！！
+ */
+public class ExecutorManager {
+    public static final int DEVICE_INFO_UNKNOWN = 0;
+    public static ExecutorService eventExecutor;
+    //private static final int CPU_COUNT = Runtime.getRuntime().availableProcessors();
+    private static final int CPU_COUNT = ExecutorManager.getCountOfCPU();
+    private static final int CORE_POOL_SIZE = CPU_COUNT + 1;
+    private static final int MAXIMUM_POOL_SIZE = CPU_COUNT * 2 + 1;
+    private static final int KEEP_ALIVE = 1;
+    private static final BlockingQueue<Runnable> eventPoolWaitQueue = new LinkedBlockingQueue<>(128);
+    private static final ThreadFactory eventThreadFactory = new ThreadFactory() {
+        private final AtomicInteger mCount = new AtomicInteger(1);
+        public Thread newThread(@NonNull Runnable r) {
+            return new Thread(r, "eventAsyncAndBackground #" + mCount.getAndIncrement());
+        }
+    };
+    private static final RejectedExecutionHandler eventHandler =
+            new ThreadPoolExecutor.CallerRunsPolicy();
+    static {
+        eventExecutor =
+                new ThreadPoolExecutor(CORE_POOL_SIZE, MAXIMUM_POOL_SIZE, KEEP_ALIVE, TimeUnit.SECONDS,
+                        eventPoolWaitQueue, eventThreadFactory, eventHandler);
+    }
+    /**
+     * Linux中的设备都是以文件的形式存在，CPU也不例外，因此CPU的文件个数就等价与核数。
+     * Android的CPU 设备文件位于/sys/devices/system/cpu/目录，文件名的的格式为cpu\d+。
+     *
+     * 引用：http://www.jianshu.com/p/f7add443cd32#，感谢 liangfeizc :)
+     * https://github.com/facebook/device-year-class
+     */
+    public static int getCountOfCPU() {
+        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.GINGERBREAD_MR1) {
+            return 1;
+        }
+        int count;
+        try {
+            count = new File("/sys/devices/system/cpu/").listFiles(CPU_FILTER).length;
+        } catch (SecurityException | NullPointerException e) {
+            count = DEVICE_INFO_UNKNOWN;
+        }
+        return count;
+    }
+    private static final FileFilter CPU_FILTER = new FileFilter() {
+        @Override public boolean accept(File pathname) {
+            String path = pathname.getName();
+            if (path.startsWith("cpu")) {
+                for (int i = 3; i < path.length(); i++) {
+                    if (path.charAt(i) < '0' || path.charAt(i) > '9') {
+                        return false;
+                    }
+                }
+                return true;
+            }
+            return false;
+        }
+    };
+}
+```
+
+
