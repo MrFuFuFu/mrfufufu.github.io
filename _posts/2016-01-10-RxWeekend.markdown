@@ -12,6 +12,8 @@ tags:
 >[Part1](#part-1-rxjava-essentials----operators) 部分主要是 *RxJava Essentials* 的操作符
 >[Part2](#part-2-tips) 部分主要是一些 tips
 >对于Part1我更建议你先去看 [*RxJava Essentials*](https://www.google.co.jp/search?q=RxJava+Essentials&oq=RxJava+Essentials&aqs=chrome..69i57j69i60j69i65j69i60l2.304j0j7&sourceid=chrome&es_sm=91&ie=UTF-8) 这本书，再回过头来看这部分。我这里的解释可能是非常抽象的，都是一些总结性的解释。
+>
+>这里有一个项目实例: 和 Tips7 有关：[RxFace](https://github.com/MrFuFuFu/RxFace)，喜欢就 star
 
 
 ## Part 1: *RxJava Essentials* -- Operators
@@ -250,6 +252,7 @@ if (!subscriber.isUnsubscribed()){
 
 我觉得这个 Tips 是最有用的
 
+
 先祭出两个工具类
 
 对于 `SchedulersCompat` 类，我们的目的，是为了写出这样的代码：
@@ -263,6 +266,8 @@ if (!subscriber.isUnsubscribed()){
 `SchedulersCompat ` 类中有这么一段 `Schedulers.from(ExecutorManager.eventExecutor)`，哇喔，这里`ExecutorManager` 类里维护了一个线程池！目的呢！避免线程反复创建，实现线程复用！！！这样，我就不需要每次都通过`Schedulers.newThread()`来实现了！！
 
 如果你想了解更多，关于 `compose()`操作符，可以看这里：[小鄧子-避免打断链式结构：使用.compose( )操作符](http://www.jianshu.com/p/e9e03194199e) 
+
+对于这个 Tips, 我给出一个项目实例：[RxFace](https://github.com/MrFuFuFu/RxFace)，这是我在做一个人脸识别的 demo 的时候所写的，用了 `RxJava`, `retrofit`, `Okhttp`。我在v1.1版本的时候增加通过`compose()`操作符复用 `subscribeOn()` 和 `observeOn()` 的逻辑。觉得还 OK 的话，可以点个 star 喔，哈哈
 
 ```java
 /**
