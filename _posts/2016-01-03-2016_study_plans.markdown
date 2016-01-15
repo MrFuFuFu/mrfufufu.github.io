@@ -78,3 +78,22 @@ tags:
 
 阅读次数：2，笔记：已做
 备注：英文版2次，[中文翻译版](http://rxjava.yuxingxin.com/)1次
+
+
+## update 2016.1.15
+
+已完成：
+
+**《English as a second language podcast presents -- Introduction to the United States》**  
+
+* 开始时间：2015年12月01日
+
+* 完成时间：2016年01月15日
+
+* 每天3个课时，每个课时当天录音播放次数:3次，每个课时听的次数6次，朗读次数8次。次日复习：播放1次，听2次，朗读2次。如下图统计，第一个 R 是 radio 播放次数，第二次 L 是 listen 听的次数，第三个 R 是 read 朗读次数。
+
+![esl_pod](/img/article/esl_pod.jpeg)
+
+![esl_pod2](/img/article/esl_pod2.jpeg)
+
+
