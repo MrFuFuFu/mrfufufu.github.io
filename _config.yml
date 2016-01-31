@@ -77,8 +77,8 @@ featured-condition-size: 1              # A tag will be featured if the size of 
 # Friends
 friends: [
     {
-        title: "y521263的专栏",
-        href: "http://blog.csdn.net/y521263"
+        title: "林大神的博客(他是打酱油的)",
+        href: "http://maples.me/"
     },{
         title: "程序亦非猿的OnePiece",
         href: "http://yifeiyuan.me/"
