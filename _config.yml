@@ -20,7 +20,7 @@ instagram_username: mrfufufufu
 
 
 # Build settings
-highlighter: pygments
+highlighter: rouge #pygments
 permalink: pretty
 paginate: 50
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
