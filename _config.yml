@@ -22,14 +22,14 @@ instagram_username: mrfufufufu
 # Build settings
 highlighter: rouge #pygments
 permalink: pretty
-paginate: 50
+paginate: 100
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 
 
 # PAGINATION
 gems: [jekyll-paginate]
-paginate: 50
+paginate: 100
 paginate_path: "page:num"
 
 
