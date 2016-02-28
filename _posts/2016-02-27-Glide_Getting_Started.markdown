@@ -8,6 +8,8 @@ tags:
     -  Glide
 ---
 
+> 译者注：原文[Glide — Getting Started](https://futurestud.io/blog/glide-getting-started)
+
 在我们的 Picasso 系列收到很多成功的反馈后，我们要开始延伸另外一个令人惊讶的图片加载库系列：Glide。
 
 Glide，就像 Picasso，可以从多个源去加载和显示图片，同时也兼顾缓存和在做图片处理的时候维持一个低内存消耗。它已经在 Google 官方 APP （如 Google 2015开发者大会的应用程序）中使用了，就和 Picasso 一样受欢迎。在这个系列中，我们要探讨 Glide 和 Picasso 的不同和优势。
