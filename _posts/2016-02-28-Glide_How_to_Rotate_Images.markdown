@@ -3,10 +3,11 @@ layout: post
 title:  "Glide - 怎样旋转图像"
 subtitle:   "Glide — How to Rotate Images"
 author: MrFu
-date:   2016-02-28 14:50:00
+date:   2016-02-28 14:45:00
 tags:
     -  Glide
 ---
+
 
 
 不久前，我们有一个问题是如何用 Glide 旋转图像，因为 Picasso 提供了这个方法 [out-of-the-box](https://futurestud.io/blog/picasso-image-rotation-and-transformation)。不幸的是，Glide 并不提供这样的小方法的调用，但是在这个博客中我们将会告诉你怎么做的跟它一样简单。
