@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Glide - Module 实例：优化：通过自定义大小加载图片
+title:  Glide - Module 实例：用自定义尺寸优化加载的图片
 author: MrFu
 date:   2016-02-28 14:30:00
 tags:
