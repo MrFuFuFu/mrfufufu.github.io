@@ -36,7 +36,7 @@ tags:
 18. [Module 实例：自定义缓存](http://mrfu.me/2016/02/28/Glide_Module_Example_Customize_Caching/)
 19. [Module 实例：用自定义尺寸优化加载的图片](http://mrfu.me/2016/02/28/Glide_Module_Example_Optimizing/)
 20. [动态使用 Model Loader](http://mrfu.me/2016/02/28/Glide_Dynamically_Use_Model_Loaders/)
-21. [如何旋转图像](http://mrfu.me/2016/02/28/Glide_How_to_Rotate_Images/)
+21. 如何旋转图像
 22. [系列综述](http://mrfu.me/2016/02/28/Glide_Series_Roundup/)
 
 ## 如何用 Glide 旋转图片

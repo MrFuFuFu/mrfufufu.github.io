@@ -23,7 +23,7 @@ Glide 的所有基本概念已经都介绍过了，我要来看看开发者的�
 9. [缩略图](http://mrfu.me/2016/02/27/Glide_Thumbnails/)
 10. [回调：SimpleTarget 和 ViewTarget 用于自定义视图类](http://mrfu.me/2016/02/27/Glide_Callbacks_SimpleTarget_and_ViewTarget_for_Custom_View_Classes/)
 11. [加载图片到通知栏和应用小部件中](http://mrfu.me/2016/02/27/Glide_Loading_Images_into_Notifications_and_AppWidgets/)
-12. [异常：调试和错误处理](http://mrfu.me/2016/02/28/Glide_Exceptions-_Debugging_and_Error_Handling/)
+12. 异常：调试和错误处理
 13. [自定义转换](http://mrfu.me/2016/02/28/Glide_Custom_Transformations/)
 14. [用 animate() 自定义动画](http://mrfu.me/2016/02/28/Glide_Custom_Animations_with_animate()/)
 15. [集成网络栈](http://mrfu.me/2016/02/28/Glide_Integrating_Networking_Stacks/)

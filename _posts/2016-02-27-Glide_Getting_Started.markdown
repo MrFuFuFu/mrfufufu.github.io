@@ -14,7 +14,7 @@ Glide，就像 Picasso，可以从多个源去加载和显示图片，同时也�
 
 ## Glide 系列预览
 
-1. [开始！](http://mrfu.me/2016/02/27/Glide_Getting_Started/)
+1. 开始！
 2. [加载进阶](http://mrfu.me/2016/02/27/Glide_Advanced_Loading/)
 3. [ListAdapter(ListView, GridView)](http://mrfu.me/2016/02/27/Glide_ListAdapter_(ListView,_GridView)/)
 4. [占位符 和 渐现动画](http://mrfu.me/2016/02/27/Glide_Placeholders_&_Fade_Animations/)

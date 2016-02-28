@@ -16,7 +16,7 @@ tags:
 2. [加载进阶](http://mrfu.me/2016/02/27/Glide_Advanced_Loading/)
 3. [ListAdapter(ListView, GridView)](http://mrfu.me/2016/02/27/Glide_ListAdapter_(ListView,_GridView)/)
 4. [占位符 和 渐现动画](http://mrfu.me/2016/02/27/Glide_Placeholders_&_Fade_Animations/)
-5. [图片重设大小 和 缩放](http://mrfu.me/2016/02/27/Glide_Image_Resizing_&_Scaling/)
+5. 图片重设大小 和 缩放
 6. [显示 Gif 和 Video](http://mrfu.me/2016/02/27/Glide_Displaying_Gifs_&_Videos/)
 7. [缓存基础](http://mrfu.me/2016/02/27/Glide_Caching_Basics/)
 8. [请求优先级](http://mrfu.me/2016/02/27/Glide_Request_Priorities/)
