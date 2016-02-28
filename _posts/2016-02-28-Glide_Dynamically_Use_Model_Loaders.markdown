@@ -3,10 +3,11 @@ layout: post
 title:  "Glide - 动态使用 Model Loader"
 subtitle:   "Glide — Dynamically Use Model Loaders"
 author: MrFu
-date:   2016-02-28 15:00:00
+date:   2016-02-28 14:40:00
 tags:
     -  Glide
 ---
+
 
 在[上篇博客](https://futurestud.io/blog/glide-module-example-optimizing-by-loading-images-in-custom-sizes)中，你已经看到了如何声明和配置一个 Glide module，它在请求中增加了图像大小。这是非常有用的优化。然而，重要的是要知道，声明 Glide module 总是主动的。默认情况下，你不能动态的打开或者关闭它们。
 

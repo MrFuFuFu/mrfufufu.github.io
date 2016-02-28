@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Glide旋转图像"
+title:  "Glide - 怎样旋转图像"
 subtitle:   "Glide — How to Rotate Images"
 author: MrFu
 date:   2016-02-28 17:10:00
