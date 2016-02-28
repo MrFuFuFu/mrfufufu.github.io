@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  Glide-系列综述
+title:  Glide - 系列综述
 author: MrFu
-date:   2016-02-28 15:30:00
+date:   2016-02-28 18:00:00
 tags:
     -  Glide
 ---
