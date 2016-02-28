@@ -3,7 +3,7 @@ layout: post
 title:  "Glide - 怎样旋转图像"
 subtitle:   "Glide — How to Rotate Images"
 author: MrFu
-date:   2016-02-28 17:10:00
+date:   2016-02-28 14:50:00
 tags:
     -  Glide
 ---
