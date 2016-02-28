@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  Glide - 系列综述
+title:  "Glide - 系列综述"
+subtitle:   "Glide — Series Roundup"
 author: MrFu
 date:   2016-02-28 18:00:00
 tags:

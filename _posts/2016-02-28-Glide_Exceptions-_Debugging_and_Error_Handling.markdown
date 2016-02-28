@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  Glide - 异常：调试和错误处理
+title:  "Glide - 异常：调试和错误处理"
+subtitle:   "Glide — Exceptions: Debugging and Error Handling"
 author: MrFu
 date:   2016-02-28 11:00:00
 tags:

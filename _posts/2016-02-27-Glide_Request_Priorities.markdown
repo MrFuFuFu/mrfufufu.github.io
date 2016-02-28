@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  Glide - 请求优先级
+title:  "Glide - 请求优先级"
+subtitle:   "Glide — Request Priorities"
 author: MrFu
 date:   2016-02-27 19:10:00
 tags:

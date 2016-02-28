@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  Glide - ListAdapter(ListView, GridView)
+title:  "Glide - ListAdapter(ListView, GridView)"
+subtitle:   "Glide — ListAdapter (ListView, GridView)"
 author: MrFu
 date:   2016-02-27 15:00:00
 tags:

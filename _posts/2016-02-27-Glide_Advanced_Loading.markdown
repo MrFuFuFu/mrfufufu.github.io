@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  Glide - 加载进阶
+title:  "Glide - 加载进阶"
+subtitle:   "Glide — Advanced Loading"
 author: MrFu
 date:   2016-02-27 13:00:00
 tags:
     -  Glide
 ---
 
-# Glide — Advanced Loading
 
 上周我们了解了用 Glide 的理由和简单的示例来加载一个来自网络的图片。但这不仅仅 Glide 的唯一加载来源。Glide 也能从 Android 资源，文件和 Uri 中加载。在这篇博客中，我们将涉及这三个选项。
 

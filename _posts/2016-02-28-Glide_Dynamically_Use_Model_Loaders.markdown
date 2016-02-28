@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  Glide - 动态使用 Model Loader 
+title:  "Glide - 动态使用 Model Loader"
+subtitle:   "Glide — Dynamically Use Model Loaders"
 author: MrFu
 date:   2016-02-28 15:00:00
 tags:

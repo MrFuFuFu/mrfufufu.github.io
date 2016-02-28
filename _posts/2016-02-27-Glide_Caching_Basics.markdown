@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  Glide - 缓存基础
+title:  "Glide - 缓存基础"
+subtitle:   "Glide — Caching Basics"
 author: MrFu
 date:   2016-02-27 19:00:00
 tags:

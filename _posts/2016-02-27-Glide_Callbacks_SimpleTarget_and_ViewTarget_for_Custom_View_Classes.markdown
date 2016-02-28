@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  Glide - 回调：SimpleTarget 和 ViewTarget 用于自定义视图类
+title:  "Glide - 回调：SimpleTarget 和 ViewTarget 用于自定义视图类"
+subtitle:   "Glide — Callbacks: SimpleTarget and ViewTarget for Custom View Classes"
 author: MrFu
 date:   2016-02-27 19:30:00
 tags:

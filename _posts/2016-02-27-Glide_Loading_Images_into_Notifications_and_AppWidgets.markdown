@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  Glide - 加载图片到通知栏和应用小部件中
+title:  "Glide - 加载图片到通知栏和应用小部件中"
+subtitle:   "Glide — Loading Images into Notifications and AppWidgets"
 author: MrFu
 date:   2016-02-27 19:40:00
 tags:
