@@ -2,7 +2,7 @@
 layout: post
 title:  Glide - 怎样旋转图像
 author: MrFu
-date:   2016-02-28 17:00:00
+date:   2016-02-28 17:10:00
 tags:
     -  Glide
 ---
