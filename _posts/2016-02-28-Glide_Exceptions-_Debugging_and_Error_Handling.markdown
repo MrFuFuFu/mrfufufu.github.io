@@ -12,6 +12,29 @@ Glide 的所有基本概念已经都介绍过了，我要来看看开发者的�
 
 ## Glide 系列预览
 
+1. [开始！](http://mrfu.me/2016/02/27/Glide_Getting_Started/)
+2. [加载进阶](http://mrfu.me/2016/02/27/Glide_Advanced_Loading/)
+3. [ListAdapter(ListView, GridView)](http://mrfu.me/2016/02/27/Glide_ListAdapter_(ListView,_GridView)/)
+4. [占位符 和 渐现动画](http://mrfu.me/2016/02/27/Glide_Placeholders_&_Fade_Animations/)
+5. [图片重设大小 和 缩放](http://mrfu.me/2016/02/27/Glide_Image_Resizing_&_Scaling/)
+6. [显示 Gif 和 Video](http://mrfu.me/2016/02/27/Glide_Displaying_Gifs_&_Videos/)
+7. [缓存基础](http://mrfu.me/2016/02/27/Glide_Caching_Basics/)
+8. [请求优先级](http://mrfu.me/2016/02/27/Glide_Request_Priorities/)
+9. [缩略图](http://mrfu.me/2016/02/27/Glide_Thumbnails/)
+10. [回调：SimpleTarget 和 ViewTarget 用于自定义视图类](http://mrfu.me/2016/02/27/Glide_Callbacks_SimpleTarget_and_ViewTarget_for_Custom_View_Classes/)
+11. [加载图片到通知栏和应用小部件中](http://mrfu.me/2016/02/27/Glide_Loading_Images_into_Notifications_and_AppWidgets/)
+12. [异常：调试和错误处理](http://mrfu.me/2016/02/28/Glide_Exceptions-_Debugging_and_Error_Handling/)
+13. [自定义转换](http://mrfu.me/2016/02/28/Glide_Custom_Transformations/)
+14. [用 animate() 自定义动画](http://mrfu.me/2016/02/28/Glide_Custom_Animations_with_animate()/)
+15. [集成网络栈](http://mrfu.me/2016/02/28/Glide_Integrating_Networking_Stacks/)
+16. [用 Module 自定义 Glide](http://mrfu.me/2016/02/28/Glide_Customize_Glide_with_Modules/)
+17. [Module 实例：接受自签名证书的 HTTPS](http://mrfu.me/2016/02/28/Glide_Module_Example_Accepting_Self-Signed_HTTPS_Certificates/)
+18. [Module 实例：自定义缓存](http://mrfu.me/2016/02/28/Glide_Module_Example_Customize_Caching/)
+19. [Module 实例：用自定义尺寸优化加载的图片](http://mrfu.me/2016/02/28/Glide_Module_Example_Optimizing/)
+20. [动态使用 Model Loader](http://mrfu.me/2016/02/28/Glide_Dynamically_Use_Model_Loaders/)
+21. [如何旋转图像](http://mrfu.me/2016/02/28/Glide_How_to_Rotate_Images/)
+22. [系列综述](http://mrfu.me/2016/02/28/Glide_Series_Roundup/)
+
 Glide 的 [GeneralRequest](http://bumptech.github.io/glide/javadocs/340/com/bumptech/glide/request/GenericRequest.html) 类提供了一个方法去设置 log 的级别。不幸的是，在生产过程中，使用这个类并不容易。然而，有一个非常简单的方法去获得 Glide 的调试日志。你所要做的就是通过 `adb` 的 shell 来激活。打开你的终端，使用以下命令：
 
 ```java
