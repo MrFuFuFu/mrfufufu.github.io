@@ -75,7 +75,7 @@ private void loadImageSimpleTarget() {
 
 除了知道如何实现一个简单版本的 Glide 的 Target 回调系统，你要学会额外两件事。
 
-首先是 `SimpleTarget` 对象的字段声明。从技术上来说，Java/Android 会允许你在 `.into()` 方法中去声明 target 的匿名内部类。然而，这大大增加了这样一个可能性：即在 Glide 做完图片请求之前， Android 垃圾回收移除了这个匿名内部类对象。最终这可能会导致一个情况，当图像加载王城了，但是回调再也不会被调用。所请确保你所声明的回调对象是作为一个字段对象的，这样你就可以保护它避免被邪恶的 Android 垃圾回收机制回收 ;-)
+首先是 `SimpleTarget` 对象的字段声明。从技术上来说，Java/Android 会允许你在 `.into()` 方法中去声明 target 的匿名内部类。然而，这大大增加了这样一个可能性：即在 Glide 做完图片请求之前， Android 垃圾回收移除了这个匿名内部类对象。最终这可能会导致一个情况，当图像加载完成了，但是回调再也不会被调用。所请确保你所声明的回调对象是作为一个字段对象的，这样你就可以保护它避免被邪恶的 Android 垃圾回收机制回收 ;-)
 
 第二个关键部分是 Glide 建造者中这行：`.with(context)`。 这里的问题实际是 Glide 的功能：当你传了一个 context，例如是当前应用的 activity，Glide 将会自动停止请求当请求的 activity 已经停止的时候。这整合到了应用的生命周期中通常是非常有帮助的，但是有时工作起来是困难的，如果你的 target 是独立于应用的 activity 生命周期。这里的解决方案是用 application 的 context: `.with(context.getApplicationContext))`。当应用资深完全停止时，Glide 才会杀死这个图片请求。请求记住，再说一次，如果你的请求需要在 activity 生命周期之外去做时，才用下面这样的代码：
 

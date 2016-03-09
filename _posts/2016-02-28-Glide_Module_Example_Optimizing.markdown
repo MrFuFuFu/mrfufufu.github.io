@@ -78,7 +78,7 @@ public interface CustomImageSizeModel {
 }
 ```
 
-`CustomImageSizeModel` 只是一个借口，它将宽度和高度作为其参数，这是必须的，这样我们才能从媒体服务端请求精确的像素图像。第二个未知的类是 `CustomImageSizeModelFactory`：
+`CustomImageSizeModel` 只是一个接口，它将宽度和高度作为其参数，这是必须的，这样我们才能从媒体服务端请求精确的像素图像。第二个未知的类是 `CustomImageSizeModelFactory`：
 
 ```java
 private class CustomImageSizeModelFactory implements ModelLoaderFactory<CustomImageSizeModel, InputStream> {  
