@@ -6,7 +6,7 @@
                 <ul class="list-inline text-center">
                     
                     <!-- delete rss -->
-                    <!--
+                    {% if site.RSS %}
                     <li>
                         <a href="{{ "/feed.xml" | prepend: site.baseurl }}">
                             <span class="fa-stack fa-lg">
@@ -15,7 +15,8 @@
                             </span>
                         </a>
                     </li>
-                     -->
+                    {% endif %}
+
                     {% if site.github_username %}
                     <li>
                         <a target="_blank" href="https://github.com/{{ site.github_username }}">

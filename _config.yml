@@ -11,7 +11,7 @@ baseurl: ""
 
 
 # SNS settings
-RSS: false
+RSS: true
 #twitter_username: 15068728607
 github_username:  mrfufufu
 facebook_username:  mrfufufu
