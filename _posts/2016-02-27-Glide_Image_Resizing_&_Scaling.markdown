@@ -37,7 +37,7 @@ tags:
 
 ## 用 resize(x,y) 调整图片大小
 
-通常情况下，如果你的服务器或者 API 提供的图像是你需要的精确驰却，这时是完美的情况下，在内存小号和图像质量之间的权衡。
+通常情况下，如果你的服务器或者 API 提供的图像是你需要的精确尺寸，这时是完美的情况下，在内存小号和图像质量之间的权衡。
 
 在和 Picasso 比较后，Glide 有[更加高效](http://inthecheesefactory.com/blog/get-to-know-glide-recommended-by-google/en)的内存管理。Glide 自动限制了图片的尺寸在缓存和内存中，并给到 `ImageView` 需要的尺寸。Picasso 也有这样的能力，但需要调用 `fit()` 方法。对于 Glide，如果图片不会自动适配到 `ImageView`，调用 `override(horizontalSize, verticalSize)
 `。这将在图片显示到 `ImageView`之前重新改变图片大小。
