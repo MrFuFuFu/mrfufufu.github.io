@@ -43,7 +43,7 @@ Glide，就像 Picasso，可以从多个源去加载和显示图片，同时也�
 
 有经验的 Android 开发者可以跳过这节，但对于初学者来说，你可能会问自己为什么你想要去用 Glide，而不是自己去实现。
 
-Android 在处理图片工作的时候显得有点娘，因为它会以[像素形式](http://developer.android.com/intl/zh-cn/training/displaying-bitmaps/index.html)加载图片到内存中去，一张照片平均普通的手机摄像头尺寸是 2592x193 像素（5百万像素）将大约会分配 19MB 内存。对于复杂的网络情况，缓存和图片处理，如果你用了一个测试完善开发完成的库，如 Glide，你会省下大量的时间，还不会让你头疼！
+Android 在处理图片工作的时候显得有点娘，因为它会以[像素形式](http://developer.android.com/intl/zh-cn/training/displaying-bitmaps/index.html)加载图片到内存中去，一张照片平均普通的手机摄像头尺寸是 2592x1936 像素（5百万像素）将大约会分配 19MB 内存。对于复杂的网络情况，缓存和图片处理，如果你用了一个测试完善开发完成的库，如 Glide，你会省下大量的时间，还不会让你头疼！
 
 在这个系列，我们将看到 Glide 的很多特性，去看下这篇博客的提纲，并考虑你是否真的要去开发所有这些功能。
 
