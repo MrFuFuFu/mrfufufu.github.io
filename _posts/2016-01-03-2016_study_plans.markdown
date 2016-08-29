@@ -7,6 +7,68 @@ tags:
     - Life
 ---
 
+
+## update 2016.8.29
+
+小说：
+
+* [凡尔纳三部曲之二：海底两万里](https://www.shanbay.com/read/book/265/) 
+* [凡尔纳三部曲之三：神秘岛](https://www.shanbay.com/read/book/271/) 
+* [八十天环游地球](https://www.shanbay.com/read/book/361/) 
+
+![829studyplan](/img/article/829studyplan.jpeg)
+
+
+## update 2016.8.15
+
+已完成：
+
+语法：
+
+* 英语魔法师之语法俱乐部
+
+小说：
+
+* [小王子](https://www.shanbay.com/read/book/82/)
+* [Oxford Bookworm 1-6](https://www.shanbay.com/read/books/topic/#topic7) 共60本
+* [纳尼亚传奇](https://www.shanbay.com/read/books/topic/#topic82) 全套7册: 《纳尼亚传奇：狮子、女巫和魔衣柜》、《纳尼亚传奇：凯斯宾王子》、《纳尼亚传奇：黎明踏浪号》、《纳尼亚传奇：银椅》、《纳尼亚传奇：能言马与男孩》、《纳尼亚传奇：魔法师的外甥》、《纳尼亚传奇：最后一战》
+* [访谈演说](https://www.shanbay.com/read/books/topic/#topic79) 《微软启示录：比尔·盖茨语录》、《奥巴马演说集》、《奥巴马访谈录》、《英女王演说集》、《布莱尔演说集》、《罗斯福炉边谈话：经济篇》
+* [奇幻历险](https://www.shanbay.com/read/books/topic/#topic34): 《爱丽丝漫游仙境》、《福尔摩斯冒险史（上）》、《绿野仙踪》
+* [凡尔纳三部曲之一：格兰特船长的儿女](https://www.shanbay.com/read/book/238/) 上中下
+
+进行中：
+
+* [安徒生童话](https://www.shanbay.com/read/book/97/)
+* [凡尔纳三部曲之二：海底两万里](https://www.shanbay.com/read/book/265/) 
+
+
+## update 2016.1.15
+
+已完成：
+
+**《English as a second language podcast presents -- Introduction to the United States》**  
+
+* 开始时间：2015年12月01日
+
+* 完成时间：2016年01月15日
+
+* 每天3个课时，每个课时当天录音播放次数:3次，每个课时听的次数6次，朗读次数8次。次日复习：播放1次，听2次，朗读2次。如下图统计，第一个 R 是 radio 播放次数，第二次 L 是 listen 听的次数，第三个 R 是 read 朗读次数。
+
+![esl_pod](/img/article/esl_pod.jpeg)
+
+![esl_pod2](/img/article/esl_pod2.jpeg)
+
+
+## update 2016.1.9
+已完成：
+
+**RxJava Essentials**
+
+阅读次数：2，笔记：已做
+备注：英文版2次，[中文翻译版](http://rxjava.yuxingxin.com/)1次
+
+
+
 > 2016-01-03 15:46:00
 
 ## 2016年，学习目录
@@ -71,50 +133,4 @@ tags:
 
 
 
-## update 2016.1.9
-已完成：
 
-**RxJava Essentials**
-
-阅读次数：2，笔记：已做
-备注：英文版2次，[中文翻译版](http://rxjava.yuxingxin.com/)1次
-
-
-## update 2016.1.15
-
-已完成：
-
-**《English as a second language podcast presents -- Introduction to the United States》**  
-
-* 开始时间：2015年12月01日
-
-* 完成时间：2016年01月15日
-
-* 每天3个课时，每个课时当天录音播放次数:3次，每个课时听的次数6次，朗读次数8次。次日复习：播放1次，听2次，朗读2次。如下图统计，第一个 R 是 radio 播放次数，第二次 L 是 listen 听的次数，第三个 R 是 read 朗读次数。
-
-![esl_pod](/img/article/esl_pod.jpeg)
-
-![esl_pod2](/img/article/esl_pod2.jpeg)
-
-
-## update 2016.8.15
-
-已完成：
-
-语法：
-
-* 英语魔法师之语法俱乐部
-
-小说：
-
-* [小王子](https://www.shanbay.com/read/book/82/)
-* [Oxford Bookworm 1-6](https://www.shanbay.com/read/books/topic/#topic7) 共60本
-* [纳尼亚传奇](https://www.shanbay.com/read/books/topic/#topic82) 全套7册: 《纳尼亚传奇：狮子、女巫和魔衣柜》、《纳尼亚传奇：凯斯宾王子》、《纳尼亚传奇：黎明踏浪号》、《纳尼亚传奇：银椅》、《纳尼亚传奇：能言马与男孩》、《纳尼亚传奇：魔法师的外甥》、《纳尼亚传奇：最后一战》
-* [访谈演说](https://www.shanbay.com/read/books/topic/#topic79) 《微软启示录：比尔·盖茨语录》、《奥巴马演说集》、《奥巴马访谈录》、《英女王演说集》、《布莱尔演说集》、《罗斯福炉边谈话：经济篇》
-* [奇幻历险](https://www.shanbay.com/read/books/topic/#topic34): 《爱丽丝漫游仙境》、《福尔摩斯冒险史（上）》、《绿野仙踪》
-* [凡尔纳三部曲之一：格兰特船长的儿女](https://www.shanbay.com/read/book/238/) 上中下
-
-进行中：
-
-* [安徒生童话](https://www.shanbay.com/read/book/97/)
-* [凡尔纳三部曲之二：海底两万里](https://www.shanbay.com/read/book/265/) 
