@@ -23,7 +23,7 @@ tags:
 
 ## RxJava 简介
 
-[RxJava](https://github.com/ReactiveX/RxJava) 是 ReactiveX 在 Java 上的开源的实现。Observable（观察者） 和 Subscriber（订阅者）是两个主要的类。在 RxJava 上，一个 Observable 是一个发出数据流或者事件的类，Subscriber 是一个对这些发出的 items （数据流或者事件）进行处理（采取行动）的类。一个 Observable 的标准流发出一个或多个 item，然后成功完成或者出错。一个 Observable 可以有多个 Subscribers，并且通过 Observable 发出的每一个 item，该 item 将会被发送到 Subscriber.onNext() 方法来进行处理。一旦 Observable 不再发出 items，它将会调用 Subscriber.onCompleted() 方法，或如果有一个出错的话 Observable 会调用 Subscriber.onError() 方法。
+[RxJava](https://github.com/ReactiveX/RxJava) 是 ReactiveX 在 Java 上的开源的实现。Observable（被观察者） 和 Subscriber（订阅者）是两个主要的类。在 RxJava 上，一个 Observable 是一个发出数据流或者事件的类，Subscriber 是一个对这些发出的 items （数据流或者事件）进行处理（采取行动）的类。一个 Observable 的标准流发出一个或多个 item，然后成功完成或者出错。一个 Observable 可以有多个 Subscribers，并且通过 Observable 发出的每一个 item，该 item 将会被发送到 Subscriber.onNext() 方法来进行处理。一旦 Observable 不再发出 items，它将会调用 Subscriber.onCompleted() 方法，或如果有一个出错的话 Observable 会调用 Subscriber.onError() 方法。
 
 现在，我们知道了很多关于 Observable 和 Subscriber 类，我们可以继续去介绍有关 Observables 的创建和订阅。
 
