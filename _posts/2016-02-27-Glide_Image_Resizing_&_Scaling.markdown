@@ -58,7 +58,7 @@ Glide
 
 ## CenterCrop
 
-`CenterCrop()`是一个裁剪技术，即缩放图像让它填充到 `ImageView` 界限内并且侧键额外的部分。`ImageView` 可能会完全填充，但图像可能不会完整显示。
+`CenterCrop()`是一个裁剪技术，即缩放图像让它填充到 `ImageView` 界限内并且裁剪额外的部分。`ImageView` 可能会完全填充，但图像可能不会完整显示。
 
 ```java
 Glide
