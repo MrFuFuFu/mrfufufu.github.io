@@ -4,7 +4,8 @@ title:  2016年，学习目录
 author: MrFu
 date:   2016-01-03 15:46:00
 tags:
-    - Life, English
+    - Life
+    - English
 ---
 
 ## update 2016.9.30
