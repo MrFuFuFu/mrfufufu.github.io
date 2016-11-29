@@ -684,7 +684,7 @@ private void initInstances() {
 
 ![17](https://raw.githubusercontent.com/MrFuFuFu/Codelab/master/gif/17.gif)
 
-图片已经显示出来了，但是这里有一点还没有达到预期，蓝色的导航条仍旧显示着。有一个 Toolbar 的背景看起来不是酷炫的。从 Toolbar 移除它，只需要下面这行代码就行了。
+图片已经显示出来了，但是这里有一点还没有达到预期，蓝色的导航条仍旧显示着。有一个 Toolbar 的背景看起来不是酷炫的。只需要在Toolbar里移除下面这行代码就行了。
 
 ```xml
 android:background="?attr/colorPrimary"
