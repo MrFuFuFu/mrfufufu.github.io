@@ -2,7 +2,7 @@
 layout:     keynote
 title:      "指尖上的RxJava"
 subtitle:   "Keynote: A finger tips of RxJava"
-iframe:     "http://mrfu.me/rxjava-keynote/"
+iframe:     "//mrfu.me/rxjava-keynote/"
 date:       2015-11-07
 author:     "MrFu"
 header-img: "img/post-bg-js-version.jpg"
@@ -19,7 +19,7 @@ RxJava
 
 
 
-### [Watch Slides →](http://mrfu.me/rxjava-keynote)
+### [Watch Slides →](//mrfu.me/rxjava-keynote)
 
 <img src="http://mrfu.me/rxjava-keynote/attach/qrcode.png" width="300" height="300"/>
 

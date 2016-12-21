@@ -2,7 +2,7 @@
 layout:     keynote
 title:      “Retrofit Analysis"
 subtitle:   "Keynote: A finger tips of RxJava"
-iframe:     "http://mrfu.me/retrofit-analysis/"
+iframe:     "//mrfu.me/retrofit-analysis/"
 date:       2016-05-17
 author:     "MrFu"
 header-img: "img/post-bg-js-version.jpg"
@@ -19,7 +19,7 @@ Retrofit
 
 
 
-### [Watch Slides →](http://mrfu.me/retrofit-analysis)
+### [Watch Slides →](//mrfu.me/retrofit-analysis)
 
 <img src="http://mrfu.me/retrofit-analysis/attach/qrcode.png" width="300" height="300"/>
 
