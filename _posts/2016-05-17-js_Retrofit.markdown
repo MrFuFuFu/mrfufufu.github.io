@@ -21,7 +21,7 @@ Retrofit
 
 ### [Watch Slides →](//mrfu.me/retrofit-analysis)
 
-<img src="http://mrfu.me/retrofit-analysis/attach/qrcode.png" width="300" height="300"/>
+<img src="https://mrfu.me/retrofit-analysis/attach/qrcode.png" width="300" height="300"/>
 
 
 
