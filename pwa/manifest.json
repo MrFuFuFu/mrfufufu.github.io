@@ -1,0 +1,19 @@
+{
+  "name": "傅圆的博客 | MrFu Blog",
+  "short_name": "MrFu Blog",
+  "description": "Hi, I'm Fu Yuan, an Android software engineer",
+  "icons": [{
+    "src": "icons/128.png",
+    "sizes": "128x128",
+    "type": "image/png"
+  }, {
+    "src": "icons/512.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }],
+  "background_color": "#fff",
+  "theme_color": "#000",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait"
+}
