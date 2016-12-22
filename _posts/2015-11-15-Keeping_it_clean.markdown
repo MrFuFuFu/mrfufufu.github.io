@@ -6,6 +6,7 @@ author: MrFu
 date:   2015-11-15 17:40:00
 categories: Android
 header-img: "img/post-bg-edittext.png"
+catalog:    true
 tags:
     - Android
 ---

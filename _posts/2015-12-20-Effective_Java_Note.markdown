@@ -4,6 +4,7 @@ title:  Effective Java 笔记
 author: MrFu
 date:   2015-12-20 20:52:00
 header-img: "img/post-bg-effective-java.jpg"
+catalog:    true
 tags:
     - Effective Java
 ---

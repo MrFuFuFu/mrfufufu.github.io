@@ -4,6 +4,7 @@ title:  "Glide - 图片重设大小 和 缩放"
 subtitle:   "Glide — Image Resizing & Scaling"
 author: MrFu
 date:   2016-02-27 17:00:00
+catalog:    true
 tags:
     -  Glide
 ---

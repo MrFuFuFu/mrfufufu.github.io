@@ -4,6 +4,7 @@ title:  "Glide - 显示 Gif 和 Video"
 subtitle:   "Glide — Displaying Gifs & Videos"
 author: MrFu
 date:   2016-02-27 18:00:00
+catalog:    true
 tags:
     -  Glide
 ---

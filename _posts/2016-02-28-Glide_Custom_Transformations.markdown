@@ -4,6 +4,7 @@ title:  "Glide - 自定义转换"
 subtitle:   "Glide — Custom Transformations"
 author: MrFu
 date:   2016-02-28 11:30:00
+catalog:    true
 tags:
     -  Glide
 ---

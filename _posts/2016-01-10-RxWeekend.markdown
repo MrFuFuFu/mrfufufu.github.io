@@ -4,6 +4,7 @@ title:  RxWeekend
 subtitle: RxJava 的周末狂欢
 author: MrFu
 date:   2016-01-10 21:41:00
+catalog:    true
 tags:
     -  RxJava
 ---

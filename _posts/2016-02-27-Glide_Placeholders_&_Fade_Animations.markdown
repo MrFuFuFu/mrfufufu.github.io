@@ -4,6 +4,7 @@ title:  "Glide - 占位符 和 渐现动画"
 subtitle:   "Glide — Placeholders & Fade Animations"
 author: MrFu
 date:   2016-02-27 16:00:00
+catalog:    true
 tags:
     -  Glide
 ---

@@ -4,6 +4,7 @@ title:  "Glide - 如何旋转图像"
 subtitle:   "Glide — How to Rotate Images"
 author: MrFu
 date:   2016-02-28 14:45:00
+catalog:    true
 tags:
     -  Glide
 ---

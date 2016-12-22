@@ -5,6 +5,7 @@ author: MrFu
 date:   2015-06-22 18:55:00
 categories: Android
 header-img: "img/post-bg-e2e-ux.jpg"
+catalog:    true
 tags:
     - Android
 ---

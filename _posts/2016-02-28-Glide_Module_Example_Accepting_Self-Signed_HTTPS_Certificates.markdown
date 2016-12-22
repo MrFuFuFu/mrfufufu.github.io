@@ -4,6 +4,7 @@ title:  "Glide - Module 实例：接受自签名证书的 HTTPS"
 subtitle:   "Glide Module Example: Accepting Self-Signed HTTPS Certificates"
 author: MrFu
 date:   2016-02-28 13:30:00
+catalog:    true
 tags:
     -  Glide
 ---

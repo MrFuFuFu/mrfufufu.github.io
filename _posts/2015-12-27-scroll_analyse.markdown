@@ -5,6 +5,7 @@ subtitle: 《Android 群英传》读书笔记
 author: MrFu
 date:   2015-12-27 16:40:00
 header-img: "img/post-bg-android-heros.jpg"
+catalog:    true
 tags:
     - 《Android 群英传》
 ---

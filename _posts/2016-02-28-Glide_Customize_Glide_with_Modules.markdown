@@ -4,6 +4,7 @@ title:  "Glide - 用 Module 自定义 Glide"
 subtitle:   "Glide — Customize Glide with Modules"
 author: MrFu
 date:   2016-02-28 13:00:00
+catalog:    true
 tags:
     -  Glide
 ---

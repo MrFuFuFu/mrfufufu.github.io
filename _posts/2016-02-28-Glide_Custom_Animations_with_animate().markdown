@@ -4,6 +4,7 @@ title:  "Glide - 用 animate() 自定义动画"
 subtitle:   "Glide — Custom Animations with animate()"
 author: MrFu
 date:   2016-02-28 12:00:00
+catalog:    true
 tags:
     -  Glide
 ---

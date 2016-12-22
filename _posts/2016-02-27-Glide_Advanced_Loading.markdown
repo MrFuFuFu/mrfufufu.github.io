@@ -4,6 +4,7 @@ title:  "Glide - 加载进阶"
 subtitle:   "Glide — Advanced Loading"
 author: MrFu
 date:   2016-02-27 13:00:00
+catalog:    true
 tags:
     -  Glide
 ---

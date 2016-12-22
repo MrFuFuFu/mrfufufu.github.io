@@ -5,6 +5,7 @@ author: MrFu
 date:   2015-07-01 20:56:00
 categories: Android
 header-img: "img/codelab-android-lib.jpg"
+catalog:    true
 tags:
     - Android
 ---

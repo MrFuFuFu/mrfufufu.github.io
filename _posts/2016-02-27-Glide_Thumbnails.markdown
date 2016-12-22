@@ -4,6 +4,7 @@ title:  "Glide - 缩略图"
 subtitle:   "Glide — Thumbnails"
 author: MrFu
 date:   2016-02-27 19:25:00
+catalog:    true
 tags:
     -  Glide
 ---

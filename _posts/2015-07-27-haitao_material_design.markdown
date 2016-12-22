@@ -5,6 +5,7 @@ author: MrFu
 date:   2015-07-27 13:43:00
 categories: Android
 header-img: "img/post-bg-mdhaitao.jpg"
+catalog:    true
 tags:
     - Android
 ---

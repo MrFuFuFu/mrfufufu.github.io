@@ -6,6 +6,7 @@ author: MrFu
 date:   2015-08-31 17:52:00
 categories: Android
 header-img: "img/percentcover.jpg"
+catalog:    true
 tags:
     - Android
 ---

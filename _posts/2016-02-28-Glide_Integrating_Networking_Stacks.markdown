@@ -4,6 +4,7 @@ title:  "Glide - 集成网络栈"
 subtitle:   "Glide — Integrating Networking Stacks"
 author: MrFu
 date:   2016-02-28 12:30:00
+catalog:    true
 tags:
     -  Glide
 ---

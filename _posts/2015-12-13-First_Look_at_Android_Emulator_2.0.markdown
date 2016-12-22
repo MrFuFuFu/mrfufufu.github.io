@@ -6,6 +6,7 @@ author: MrFu
 date:   2015-12-13 15:50:00
 categories: Android
 header-img: "img/post-bg-androidemulator2.jpg"
+catalog:    true
 tags:
     - Android
 ---

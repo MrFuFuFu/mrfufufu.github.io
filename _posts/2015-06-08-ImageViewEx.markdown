@@ -5,6 +5,7 @@ author: MrFu
 date:   2015-06-08 20:12:00
 categories: Android
 header-img: "img/post-bg-js-module.jpg"
+catalog:    true
 tags:
     - Android
 ---

@@ -4,6 +4,7 @@ title:  Glide - Module 实例：自定义缓存
 subtitle:   "Glide Module Example: Customize Caching"
 author: MrFu
 date:   2016-02-28 14:00:00
+catalog:    true
 tags:
     -  Glide
 ---

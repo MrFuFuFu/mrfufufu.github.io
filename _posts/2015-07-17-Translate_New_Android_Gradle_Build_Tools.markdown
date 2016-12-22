@@ -5,6 +5,7 @@ author: MrFu
 date:   2015-07-17 21:26:00
 categories: English
 header-img: "img/gradle-tools.jpg"
+catalog:    true
 tags:
     - English
 ---

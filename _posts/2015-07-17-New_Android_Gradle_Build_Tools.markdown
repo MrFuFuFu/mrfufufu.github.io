@@ -5,6 +5,7 @@ author: MrFu
 date:   2015-07-17 21:27:00
 categories: Android
 header-img: "img/gradle-tools.jpg"
+catalog:    true
 tags:
     - Android
 ---
