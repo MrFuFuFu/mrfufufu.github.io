@@ -12,6 +12,12 @@ header-img: "img/about-bg.jpg"
     <ul class="active-list">
         <li><a href="{{site.baseUrl}}/attach/TheEconomist/2017-03-01-Industrial-clusters.pdf"> 2017.03.01 Industrial clusters </a></li>
         <li><a href="{{site.baseUrl}}/attach/TheEconomist/2017-03-02-Mineral-water.pdf"> 2017.03.02 Mineral Water </a></li>
+
+        {% for file in site.static_files %}
+          {% if file.extname == ".pdf" %}
+          <li><a href="{{ file.path }}"> file.basename </a></li>
+          {% endif %}
+        {% endfor %}
     </ul>
 </div>
 
