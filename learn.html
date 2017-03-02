@@ -15,7 +15,7 @@ header-img: "img/about-bg.jpg"
 
         {% for file in site.static_files %}
           {% if file.extname == ".pdf" %}
-          <li><a href="{{ file.path }}"> file.basename </a></li>
+          <li><a href="{{ file.path }}"> {{ file.basename }} </a></li>
           {% endif %}
         {% endfor %}
     </ul>
