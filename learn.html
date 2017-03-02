@@ -10,9 +10,6 @@ header-img: "img/about-bg.jpg"
     <p>外刊看中国，The Economist 学习</p>
 
     <ul class="active-list">
-        <li><a href="{{site.baseUrl}}/attach/TheEconomist/2017-03-01-Industrial-clusters.pdf"> 2017.03.01 Industrial clusters </a></li>
-        <li><a href="{{site.baseUrl}}/attach/TheEconomist/2017-03-02-Mineral-water.pdf"> 2017.03.02 Mineral Water </a></li>
-
         {% for file in site.static_files %}
           {% if file.path contains "/attach/TheEconomist" and file.extname == ".pdf" %}
             <li><a href="{{ file.path }}"> {{ file.basename }} </a></li>
