@@ -14,10 +14,8 @@ header-img: "img/about-bg.jpg"
         <li><a href="{{site.baseUrl}}/attach/TheEconomist/2017-03-02-Mineral-water.pdf"> 2017.03.02 Mineral Water </a></li>
 
         {% for file in site.static_files %}
-          {% if file.path contains "/attach/TheEconomist" %}
-          {% if file.extname == ".pdf" %}
+          {% if file.path contains "/attach/TheEconomist" and file.extname == ".pdf" %}
             <li><a href="{{ file.path }}"> {{ file.basename }} </a></li>
-          {% endif %}
           {% endif %}
         {% endfor %}
     </ul>
