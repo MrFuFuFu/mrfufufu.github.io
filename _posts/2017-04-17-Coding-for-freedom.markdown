@@ -25,7 +25,7 @@ tags:
 
 开始准备雅思，报考了12月17日这一场。知乎搜了好多攻略，做了一些整理：<a href="{{site.baseUrl}}/attach/Prepare-IELTS.pdf"> Prepare IELTS </a>，正式开始备考。恰逢公司开始996加班，跟 leader 表明了想法之后，得到支持，允许我晚上加班期间回家看书。感动 ing。
 
-#### 以下是之前写的
+#### 以下是之前写的(以前整理的)
 
 * 9月初开始准备雅思
 * Reading 分数从剑4做到剑5，分数由4.5分升到6.5分，偶尔有7分，扇贝读书90多本原著没白看！
@@ -51,9 +51,9 @@ tags:
 | 硕士年份  | 2 | 1 |
 | 硕士区别 | Master(硕士学位)  | 可拿Diploma(硕士文凭)即: PGD |
 | 读书总开销 | 40W+(学费28-30W) |  20W+(学费10W) |
-| 移民条件 | 雅思4个7(主要难点) | 找到相关工作(主要难点) |
-| 移民难度 | 四个7难度一般 | 据说一般总能找到 |
-| PR(绿卡) | 没有永久绿卡(需5年内待满2年) | 有永久绿卡(即使回国工作)|
+| PR 条件 | 雅思4个7(主要难点) | 找到相关工作(主要难点) |
+| PR 难度 | 四个7难度一般 | 据说一般总能找到 |
+| PR | 没有永久PR(需5年内待满2年) | 永久PR(即使回国工作)|
 | PR 优势 | 拿到澳洲PR=拿到新西兰 PR | 不等于 |
 | 薪资待遇 | 35W(RMB)/年 起 | 25W(RMB)/年 起 |
 | 无聊程度 | 不无聊 | 非常无聊 |
@@ -62,9 +62,9 @@ tags:
 
 ### 2016.12
 
-12月17日考试，31日出分：5.5（除了阅读6，其他都是5），理所当然的失眠，哎，17年继续。
-
 #### 以下是之前写的
+
+12月17日考试，31日出分：5.5（除了阅读6，其他都是5），理所当然的失眠，哎，17年继续。
 
 ##### 先说雅思
 
@@ -92,6 +92,7 @@ tags:
 
 Unitec 的 PGD 的 condition offer 也收到了。
 
+
 ### 2017.04.17
 
 3月30日 IELTS 三战6.0(L:6, R:7, W:5.5, S:5.5)，这分数，只够 GD，而且 Unitec 的 GD 还达不到要求（要求 W:6）。所以周末开始看其他学校，整理了一下，MASSEY, UCOL, MIT, 还有 Wintec 都有相关专业的 GD，并且也都符合要求。恰逢复活节假期，他们休假。刚好，今天2.25的复议成绩出来了，写作提升了0.5！！！总分提升到了6(L:5.5, R:6, W:6, S:5.5)，至此，UNITEC 的 GD 是达到要求了。2.25的成绩单也能拿去申请 GD 了，所以顺手把复议成功退回来的1000块钱，接着拿去复议3.30这场的考试了（总感觉写作和口语不止5.5，我发挥的不错呀！）
@@ -100,17 +101,17 @@ Unitec 的 PGD 的 condition offer 也收到了。
 
 这几天因为三战的成绩实在纠结许久，甚至已经报了第四次的考试了(5月6日的)，幸好昨天冲动点了退考，因为实在不想考了...
 
-附上对比的结果吧，也许有人要用呢，仅限于 IT 相关的软件开发的 GD，并且适用于雅思总分6的，（AUT 要求每项小分6.0，总分6），
+附上对比的结果吧，也许有人要用呢，仅限于 IT 相关的软件开发的 GD，并且适用于雅思总分6的，（AUT 好像要求每项小分6.0，总分6），
 
-| 学校 | 专业名称 | 学费 | 入学要求  | 位置 | 开学时间 | 
-|:------:|:-----:|:-----:|:-----:|:---:|:---:|
-| Massey University | [GD IN INFORMATION SCIENCES (GradDipInfSc)](https://www.massey.ac.nz/massey/learning/programme-course/programme.cfm?prog_id=93060&tab=plan) 方向: [Software Engineering](http://www.massey.ac.nz/massey/about-massey/calendar/qualification-regulations/graduate-diplomas/graduate-diploma-in-information-sciences.cfm) | [Computer Science $29,100](https://www.massey.ac.nz/massey/admission/fees/quick-guide/quick-guide_home.cfm) | [IELTS6.0(5.5)](http://www.massey.ac.nz/massey/international/study-with-massey/entry-requirements/entry-requirements_home.cfm#UG) | 北帕莫斯顿 | - | 
-| Universal College of Learning(UCOL) | [GD in ICT(Software Development)](https://www.ucol.ac.nz/programmes/information-technology/graduate-diploma-in-ict-(software-development))| $18,670 | IELTS6.0(5.5) | 北帕莫斯顿 | 24 Jul 2017 | 
-| MANUKAU INSTITUTE OF TECHONOLOGY(MIT) | Digital Technologies [GD in Software and Web Development](http://www.manukau.ac.nz/study-options/areas-of-study/information-technology/information-technology/graduate-diploma-in-software-and-web-development-level-7) | $20,800  | IELTS6.0(5.5) | MIT Manukau(Auckland) | 21 July |
-| Unitec | [GD in Computing](http://www.unitec.ac.nz/career-and-study-options/computing-and-information-technology/graduate-diploma-in-computing) | $20,145 | IELTS6.0(5.5) W, R 6.0; L, S 5.5 | Auckland | 24 Jul 17 |
+| 学校 | 专业名称 | 学费 | 入学要求  | 位置 | 
+|:------:|:-----:|:-----:|:-----:|:---:|
+| Massey University | [GD IN INFORMATION SCIENCES (GradDipInfSc)](https://www.massey.ac.nz/massey/learning/programme-course/programme.cfm?prog_id=93060&tab=plan) 方向: [Software Engineering](http://www.massey.ac.nz/massey/about-massey/calendar/qualification-regulations/graduate-diplomas/graduate-diploma-in-information-sciences.cfm) | [Computer Science $29,100](https://www.massey.ac.nz/massey/admission/fees/quick-guide/quick-guide_home.cfm) | [IELTS6.0(5.5)](http://www.massey.ac.nz/massey/international/study-with-massey/entry-requirements/entry-requirements_home.cfm#UG) | 北帕莫斯顿 |
+| Universal College of Learning(UCOL) | [GD in ICT(Software Development)](https://www.ucol.ac.nz/programmes/information-technology/graduate-diploma-in-ict-(software-development))| $18,670 | IELTS6.0(5.5) | 北帕莫斯顿 |
+| MANUKAU INSTITUTE OF TECHONOLOGY(MIT) | Digital Technologies [GD in Software and Web Development](http://www.manukau.ac.nz/study-options/areas-of-study/information-technology/information-technology/graduate-diploma-in-software-and-web-development-level-7) | $20,800  | IELTS6.0(5.5) | Auckland |
+| Unitec | [GD in Computing](http://www.unitec.ac.nz/career-and-study-options/computing-and-information-technology/graduate-diploma-in-computing) | $20,145 | IELTS6.0(5.5) W, R 6.0; L, S 5.5 | Auckland |
 | Wintec | [GD in Information Technology](https://www.wintec.ac.nz/study-at-wintec/courses/information-technology/graduate-diploma-in-information-technology-(level-7)) |  $21,036(+600保险) | IELTS6.0(5.5) | 哈密尔顿 |
 
-接下来该开始上手点英语之外的，iOS 开发需要学学，以后应该会用，前端也要学一下。Java 搞个服务器弄几个接口也要会，Python 也要学，Python 大法好，至于 PHP，再看吧，毕竟是世界上最伟大的语言。
+接下来该开始上手点英语之外的，iOS 开发需要学学，以后应该会用，前端也要学一下。Java 搞个服务器弄几个接口也要会，Python 也要学，Python 大法好，至于 PHP，再看吧，毕竟是世界上最伟大的语言。感觉刚忙了？
 
 这么看来，可以开始把签证材料准备起来了？机票也可以看起来了？想想还是有点小激动的。
 
