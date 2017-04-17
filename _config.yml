@@ -44,14 +44,6 @@ kramdown:
 
 
 
-# Duoshuo settings
-duoshuo_username: mrfu
-# Share component is depend on Comment so we can NOT use share only.
-duoshuo_share: true                     # set to false if you want to use Comment without Sharing
-
-
-
-
 # Analytics settings
 # Baidu Analytics
 ba_track_id: c3407349cc1129e07d0c33c8714b6175

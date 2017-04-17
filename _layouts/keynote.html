@@ -59,32 +59,6 @@ layout: default
 
                 <hr>
 
-                {% if site.duoshuo_share && site.duoshuo_username %}
-                <!-- 多说 Share start -->
-                </style>
-                <div class="ds-share"
-                    style="text-align: right"
-                    data-thread-key="{{page.id}}" data-title="{{page.title}}"
-                    data-images="{{ site.url }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}"
-                    data-content="{{ content | strip_html | truncate:80 }} | MrFu Blog，@傅圆 的个人博客"
-                    data-url="{{site.url}}{{page.url}}">
-                    <div class="ds-share-inline">
-                      <ul  class="ds-share-icons-16">
-                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
-                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">WeChat</a></li>
-                        <li> <a class="ds-linkedin" href="javascript:void(0);" data-service="linkedin">L</a> </li>
-                        <li> <a class="ds-facebook" href="javascript:void(0);" data-service="facebook">F</a> </li>
-                        <li> <a class="ds-twitter" href="javascript:void(0);" data-service="twitter">T</a> </li>
-                      </ul>
-                      <div class="ds-share-icons-more">
-                      </div>
-                    </div>
-                <hr>
-                </div>
-                <!-- 多少 Share end-->
-                {% endif %}
-
-
                 <ul class="pager">
                     {% if page.previous.url %}
                     <li class="previous">
@@ -104,18 +78,6 @@ layout: default
                     {% endif %}
                 </ul>
 
-
-                {% if site.duoshuo_username %}
-                <!-- 多说评论框 start -->
-                <div class="comment">
-                    <div class="ds-thread"
-                        data-thread-key="{{page.id}}"
-                        data-title="{{page.title}}"
-                        data-url="{{site.url}}{{page.url}}" >
-                    </div>
-                </div>
-                <!-- 多说评论框 end -->
-                {% endif %}
             </div>
 
             <!-- Sidebar Container -->
@@ -177,29 +139,6 @@ layout: default
     })
     resize();
 </script>
-
-{% if site.duoshuo_username %}
-<!-- Duoshuo hacking -->
-<input id="dsUser" type="hidden" value="{{site.duoshuo_username}}"  />
-
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-    // dynamic User hacking by Hux
-    var _user = document.getElementById('dsUser').value;
-    // duoshuo comment query.
-    var duoshuoQuery = {short_name: _user };
-    (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0]
-         || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-</script>
-<script src="https://dn-hb0716.qbox.me/duoshuo.js"></script>
-<!-- 多说公共JS代码 end -->
-{% endif %}
 
 
 {% if site.anchorjs %}
