@@ -111,7 +111,7 @@ Unitec 的 PGD 的 condition offer 也收到了。
 | Unitec | [GD in Computing](http://www.unitec.ac.nz/career-and-study-options/computing-and-information-technology/graduate-diploma-in-computing) | $20,145 | IELTS6.0(5.5) W, R 6.0; L, S 5.5 | Auckland |
 | Wintec | [GD in Information Technology](https://www.wintec.ac.nz/study-at-wintec/courses/information-technology/graduate-diploma-in-information-technology-(level-7)) |  $21,036(+600保险) | IELTS6.0(5.5) | 哈密尔顿 |
 
-接下来该开始上手点英语之外的，iOS 开发需要学学，以后应该会用，前端也要学一下。Java 搞个服务器弄几个接口也要会，Python 也要学，Python 大法好，至于 PHP，再看吧，毕竟是世界上最伟大的语言。感觉刚忙了？
+接下来该开始上手点英语之外的，iOS 开发需要学学，以后应该会用，前端也要学一下。Java 搞个服务器弄几个接口也要会，Python 也要学，Python 大法好，至于 PHP，再看吧，毕竟是世界上最伟大的语言。感觉更忙了？
 
 这么看来，可以开始把签证材料准备起来了？机票也可以看起来了？想想还是有点小激动的。
 
