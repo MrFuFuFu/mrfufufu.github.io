@@ -1,0 +1,118 @@
+---
+layout: post
+title:  Coding for freedom
+subtitle: 在希望的原野上奔跑
+author: MrFu
+date:   2017-04-17 15:15:00
+catalog:    true
+tags:
+    - Life
+---
+
+思来想去，还是决定新开个文章，再写在 [My stages](https://mrfu.me/2016/01/03/2016_study_plans/) 就显得有点不合适了。对，我决定...公开了！虽然这里也没几个人能看到，哈哈哈哈哈。
+
+## 起因
+
+原因复杂，细说也不便，记得当初我的 leader 在饭后散步和我们说起他的一个阿里同事的座右铭，即本文标题，coding for freedom（不晓得他的这个同事现在如何了）。这句话倒是一直印在我脑海里，这倒不是说出国了就 free 了，现在也很 free 。只是说可以去尝试一些不一样生活，毕竟，人生还是有很多选择的不是吗。这里 coding 也只是一个手段，恰逢学了这项技能，而且还能谋个生，攒点学费钱（攒不起老婆本，杭州的房价...哎...）。还有一个就是如果出去了，我还能找个 Aeroclub 学学开飞机呀，这种 club，国内还真没听说过，想想还是很激动的，再考个私照，以后说不定就能自由飞了。虽然飞不了 Boeing737 这种超级空客，但是塞斯纳这种小飞机，肯定没有问题的。
+
+15年开始，慢慢的就有了这些想法了。15年春节，先跟家里通了个气，说想出去读个书，探探口风，倒是没有明确拒绝，只不过担心我这么大了还没结婚（那会才25！）。2016年，其实刚开始是什么都不懂，去哪个国家，怎么去，是不是读书，读什么专业，都是完全不知所措的。慢慢查资料继续学英语（此时扇贝打卡应该有一年了吧）。当明白直接去当地找工作是不太可能的之后，留学便成了必然了。9月份开始看国家，定学校，找中介。刚开始是找的澳洲，毕竟大部分要留学都去的这里。但是澳洲硕士要两年，差不多要花40多万，而且留下来也不那么容易。学校 offer 都收到了。最后心里还是放弃了，转向新西兰，一年读书，然后找到工作就能拿 PR 的实在是太吸引人了。
+
+## 经过
+
+### 2016.9
+
+定校：刚开始是澳洲的三个学校：弗林德斯大学, 塔斯马尼亚大学, 伍伦贡大学 最后都拿到了 condition offer.
+
+开始准备雅思，报考了12月17日这一场。知乎搜了好多攻略，做了一些整理：<a href="{{site.baseUrl}}/attach/Prepare-IELTS.pdf"> Prepare IELTS </a>，正式开始备考。恰逢公司开始996加班，跟 leader 表明了想法之后，得到支持，允许我晚上加班期间回家看书。感动 ing。
+
+#### 以下是之前写的
+
+* 9月初开始准备雅思
+* Reading 分数从剑4做到剑5，分数由4.5分升到6.5分，偶尔有7分，扇贝读书90多本原著没白看！
+* Listening 分数从剑4做到剑5，分数由4.5分维持在4.5分。我表示很痛苦，期间去了一次英文的圣经分享，依然听不懂他们讨论。撞墙中...目前在刷语料库，科学60秒，BBC 6 minute English，TED
+* Writing 还没动笔，顾家北的和慎小嶷的都在看
+* Speaking 嗯...不表...完全张不开嘴
+
+对了，开始前 [Test your vocab](http://testyourvocab.com/) 测试结果为词汇量 5970，待雅思考完，再测一次
+
+
+### 2016.10
+
+国庆在家看了 [Jack Liu](http://www.jack-liu.com/) 的博客之后开始考虑新西兰，一番罗列和对比，并且咨询了一下已经过去了的人，并看了很多文章，如：[这篇](http://ourcoders.com/thread/show/3659/)，最后心里有了答案。申请了 Unitec 的 PGD。
+
+#### 以下是之前写的
+
+.....略
+
+上个对比图
+
+| 项目 | 澳洲  | 新西兰 |
+|:----------:|:----------:|:-----------:|
+| 硕士年份  | 2 | 1 |
+| 硕士区别 | Master(硕士学位)  | 可拿Diploma(硕士文凭)即: PGD |
+| 读书总开销 | 40W+(学费28-30W) |  20W+(学费10W) |
+| 移民条件 | 雅思4个7(主要难点) | 找到相关工作(主要难点) |
+| 移民难度 | 四个7难度一般 | 据说一般总能找到 |
+| PR(绿卡) | 没有永久绿卡(需5年内待满2年) | 有永久绿卡(即使回国工作)|
+| PR 优势 | 拿到澳洲PR=拿到新西兰 PR | 不等于 |
+| 薪资待遇 | 35W(RMB)/年 起 | 25W(RMB)/年 起 |
+| 无聊程度 | 不无聊 | 非常无聊 |
+
+吐槽下，又感冒了！感觉1个月感冒2次，每次15天的节奏！！！睡眠不足的后果就是太虚了，即使每天锻炼都完全没用...
+
+### 2016.12
+
+12月17日考试，31日出分：5.5（除了阅读6，其他都是5），理所当然的失眠，哎，17年继续。
+
+#### 以下是之前写的
+
+##### 先说雅思
+
+一战17号结束，个中艰辛不表，本来阅读和听力感觉是最好拿分的，最后一段时间发现，这两项才是头疼的，扇贝读书的90多本书白读了的感觉！！至于口语和写作，这就得感谢最好的雅思小伙伴也是唯一的雅思伙伴 Ashley 了，帮了我超大超大的忙，每两天帮我上一次口语课，每次她都要跑到他们学校的食堂去上，大冬天的，要感动的哭了。而且，口语练习的话题卡和写作，每天都帮我批改，这也是，到最后，会去头疼阅读和听力的原因了，全是因为 Ashley 啊。点链接！贴了个写作修改范例！等出分吧，感觉阅读听力一团糟，我已经做好再战的准备了
+
+另：词汇现在 7650，相较准备前，多了1680，说不上好坏，欧路词典里，添加了2000个生词，都没背完，怪不得阅读这么差。
+
+##### 再说其他
+
+澳洲的三个学校的 condition offer 都下来了，不过…死心了
+
+新西兰前段时间修改了政策，新增了雅思6.5分的要求，应该不是大问题。
+
+新西兰学校 Unitec 申请了，还没下来，进度有点慢，问了其他人，都挺快的。
+
+签证的问题也了解了，目前的薪资水平，我可以自己担保自己，只要提供工资流水就行了，还得多亏当地的中介，国内的中介都让我存钱到父母账户…完全把我当应届生的节奏…也是醉了。
+
+备考很艰辛，4个月，后来连图书馆都不去了，因为图书馆太吵了，来回也浪费时间。几乎没去过电影院，拉下一大堆，最近是要一部部补回来了，上周六考完，刚好团建，玩的很嗨，XBox 很给力啊，想入了…以后再说…
+
+### 2017.03.13
+
+2月25日 IELTS 二战5.5（除了阅读是6，其他都是5.5），三个小分都升到5.5了。复议+报名月底的3战了。另外，开始考虑 Unitec 的 GD 了，PGD 看来是有点悬。时间还够，但是真心没心思再考了...月底这次再拼拼...
+
+另外参加了魏剑锋的外刊看中国第五期，笔记都传到 [LEARN](https://mrfu.me/learn/) 模块了。
+
+Unitec 的 PGD 的 condition offer 也收到了。
+
+### 2017.04.17
+
+3月30日 IELTS 三战6.0(L:6, R:7, W:5.5, S:5.5)，这分数，只够 GD，而且 Unitec 的 GD 还达不到要求（要求 W:6）。所以周末开始看其他学校，整理了一下，MASSEY, UCOL, MIT, 还有 Wintec 都有相关专业的 GD，并且也都符合要求。恰逢复活节假期，他们休假。刚好，今天2.25的复议成绩出来了，写作提升了0.5！！！总分提升到了6(L:5.5, R:6, W:6, S:5.5)，至此，UNITEC 的 GD 是达到要求了。2.25的成绩单也能拿去申请 GD 了，所以顺手把复议成功退回来的1000块钱，接着拿去复议3.30这场的考试了（总感觉写作和口语不止5.5，我发挥的不错呀！）
+
+明天等中介上班，提交成绩单，更换 Unitec 的 PGD 的 condition offer 为 GD 的 uncondition offer。然后再考虑多申请个 UCOL，以备不时之需。
+
+这几天因为三战的成绩实在纠结许久，甚至已经报了第四次的考试了(5月6日的)，幸好昨天冲动点了退考，因为实在不想考了...
+
+附上对比的结果吧，也许有人要用呢，仅限于 IT 相关的软件开发的 GD，并且适用于雅思总分6的，（AUT 要求每项小分6.0，总分6），
+
+| 学校 | 专业名称 | 学费 | 入学要求  | 位置 | 开学时间 | 
+|:------:|:-----:|:-----:|:-----:|:---:|:---:|
+| Massey University | [GD IN INFORMATION SCIENCES (GradDipInfSc)](https://www.massey.ac.nz/massey/learning/programme-course/programme.cfm?prog_id=93060&tab=plan) 方向: [Software Engineering](http://www.massey.ac.nz/massey/about-massey/calendar/qualification-regulations/graduate-diplomas/graduate-diploma-in-information-sciences.cfm) | [Computer Science $29,100](https://www.massey.ac.nz/massey/admission/fees/quick-guide/quick-guide_home.cfm) | [IELTS6.0(5.5)](http://www.massey.ac.nz/massey/international/study-with-massey/entry-requirements/entry-requirements_home.cfm#UG) | 北帕莫斯顿 | - | 
+| Universal College of Learning(UCOL) | [GD in ICT(Software Development)](https://www.ucol.ac.nz/programmes/information-technology/graduate-diploma-in-ict-(software-development))| $18,670 | IELTS6.0(5.5) | 北帕莫斯顿 | 24 Jul 2017 | 
+| MANUKAU INSTITUTE OF TECHONOLOGY(MIT) | Digital Technologies [GD in Software and Web Development](http://www.manukau.ac.nz/study-options/areas-of-study/information-technology/information-technology/graduate-diploma-in-software-and-web-development-level-7) | $20,800  | IELTS6.0(5.5) | MIT Manukau(Auckland) | 21 July |
+| Unitec | [GD in Computing](http://www.unitec.ac.nz/career-and-study-options/computing-and-information-technology/graduate-diploma-in-computing) | $20,145 | IELTS6.0(5.5) W, R 6.0; L, S 5.5 | Auckland | 24 Jul 17 |
+| Wintec | [GD in Information Technology](https://www.wintec.ac.nz/study-at-wintec/courses/information-technology/graduate-diploma-in-information-technology-(level-7)) |  $21,036(+600保险) | IELTS6.0(5.5) | 哈密尔顿 |
+
+接下来该开始上手点英语之外的，iOS 开发需要学学，以后应该会用，前端也要学一下。Java 搞个服务器弄几个接口也要会，Python 也要学，Python 大法好，至于 PHP，再看吧，毕竟是世界上最伟大的语言。
+
+这么看来，可以开始把签证材料准备起来了？机票也可以看起来了？想想还是有点小激动的。
+
+
+
