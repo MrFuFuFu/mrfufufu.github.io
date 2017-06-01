@@ -23,9 +23,6 @@ Hi, Kotlin
 
 <img src="http://mrfu.me/rxjava-keynote/attach/kotlin_qrcode.png" width="300" height="300"/>
 
-![keeping-it-clean](/img/keeping-it-clean.jpeg)
-
-
 
 <small class="img-hint">你也可以通过扫描二维码在手机上观看</small>
 
