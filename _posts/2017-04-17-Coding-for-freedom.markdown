@@ -135,7 +135,9 @@ Unitec 的 PGD 的 condition offer 也收到了。
 
 过去一段时间都在准备签证材料，一大堆材料，时间点也记不住了，材料如下：
 
-![visa](/img/post-qianzheng.jpeg) ![money](/img/post-money.jpeg)
+
+<img src="https://mrfu.me/img/post-qianzheng.jpeg" width="300" height=“409”/>
+<img src="https://mrfu.me/img/post-money.jpeg" width="300" height=“201”/>
 
 签证的照片，护照，户口本，身份证，学校录取通知书，120个学分证明和假期计划(offer 里有)，体检回执(1096)，无犯罪记录公证(回家办)，出生公证(回家办)，学习计划书(中文)，学历材料，还有就是资金证明了，走了留学生专用账户，材料中信和移民局的网站都有，这步略微繁琐，时间也比较久。
 
