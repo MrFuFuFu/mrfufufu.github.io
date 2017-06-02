@@ -21,7 +21,7 @@ Hi, Kotlin
 
 ### [Watch Slides →](//mrfu.me/kotlin-keynote)
 
-<img src="https://github.com/MrFuFuFu/kotlin-keynote/blob/master/attach/kotlin_qrcode.png" width="300" height="300"/>
+<img src="https://raw.githubusercontent.com/MrFuFuFu/kotlin-keynote/master/attach/kotlin_qrcode.png" width="300" height="300"/>
 
 
 <small class="img-hint">你也可以通过扫描二维码在手机上观看</small>
