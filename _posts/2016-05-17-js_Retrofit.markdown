@@ -11,11 +11,11 @@ tags:
 ---
 
 
-> 下滑这里查看更多内容
+> Click *Watch Slides to separate page*
 
 Retrofit
 
-这是我在我们无线内部技术分享会上分享的一篇关于 Retrofit 的文章，做成了 Keynote 的形式。
+I shared this article in our technology sharing meeting in our company(Haihu). This keynote introduce the **Retrofit**.
 
 
 
@@ -25,7 +25,7 @@ Retrofit
 
 
 
-<small class="img-hint">你也可以通过扫描二维码在手机上观看</small>
+<small class="img-hint">You can also scan QR code to browser it on your mobile devices</small>
 
 [去 star 我的 Github](https://github.com/MrFuFuFu/retrofit-analysis)
 

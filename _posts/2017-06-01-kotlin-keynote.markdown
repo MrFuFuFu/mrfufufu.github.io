@@ -15,7 +15,7 @@ tags:
 
 Hi, Kotlin
 
-I shared this article in our technology sharing meeting in our company(Haihu). It is about Kotlin and what's different between Kotline and Java.
+I shared this article in our technology sharing meeting in our company(Haihu). This keynote is about the **Kotlin** and what's different between Kotline and Java.
 
 
 
