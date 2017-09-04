@@ -1,10 +1,10 @@
 # Site settings
 title: MrFu Blog
-SEOTitle: 傅圆的博客 | MrFu Blog
+SEOTitle: YuanFu’s blog | MrFu blog
 header-img: img/home-bg.jpg
 email: mrfuyuan@gmail.com
-description: "Hi, I'm Fu Yuan, an Android software engineer"
-keyword: "傅圆, MrFu, 傅傅傅先生, MrFuFuFu, Mr.Fu, @傅圆, 傅圆的博客, MrFu Blog, 博客, 个人网站, 互联网, Android"
+description: "Hi, I’m Fu Yuan, a Mobile Developer"
+keyword: "Yuan Fu, YuanFu, FuYuan, Fu Yuan, 傅圆, MrFu, 傅傅傅先生, MrFuFuFu, Mr.Fu, @傅圆, 傅圆的博客, MrFu Blog, 博客, 个人网站, 互联网, Android, iOS, Swift, Java"
 url: "https://mrfu.me"
 baseurl: ""
 
