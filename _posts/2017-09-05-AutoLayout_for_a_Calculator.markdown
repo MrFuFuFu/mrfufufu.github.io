@@ -29,7 +29,8 @@ Today, we will implement this kind of user interface which showed on below. It i
 
 Just put all of this buttons and a lable into storyboard.
 
-![blog_autolayout_step1](/img/article/autolayout/blog_autolayout_step1.png)
+<img src="/img/article/autolayout/blog_autolayout_step1.png" width="200" height="224"/>
+
 
 ### Step 2 Enbed In to Stack View
 
