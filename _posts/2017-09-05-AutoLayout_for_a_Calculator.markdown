@@ -72,7 +72,7 @@ OK, that's fine for above code, but if users want to change some buttons positio
 
 #### Do some pre-work for Height Compact style
 
-First, I want to introduce some attributes for every view. On the below **picture 1**, there is a plus mark for `Background`. It means when `Height` is `Compact`, the background color we set it to green, `Height compact` means height's value less than width's value (Screen's orientation is horizontal).
+First, I want to introduce some attributes for every view. On the below **(Picture 1)**, there is a plus mark for `Background`. It means when `Height` is `Compact`, the background color we set it to green, `Height compact` means height's value less than width's value (Screen's orientation is horizontal).
 
 Then, we continue to our steps:
 
@@ -117,3 +117,8 @@ I wound not tell you how to do it when the user interface style is width compact
 You need to know the stack view(`+-÷×`) is not exist on this orientation, because it is unusable, so you need to copy that unusable stack view to this orientation, be careful, there is some little tricks. :)
 
 
+## Postscript
+
+> [Calculator-demo-Swift](https://github.com/MrFuFuFu/Calculator-demo-Swift)
+> 
+> Learn from: [CS 193P iPhone Application Development](https://web.stanford.edu/class/cs193p/cgi-bin/drupal/)
