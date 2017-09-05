@@ -29,7 +29,7 @@ Today, we will implement this kind of user interface which showed on below. It i
 
 Just put all of this buttons and a lable into storyboard.
 
-<img src="/img/article/autolayout/blog_autolayout_step1.png" width="200" height="224"/>
+<img src="/img/article/autolayout/blog_autolayout_step1.png" width="300" height="334"/>
 
 
 ### Step 2 Enbed In to Stack View
