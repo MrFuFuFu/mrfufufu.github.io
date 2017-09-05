@@ -21,7 +21,7 @@ In this article, I will talk about **Auto Layout** in iOS (Swift 3). It is a bas
 
 ## Auto Layout for a Calculator
 
-Today, we will implement this kind of user interface which showed on below. It is a Calculator, we will focus on how to make constraints for this UI, instaed of concerned about how to Calculator. I will show this code sample at the end of this article.
+Today, I will implement this kind of user interface which showed on below. It is a Calculator, I will focus on how to make constraints for this UI, instaed of how to Calculator. I will show this code sample at the end of this article.
 
 ![blog_autolayout_calculator](/img/article/autolayout/blog_autolayout_calculator.png)
 
