@@ -34,7 +34,7 @@ Just put all of this buttons and a label into storyboard.
 
 ### Step 2 Enbed In to Stack View
 
-There is a great video to talk about why we should use the Stack View:[Mysteries of Auto Layout, Part 1](https://developer.apple.com/videos/play/wwdc2015/218/).
+There is a great video to talk about why we should use the Stack View: [Mysteries of Auto Layout, Part 1](https://developer.apple.com/videos/play/wwdc2015/218/).
 
 * 4 buttons as a line and choose them, then click `Editor --> Enbed In --> Stack View`(or you can just click right bottom's `Embed In Stack View`). 
 * Click the `Show the Attributes inspector` and selecte `Distribution's` value to `Fill Equally` and `Spacing: 10`. 
@@ -67,7 +67,12 @@ In this step, we will set our calculator fit into our any devices.
 
 Fianlly, we have got this kind of view. It already match our requirements, which can showing on all devices.
 
+
+![blog_autolayout_step3_3](/img/article/autolayout/blog_autolayout_step3_3.jpg)
+
 ## Make it more easier to use
+
+In following steps, we will talk about how to make it to fit different orientation, both height compact and width compact.
 
 ### Step 4 Height compact style
 
@@ -75,7 +80,7 @@ OK, that's fine for above code, but if users want to change some buttons positio
 
 #### Do some pre-work for Height Compact style
 
-First, I want to introduce some attributes for every view. On the below **(Picture 1)**, there is a plus mark for `Background`. It means when `Height` is `Compact`, the background color we set it to green, `Height compact` means height's value less than width's value (Screen's orientation is horizontal).
+Firstly, I want to introduce some attributes for every view. On the below **(Picture 1)**, there is a plus mark for `Background`. It means when `Height` is `Compact`, the background color we set it to green, `Height compact` means height's value less than width's value (Screen's orientation is horizontal).
 
 Then, we continue to our steps:
 
@@ -110,18 +115,18 @@ Then, we continue to our steps:
 
 ### Step 5 Width compact style
 
-I wound not tell you how to do it when the user interface style is width compact, because the steps is almost same with above. But there is some thing, you need to know:
+I wound not tell you how to do it when the user interface style is width compact, because the steps is almost same with above. But there are some things, you need to know:
 
 * When you click `Orientation` back to the `vertiacal`, **(Picture 1)** shows some unusable attributes, which means they are not used in this orientation.
 * Set style for `width compact`, you need to set `Vary for Traits` to `Width`.**(Picture 2)**
 
 ![blog_autolayout_step5](/img/article/autolayout/blog_autolayout_step5.png)
 
-You need to know the stack view(`+-÷×`) is not exist on this orientation, because it is unusable, so you need to copy that unusable stack view to this orientation, be careful, there is some little tricks. :)
+You also need to know the stack view(`+-÷×`) is not exist on this orientation, because it is unusable, so you need to copy that unusable stack view to this orientation, be careful, there is some little tricks. :)
 
 
 ## Postscript
 
-> [Calculator-demo-Swift](https://github.com/MrFuFuFu/Calculator-demo-Swift)
+> Code Sample: [Calculator-demo-Swift](https://github.com/MrFuFuFu/Calculator-demo-Swift)
 > 
-> Learn from: [CS 193P iPhone Application Development](https://web.stanford.edu/class/cs193p/cgi-bin/drupal/)
+> Learn from: [Stanford University - CS 193P iPhone Application Development](https://web.stanford.edu/class/cs193p/cgi-bin/drupal/)
