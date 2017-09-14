@@ -11,7 +11,7 @@ tags:
 
 ## Prologue
 
-In this article, I will talk about **Auto Layout** in iOS (Swift 3). It is a basic skill for iOS development nowadays. This article will be not very complicated, but very easy to understand. I will give you code at the end of article. Besides, you will know how to use storyboard to make Auto Layout.
+In this article, I will talk about **Auto Layout** in iOS (Swift 3). It is a basic skill for iOS development nowadays. This article will be not very complicated, but very easy to understand. I will give you the code at the end of this article. Besides, you will know how to use storyboard to make Auto Layout.
 
 [Apple's Auto Layout Guide](https://developer.apple.com/library/content/documentation/UserExperience/Conceptual/AutolayoutPG/index.html#//apple_ref/doc/uid/TP40010853-CH7-SW1) is a great document to read. The below's equation is a very useful guide. For more detail, please visit: [Anatomy of a Constraint](https://developer.apple.com/library/content/documentation/UserExperience/Conceptual/AutolayoutPG/AnatomyofaConstraint.html#//apple_ref/doc/uid/TP40010853-CH9-SW1).
 
@@ -21,18 +21,20 @@ In this article, I will talk about **Auto Layout** in iOS (Swift 3). It is a bas
 
 ## Auto Layout for a Calculator
 
-Today, I will implement this kind of user interface which showed on below. It is a Calculator, I will focus on how to make constraints for this UI, instaed of how to Calculator. I will show this code sample at the end of this article.
+Today, I will implement this kind of user interface which showed on below. It is a Calculator, I will focus on how to make constraints for this UI, instead of how to calculate. I will show this code sample at the end of this article.
 
 ![blog_autolayout_calculator](/img/article/autolayout/blog_autolayout_calculator.png)
 
 ### Step 1 Put all needed buttons into Storyboard
 
-Just put all of this buttons and a lable into storyboard.
+Just put all of this buttons and a label into storyboard.
 
 <img src="/img/article/autolayout/blog_autolayout_step1.png" width="300" height="334"/>
 
 
 ### Step 2 Enbed In to Stack View
+
+There is a great video to talk about why we should use the Stack View:[Mysteries of Auto Layout, Part 1](https://developer.apple.com/videos/play/wwdc2015/218/).
 
 * 4 buttons as a line and choose them, then click `Editor --> Enbed In --> Stack View`(or you can just click right bottom's `Embed In Stack View`). 
 * Click the `Show the Attributes inspector` and selecte `Distribution's` value to `Fill Equally` and `Spacing: 10`. 
@@ -58,8 +60,8 @@ Steps instructions show on the blow:
 In this step, we will set our calculator fit into our any devices.
 
 * Click the `Add New Constraints`, which located in the right-side bottom of Storyboard, then choose all four directions line to hightlight and set the vaule to `Standard`, Click `Add 4 Constraints`.**(Picture 1)**
-* Click `Show the Size inspector`, we can what's kind of constraints we have sets: `Trailling`, `Leading`, `Bottom` and `Top` to the `Superview`.**(Picture 2)**
-* But we have got a problem, The first line buttons (`+-÷×`) is not the same with our expection. Select all buttons stack view(including all buttons stack view but not include lable), and then set the `Distribution's` value to `Fill Equally`, which can solve this problem.
+* Click `Show the Size inspector`, we can see what's kind of constraints we already set: `Trailling`, `Leading`, `Bottom` and `Top` to the `Superview`.**(Picture 2)**
+* But we got a problem, The first line buttons (`+-÷×`) is not the same with our expection. Select all buttons stack view(including all buttons stack view but not include label), and then set the `Distribution's` value to `Fill Equally`, which can solve this problem.
 
 ![blog_autolayout_step3_2](/img/article/autolayout/blog_autolayout_step3_2.png)
 
