@@ -124,8 +124,6 @@ func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextIn
 
 ![improvePart](/img/article/assignment2/improvePart.png)
 
-`Auto Layout`
-
 In this screenshot, it's iPhone 5 screen, some components are out of screen edge. Actually, it's easy to understand, because I constrain all of these components' size.
 
 The solution is remove these Constraints and make these components Constraints as `Horizontally in Container`.
