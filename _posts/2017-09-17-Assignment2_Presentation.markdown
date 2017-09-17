@@ -1,13 +1,37 @@
 ---
-layout: post
+layout: keynote
 title:  Assignment2 Presentation
+iframe:    "//mrfu.me/assignment2-keynote/"
 author: MrFu
 date:   2017-09-17 14:35:00
-catalog:    true
 tags:
     - Swift
     - iOS
 ---
+
+
+
+> Click *Watch Slides to separate page*
+
+Hi, Swift
+
+I shared this article in our assignment 2 of iOS course class. This keynote is about the **Swift** and what's different between Swift, Kotline and Java.
+
+
+
+
+### [Watch Slides →](//mrfu.me/assignment2-keynote)
+
+<img src="https://raw.githubusercontent.com/MrFuFuFu/assignment2-keynote/master/attach/1505640285.png" width="300" height="300"/>
+
+
+<small class="img-hint">You can also scan QR code to browser it on your mobile devices</small>
+
+[Github](https://github.com/MrFuFuFu/assignment2-keynote)
+
+
+
+
 
 
 ## Part 1
@@ -149,5 +173,11 @@ There is an guideline for iOS: [Alerts](https://developer.apple.com/ios/human-in
 See: [The App Life Cycle](https://developer.apple.com/library/content/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/TheAppLifeCycle/TheAppLifeCycle.html)
 
 
+## Part 2: Swift, Java and Kotlin
 
+Kotlin:
+
+> Statically typed programming language for modern multiplatform applications
+
+> 100% interoperable with Java™ and Android™ (Now official on Android)
 
