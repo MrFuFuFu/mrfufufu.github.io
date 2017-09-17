@@ -175,9 +175,5 @@ See: [The App Life Cycle](https://developer.apple.com/library/content/documentat
 
 ## Part 2: Swift, Java and Kotlin
 
-Kotlin:
-
-> Statically typed programming language for modern multiplatform applications
-
-> 100% interoperable with Java™ and Android™ (Now official on Android)
+For more detail, please visit [Assignment2-keynote](https://mrfu.me/assignment2-keynote/#/)
 
