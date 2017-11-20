@@ -1,5 +1,5 @@
 ---
-layout: post
+layout:     keynote
 title:  Card Diary for iOS
 author: MrFu
 iframe: "https://carddiary.me/"
