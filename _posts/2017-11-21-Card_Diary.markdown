@@ -1,10 +1,10 @@
 ---
-layout:     keynote
+layout: post
 title:  Card Diary for iOS
 author: MrFu
-iframe: "https://carddiary.me/"
 date:   2017-11-21 11:08:00
 catalog:    true
+header-img: "img/post-bg-2015.jpg"
 tags:
     - iOS
 ---
