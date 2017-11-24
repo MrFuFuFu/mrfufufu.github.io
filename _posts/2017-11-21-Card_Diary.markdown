@@ -9,7 +9,7 @@ tags:
     - iOS
 ---
 
-Just visit:
+Please visit:
 
 ### [Card Diary](https://carddiary.me/)
 
