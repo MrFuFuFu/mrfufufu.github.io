@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  Swift Apprentice I: Basic Topics
-subtitle: Swift 4 notes
+title:  Swift Apprentice I -- Basic Topics
+subtitle: Swift notes
 author: MrFu
 date:   2017-11-30 17:23:00
 catalog:    true
