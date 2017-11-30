@@ -16,7 +16,7 @@ tags:
 
 #### updating elements
 
-```Swift
+```swift
 var players = ["A", "B", "C", "D"]
 players[0...1] = ["1", "2", "3", "4"]
 print(players)
@@ -26,7 +26,7 @@ This code means using `["1", "2", "3", "4"]` to replace the first two players. T
 
 #### Moving elements
 
-```Swift
+```swift
 //Remove "4" and instert it into 0 position
 let player4 = players.remove(at: 3)
 players.insert(player4, at: 0)
@@ -41,7 +41,7 @@ print(players)
 
 #### Iterating
 
-```Swift
+```swift
 for (index, player) in players.enumerated() {
     print("\(index + 1). \(player)")
 }
@@ -56,7 +56,7 @@ for (index, player) in players.enumerated() {
 ### Dictionaries
 
 #### Adding pairs / Updating values / Removing pairs
-```Swift
+```swift
 var bobData = ["name": "Bob", "profession": "Card Player", "country": "USA"]
 //Adding
 bobData.updateValue("CA", forKey: "state")
@@ -73,7 +73,7 @@ bobData["city"] = nil
 
 #### Iterating
 
-```Swift
+```swift
 for (player, score) in namesAndScores {//key and value
   print("\(player) - \(score)")
 }
@@ -91,7 +91,7 @@ print("") // print one final newline
 
 Sets don't have their own literals. We use **array literals** to create a set with initial values.
 
-```Swift
+```swift
 var someSet: Set<Int> = [1, 2, 3, 1]
 print(someSet)
 // > [2, 3, 1]
@@ -104,7 +104,7 @@ As you see, there is no specific ordering and the values are unique.
 
 #### Closures basics
 
-```Swift
+```swift
 //Declaration
 var multiplyClosure: (Int, Int) -> Int
 
@@ -131,7 +131,7 @@ multiplyClosure = {
 
 Further more, if the parameter list is much longer it can be confusing to remember. We can use the named syntax.
 
-```Swift
+```swift
 func operateOnNumbers(_ a: Int, _ b: Int, operation: (Int, Int) -> Int) -> Int {
   let result = operation(a, b)
   print(result)
@@ -148,7 +148,7 @@ operateOnNumbers(4, 2, operation: addClosure)
 
 Closures are simply functions without names. So we can also pass in a function as the parameter, like so:
 
-```Swift
+```swift
 func addFunction(_ a: Int, _ b: Int) -> Int {
   return a + b
 }
@@ -158,7 +158,7 @@ operateOnNumbers(4, 2, operation: addFunction)
 
 or even, define the closure inline with the function call, so no need to define the closure and assign it to a local variable or constant. Just simply declare the closure right whre you pass it into the function as a parameter! like this:
 
-```Swift 
+```swift 
 operateOnNumbers(4, 2, operation: { (a: Int, b: Int) -> Int in
   return a + b
 })
@@ -174,7 +174,7 @@ operateOnNumbers(4, 2) {//This is called trailing closure syntax.
 
 #### Closures with no return value
 
-```Swift
+```swift
 let voidClosure: () -> Void = {
   print("Swift Apprentice is awesome!")
 }
@@ -183,7 +183,7 @@ voidClosure()
 
 The closure's type is `() -> Void`. No parameters, no return type (But you must declare a return type)
 
-```Swift
+```swift
 func countingClosure() -> () -> Int {
   var counter = 0
   let incrementCounter: () -> Int = {
@@ -212,7 +212,7 @@ The closure returned from this function will increment its internal counter each
 
 Sorting
 
-```Swift
+```swift
 let names = ["ZZZZZZ", "BB", "A", "CCCC", "EEEEE"]
 let sortedByLength = names.sorted {
   $0.count > $1.count
@@ -222,7 +222,7 @@ sortedByLength //["ZZZZZZ", "EEEEE", "CCCC", "BB", "A"]
 
 Functional
 
-```Swift
+```swift
 var prices = [  1.5, 10, 4.99, 2.30, 8.19]
 
 //func filter(_ isIncluded: (Element) -> Bool) -> [Element]
@@ -247,7 +247,7 @@ let numbers2 = userInput.flatMap {
 
 ```
 
-```Swift
+```swift
 //reduce takes a starting value and a closure. 
 //The closure takes two values: the current value and an element from the array. 
 //The closure returns the next value that should be passed into the closure as the current value parameter.
@@ -273,7 +273,7 @@ let allAnimals = farmAnimals.reduce(into: []) {
 
 #### Others
 
-```Swift
+```swift
 var prices = [  1.5, 10, 4.99, 2.30, 8.19]
 let removeFirst = prices.dropFirst()//[10, 4.99, 2.3, 8.19]
 let removeFirstTwo = prices.dropFirst(2)//[4.99, 2.3, 8.19]
@@ -291,7 +291,7 @@ let lastTwo = prices.suffix(2)//[2.3, 8.19]
 
 #### Indexing strings
 
-```Swift
+```swift
 let cafeCombining = "cafe\u{0301}"
 let firstIndex = cafeCombining.startIndex // type is String.Index
 let firstChar = cafeCombining[firstIndex]//"c"
@@ -302,7 +302,7 @@ let lastChar = cafeCombining[lastIndex]//"é"
 
 #### Strings as bi-directional collections
 
-```Swift
+```swift
 let name = "Matt"
 let backwardsName = name.reversed()//Type is ReversedCollection<String>
 let secondCharIndex = backwardsName.index(backwardsName.startIndex, offsetBy: 1)//Type is ReversedIndex<String>
@@ -313,7 +313,7 @@ let backwardsNameString = String(backwardsName)//"ttaM"
 
 #### Substrings
 
-```Swift
+```swift
 let fullName = "Matt Galloway"
 let spaceIndex = fullName.index(of: " ")!
 let firstName = fullName[..<spaceIndex]//"Matt"
