@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [Top] Card Diary for iOS
+title: 【Top】 Card Diary for iOS
 subtitle: A pretty journal
 author: MrFu
 date:   2018-12-31 00:00:00
