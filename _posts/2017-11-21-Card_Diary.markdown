@@ -17,13 +17,14 @@ Please visit:
 ## CARD DIARY
 
 App Store URL(United States, Korea, China) : [Card Diary App Store](https://itunes.apple.com/app/card-diary-pretty-journal/id1295506659?mt=8)
-Website : [carddiary.me](https://carddiary.me/)
 
-### UX / UI DESIGN: Unbong Kang
+Website : [CardDiary.me](https://carddiary.me/)
+
+### UX / UI Designer: Unbong Kang
 
 [lain.kr](lain.kr) / [Dribbble](https://dribbble.com/lainkr) / [Facebook](https://www.facebook.com/unbong.kang) /  [Twitter](https://twitter.com/unbong_kang) / [Instagram](https://www.instagram.com/lain.kr/)
 
-### iOS DEVELOPMENT: Yuan Fu
+### iOS Developer: Yuan Fu
 
 [mrfu.me](https://mrfu.me/) / [Instagram](https://www.instagram.com/mrfufufufu/) / [Twitter](https://twitter.com/mrfufufufu) / [Facebook](https://www.facebook.com/mrfufufu)
 
