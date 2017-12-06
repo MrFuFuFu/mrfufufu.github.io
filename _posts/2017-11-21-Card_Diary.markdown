@@ -14,4 +14,4 @@ Please visit:
 
 ### [Card Diary](https://carddiary.me/)
 
-![card_diary_main_page](/img/article/samllArticles/card_diary_main_page.jpg)
+![card_diary_main_page](/img/article/samllArticles/card_diary_main_page.png)
