@@ -16,4 +16,4 @@ Please visit:
 
 ## Overview
 
-<img src="/img/article/samllArticles/card_diary_main_page.png" width="1400" style="height: auto; width: 1400px; margin-left: -320px;" />
+<img src="/img/article/samllArticles/card_diary_main_page.png" width="1400" style="height: auto; width: 1400px; margin-left: -320px; max-width: none;"/>
