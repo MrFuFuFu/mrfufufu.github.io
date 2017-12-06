@@ -14,9 +14,9 @@ tags:
 ## CARD DIARY
 
 
-App Store: [Card Diary App Store](https://itunes.apple.com/app/card-diary-pretty-journal/id1295506659?mt=8)
+**App Store**: [Card Diary App Store](https://itunes.apple.com/app/card-diary-pretty-journal/id1295506659?mt=8)
 
-Website : [CardDiary.me](https://carddiary.me/)
+**Website** : [CardDiary.me](https://carddiary.me/)
 
 [Behance](https://www.behance.net/gallery/59120015/Card-Diary-iOS-App) / [dribbble](https://dribbble.com/shots/3998692-Card-Diary-iOS-App) / [Uplabs](https://www.uplabs.com/posts/card-diary-ios-app)
 
