@@ -12,6 +12,8 @@ tags:
 
 Please visit:
 
-### [Card Diary](https://carddiary.me/)
+## [Card Diary](https://carddiary.me/)
 
-![card_diary_main_page](/img/article/samllArticles/card_diary_main_page.png)
+## Overview
+
+<img src="/img/article/samllArticles/card_diary_main_page.png" width="1400" style="height: auto; width: 1400px; margin-left: -320px;" />
