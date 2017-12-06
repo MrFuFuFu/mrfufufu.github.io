@@ -5,7 +5,7 @@ subtitle: A pretty journal
 author: MrFu
 date:   2018-12-31 00:00:00
 catalog:    false
-header-img: "img/post-bg-2015.jpg"
+header-img: "img/post-bg-card-diary.png"
 tags:
     - iOS
 ---
