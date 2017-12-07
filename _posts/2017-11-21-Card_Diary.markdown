@@ -51,7 +51,7 @@ tags:
 	<script type="text/javascript">
 	window.onload=function(){
 		var x = screen.width;
-		if (x < 1000) {
+		if (x < 1400) {
 			document.getElementById("bigScreenLoad").innerHTML = "<img src='/img/article/samllArticles/CardDiary/1.png'/><img src='/img/article/samllArticles/CardDiary/2.png'/><img src='/img/article/samllArticles/CardDiary/3.png'/><img src='/img/article/samllArticles/CardDiary/4.png'/><img src='/img/article/samllArticles/CardDiary/5.png'/><img src='/img/article/samllArticles/CardDiary/6.png'/><img src='/img/article/samllArticles/CardDiary/7.png'/><img src='/img/article/samllArticles/CardDiary/8.png'/><img src='/img/article/samllArticles/CardDiary/9.png'/><img src='/img/article/samllArticles/CardDiary/10.png'/><img src='/img/article/samllArticles/CardDiary/11.png'/><img src='/img/article/samllArticles/CardDiary/12.gif'/><img src='/img/article/samllArticles/CardDiary/13.png'/><img src='/img/article/samllArticles/CardDiary/14.png'/>";
 		}
 	}
