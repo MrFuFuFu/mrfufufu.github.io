@@ -322,9 +322,103 @@ let lastNameString = String(lastName)"Galloway"
 ```
 
 
-### Structures
+## Building Your Own Types
 
+### Generics
 
+**Type constraints**
+
+There are two kinds of constraints. The simplest kind of type constraint looks like this:
+
+```swift
+class Cat {
+  var name: String
+  
+  init(name: String) {
+    self.name = name
+  }
+}
+
+class Dog {
+  var name: String
+  
+  init(name: String) {
+    self.name = name
+  }
+}
+
+protocol Pet {
+  var name: String { get }  // all pets respond to a name
+}
+extension Cat: Pet {}
+extension Dog: Pet {}
+
+class Keeper<Animal: Pet> {
+  var name: String
+  var morningCare: Animal
+  var afternoonCare: Animal
+  
+  init(name: String, morningCare: Animal, afternoonCare: Animal) {
+    self.name = name
+    self.morningCare = morningCare
+    self.afternoonCare = afternoonCare
+  }
+}
+
+let cats = ["Miss Gray", "Whiskers", "Sleepy"].map { Cat(name: $0) }
+let dogs = ["Sparky", "Rusty", "Astro"].map { Dog(name: $0) }
+let pets: [Pet] = [Cat(name: "Mittens"), Dog(name: "Yeller")]
+
+//This method handles a array of type *Pet* that can mix *Dog* and *Cat* elements together.
+func herd(_ pets: [Pet]) {
+  pets.forEach {
+    print("Come \($0.name)!")
+  }
+}
+
+//Handles arrays of any kind of *Pet*, but they all need to be of a single type.
+func herd<Animal: Pet>(_ pets: [Animal]) {
+  pets.forEach {
+    print("Here \($0.name)!")
+  }
+}
+
+//Handles dogs and only dogs (or subtypes of dogs)
+func herd<Animal: Dog>(_ dogs: [Animal]) {
+  dogs.forEach {
+    print("Here \($0.name)! Come here!")
+  }
+}
+
+herd(dogs)
+herd(cats)
+herd(pets)
+
+//output:
+//Here Sparky! Come here!
+//Here Rusty! Come here!
+//Here Astro! Come here!
+//Here Miss Gray!
+//Here Whiskers!
+//Here Sleepy!
+//Come Mittens!
+//Come Yeller!
+```
+
+You can restrict what kinds of types are allowed to fill the type parameter. *type constraints*
+
+The second kind of type constraint in volves making explicit assertions that a type parameter, or its associated type, must equal another parameter or one of its conforming types.
+
+```swift
+extension Array where Element: Cat {
+  func meow() {
+    forEach { print("\($0.name) says meow!") }
+  }
+}
+
+// dogs.meow() // error: 'Dog' is not a subtype of 'Cat'
+cats.meow()
+```
 
 
 
