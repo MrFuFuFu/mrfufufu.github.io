@@ -10,6 +10,8 @@ tags:
     - Swift
 ---
 
+> The notes of [Swift Apprentice](https://store.raywenderlich.com/products/swift-apprentice)
+
 ## Collection
 
 ### Array

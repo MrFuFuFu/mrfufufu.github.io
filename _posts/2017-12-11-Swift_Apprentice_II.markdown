@@ -10,6 +10,8 @@ tags:
     - Swift
 ---
 
+> The notes of [Swift Apprentice](https://store.raywenderlich.com/products/swift-apprentice)
+
 ## Code Organization
 
 A theme of access control is the idea that your code should be loosely coupled and highly cohesive. Loosely coupled code limits how much one entity knows about another, which in turn makes different parts of your code less dependent on others.
