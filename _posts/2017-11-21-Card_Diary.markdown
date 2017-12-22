@@ -61,5 +61,7 @@ tags:
 Press:
 
 [卡片日记 – 真・精致的日记本](https://www.appinn.com/card-diary-pretty-journal/?wpc=dlc#comment-412029)
+
 [卡片日记 (Card Diary) -- 做最简洁的日记应用](https://sspai.com/post/42384)
+
 [卡片日记—来自韩国设计师和中国程序员的跨国合作](http://zuimeia.com/app/5627/?platform=1)
