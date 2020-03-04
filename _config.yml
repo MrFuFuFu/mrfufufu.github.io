@@ -56,7 +56,7 @@ ga_domain: mrfu
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Coder, Paraglider, Marathoner, RC Helicopter"
+sidebar-about-description: "Card Diary App, Paraglider, Student private pilot"
 sidebar-avatar: /img/avatar-mrfu.png     # use absolute URL.
 
 
@@ -70,14 +70,14 @@ featured-condition-size: 1              # A tag will be featured if the size of 
 # Friends
 friends: [
     {
-        title: "maple Blog",
-        href: "http://maples.me/"
+        title: "Card Diary - APP OF THE DAY",
+        href: "https://apps.apple.com/story/id1433996215"
     },{
-        title: "程序亦非猿的OnePiece",
-        href: "http://yifeiyuan.me/"
+        title: "Card Diary - Product Hunt",
+        href: "https://www.producthunt.com/posts/card-diary"
     },{
-        title: "小鄧子 - 简书",
-        href: "http://www.jianshu.com/users/df40282480b4/latest_articles"
+        title: "Card Diary - Behance",
+        href: "https://www.behance.net/gallery/59120015/Card-Diary-iOS-App"
     }
 ]
 
