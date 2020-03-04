@@ -1,3 +1,4 @@
+---
 layout: post
 title:  卡片日记 (Card Diary) -- 做最简洁的日记应用
 subtitle: Swift notes
@@ -8,6 +9,7 @@ header-img: "img/post-bg-swift-apprentice.png"
 tags:
     - Card Diary
     - 卡片日记
+---
 
 > 本文我原发于少数派，转发到我的博客，以作记录: [卡片日记 (Card Diary) -- 做最简洁的日记应用](https://sspai.com/post/42384)
 
