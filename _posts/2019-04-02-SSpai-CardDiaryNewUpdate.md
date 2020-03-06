@@ -2,14 +2,14 @@
 layout: post
 title:  在 App Store 获全球「今日 App」推荐的卡片日记迎来了最大的更新
 author: Yuan Fu
-date:   2018-04-02
+date:   2019-04-02
 catalog:    true
 tags:
     - Card Diary
     - 卡片日记
 ---
 
-> 本文我原发于少数派，转发到我的博客，以作记录: [卡片日记 (Card Diary) -- 做最简洁的日记应用](https://sspai.com/post/53803)
+> 本文我原发于少数派，转发到我的博客，以作记录: [在 App Store 获全球「今日 App」推荐的卡片日记迎来了最大的更新](https://sspai.com/post/53803)
 
 
 ![Cover](/img/carddiary/cover.png)
@@ -114,3 +114,5 @@ tags:
 
 ![iPadDetailPage](/img/carddiary/LastImg.png)
 
+
+> [在 App Store 获全球「今日 App」推荐的卡片日记迎来了最大的更新](https://sspai.com/post/53803)
