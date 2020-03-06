@@ -2,8 +2,8 @@
 layout: post
 title:  卡片日记 (Card Diary) v5.0+ 全新体验，现已来临
 author: Yuan Fu
-date:   2017-12-19
-catalog:    true
+date:   2018-04-05
+catalog:    false
 tags:
     - Card Diary
     - 卡片日记
@@ -32,7 +32,7 @@ tags:
 
 **_欢迎给我们评论并分享到微博或微信，我们会随机在评论下方抽取3个用户，赠送卡片日记的高级捐赠版优惠码 ^ ^_**
 
-![每张卡片都是一天](carddiary/204b0211545a22db266c289a664f45ac.png)
+![每张卡片都是一天](/img/carddiary/204b0211545a22db266c289a664f45ac.png)
 
 卡片日记-在你的卡片中写下每一天
 
@@ -42,7 +42,7 @@ tags:
 
 写下日记的同时，放慢你的脚步，安静的去聆听内心的呼唤。
 
-![用一张卡片，记录下你的每月每天](carddiary/6973733700beb48dfe39d55997606150.png)
+![用一张卡片，记录下你的每月每天](/img/carddiary/6973733700beb48dfe39d55997606150.png)
 
 -------------------
 
@@ -54,7 +54,7 @@ tags:
 
 “设计感爆棚应用「卡片日记」, 适合用一年的好应用。” - 最美应用
 
-![](carddiary/bbf746b64a83b58a6c8fe0ccb24a7ebb.png)
+![](/img/carddiary/bbf746b64a83b58a6c8fe0ccb24a7ebb.png)
 -------------------
 
 当你在卡片上记下你的生活之后，这张卡片便有了意义。
@@ -67,7 +67,7 @@ tags:
 
 你可以使用照片来点缀你的卡片。你可以设计一个月内最好的卡片。
 
-![Enjoy 你的每一张卡片吧!](carddiary/c4faf717bdc4f68740d270013b6ef4f0.gif)
+![Enjoy 你的每一张卡片吧!](/img/carddiary/c4faf717bdc4f68740d270013b6ef4f0.gif)
 
 -------------------
 
@@ -93,7 +93,7 @@ tags:
 
 如果你有任何问题，请给我们发邮件： [hello@carddiary.me](mailto:hello@carddiary.me)
 
-![各种卡片颜色，随意选择；照片当背景？没问题！](carddiary/35e37d9bf59de6851fd7a3caa3a3fa4e.png)
+![各种卡片颜色，随意选择；照片当背景？没问题！](/img/carddiary/35e37d9bf59de6851fd7a3caa3a3fa4e.png)
 
 
 > [卡片日记 (Card Diary) v5.0+ 全新体验，现已来临 - 少数派](https://sspai.com/post/44104)
