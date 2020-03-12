@@ -47,3 +47,7 @@ Whatever you record, Card Diary will save it and neatly arrange each entry under
 Not every day will be particularly eventful of course and when that happens, take a quick photo and add a few words – it could well be the ideal opportunity to pause, reflect on things and have a moment of appreciation for a wonderfully average day. Set yourself a challenge to record for 365 days of the year and you’ll soon find journaling becomes a habit. You might just catch yourself on the lookout for interesting things in your day, however small, something you might not do otherwise.
 
 *Card Diary makes journaling a simple, mindful and highly rewarding activity. So, what did you do today?*
+
+
+<img src="https://mrfu.me/img/carddiary/AppOfTheDay-Chinese.JPG" width="800"/>
+<img src="https://mrfu.me/img/carddiary/AppOfTheDay-English.JPG" width="800"/>
