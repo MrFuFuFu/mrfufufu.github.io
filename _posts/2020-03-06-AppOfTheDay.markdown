@@ -3,13 +3,15 @@ layout: post
 title:  APP OF THE DAY - 今日 App
 author: App Store
 date:   2020-03-06
-catalog:    false
+catalog:    true
 tags:
     - Card Diary
     - 卡片日记
 ---
 
 > 这是卡片日记获得「今日 App」的推荐语，原文链接在这里 [今日 App](https://apps.apple.com/cn/story/id1433996215)
+
+## Chinese Version
 
 还记得去年的今天你是如何度过的吗？或许那时的你有着与现在完全不同的兴趣爱好，也可能正在为某件事而烦恼。别等曾经的点点滴滴在记忆中渐渐模糊，让《卡片日记》记录你的每天生活，倾听自己过往的心声。
 
@@ -49,5 +51,15 @@ Not every day will be particularly eventful of course and when that happens, tak
 *Card Diary makes journaling a simple, mindful and highly rewarding activity. So, what did you do today?*
 
 
+-----------------
+
+## Image Versions
+
+
+### Chinese
+
 <img src="https://mrfu.me/img/carddiary/AppOfTheDay-Chinese.JPG" width="800"/>
+
+### English
+
 <img src="https://mrfu.me/img/carddiary/AppOfTheDay-English.JPG" width="800"/>
