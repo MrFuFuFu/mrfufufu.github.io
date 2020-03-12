@@ -51,7 +51,6 @@ Not every day will be particularly eventful of course and when that happens, tak
 *Card Diary makes journaling a simple, mindful and highly rewarding activity. So, what did you do today?*
 
 
------------------
 
 ## Image Versions
 
