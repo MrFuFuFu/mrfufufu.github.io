@@ -10,7 +10,7 @@ tags:
     - Interview
 ---
 
-> 这是2018年8月，PriceTag 对我的采访，原文链接在这里 [INTERVIEW 36 | 认真对待用户是很重要的事：专访「卡片日记」傅圆](https://mp.weixin.qq.com/s/jnB-IKqKuAaPZSwok1vPOQ)
+> 这是2018年8月，PriceTag 对我的采访，原文链接在这里 [INTERVIEW 36 - 认真对待用户是很重要的事：专访「卡片日记」傅圆](https://mp.weixin.qq.com/s/jnB-IKqKuAaPZSwok1vPOQ)
 
 
 「卡片日记」曾多次被 App Store 和媒体推荐，这款以简单纯净为设计理念的日记应用受到众多用户的赞誉。创作者傅圆今天来到我们的专访，通过几个问题，我们来了解「卡片日记」创造过程中有意思的事情和傅圆在新西兰生活的趣事。
@@ -89,4 +89,4 @@ Apple Connect，无聊看看卡片日记的数据，有时候下载量会突然�
 
 最近...博客写的很少，微博也不怎么用，大概就剩 Instagram 和脸书还在活跃了吧 ins: mrfufufufu。不过大多都是滑翔伞和一些生活图，不太和技术相关。博客站点是 mrfu.me。 对了，可以通过卡片日记来关注我，卡片日记的每条 App Store 评论我都会回复，哈哈。
 
-[INTERVIEW 36 | 认真对待用户是很重要的事：专访「卡片日记」傅圆](https://mp.weixin.qq.com/s/jnB-IKqKuAaPZSwok1vPOQ)
+[INTERVIEW 36 - 认真对待用户是很重要的事：专访「卡片日记」傅圆](https://mp.weixin.qq.com/s/jnB-IKqKuAaPZSwok1vPOQ)
