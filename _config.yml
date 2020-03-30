@@ -12,11 +12,11 @@ baseurl: ""
 
 # SNS settings
 RSS: false
-#twitter_username: 15068728607
+twitter_username: pilotyuan
 github_username:  mrfufufu
 facebook_username:  mrfufufu
 linkedin_username: mrfufufu
-instagram_username: mrfufufufu
+instagram_username: pilot.yuan
 
 
 # Build settings
