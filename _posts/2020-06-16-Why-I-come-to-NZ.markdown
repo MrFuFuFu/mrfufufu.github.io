@@ -4,7 +4,7 @@ title:  我为什么移民？
 subtitle: 在蓝天白云下翱翔
 author: Yuan Fu
 date:   2020-06-16 20:58:00
-catalog:    true
+catalog:    false
 tags:
     - Life
 ---
