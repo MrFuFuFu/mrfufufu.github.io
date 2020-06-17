@@ -4,6 +4,7 @@ title:  Coding for freedom
 subtitle: 在希望的原野上奔跑
 author: MrFu
 date:   2017-04-17 15:15:00
+header-style: text
 catalog:    true
 tags:
     - Life

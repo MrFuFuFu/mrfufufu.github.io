@@ -4,6 +4,7 @@ title:  My stages
 subtitle: 2016年，学习目录
 author: MrFu
 date:   2016-01-03 15:46:00
+header-style: text
 catalog:    true
 tags:
     - Life
