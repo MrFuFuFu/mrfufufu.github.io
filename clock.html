@@ -59,14 +59,16 @@
 
     <script>
       function update() {
-        var date = new Date()
-        var utcNZDT_DiffMinutes = date.getTimezoneOffset() + 780
-        date.setMinutes(date.getMinutes() + utcNZDT_DiffMinutes)
+        var d = new Date(),
+                  minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+                  hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+                  ampm = d.getHours() >= 12 ? 'pm' : 'am',
+                  months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+                  days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 
-        var timeString = date.getHours() + ':' + ('0' + date.getMinutes()).slice(-2)
-        var dateString = (date.getMonth() + 1) + '月' + date.getDate() + '日'
-        var weekList = ['日', '一', '二', '三', '四', '五', '六']
-        var weekString = '星期' + weekList[date.getDay()]
+        var timeString = hours+':'+minutes+ampm;
+        var weekString = days[d.getDay()]
+        var dateString = months[d.getMonth()]+' '+d.getDate()
 
         document.getElementById("time").innerHTML = timeString
         document.getElementById("date").innerHTML = dateString
