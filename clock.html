@@ -19,17 +19,11 @@
         .time_container,
         .date_container {
           width: 100%;
-          margin: auto;
-          text-align: center;
         }
 
         .time_container {
           top: 0;
           height: 55%;
-        }
-
-        .date_container {
-            margin-left: 90px;
         }
 
         .time {
@@ -68,8 +62,8 @@
         days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 
         var timeString = hours+':'+minutes;
-        var weekString = days[d.getDay()]
-        var dateString = months[d.getMonth()]+' '+d.getDate()
+        var weekString = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + days[d.getDay()]
+        var dateString = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + months[d.getMonth()]+' '+d.getDate()
 
         document.getElementById("time").innerHTML = timeString
         document.getElementById("date").innerHTML = dateString
