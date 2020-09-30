@@ -62,8 +62,8 @@
         days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 
         var timeString = hours+':'+minutes;
-        var weekString = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + days[d.getDay()]
-        var dateString = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + months[d.getMonth()]+' '+d.getDate()
+        var weekString = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + days[d.getDay()]
+        var dateString = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + months[d.getMonth()]+' '+d.getDate()
 
         document.getElementById("time").innerHTML = timeString
         document.getElementById("date").innerHTML = dateString
